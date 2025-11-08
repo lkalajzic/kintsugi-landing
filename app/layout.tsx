@@ -5,6 +5,10 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Kintsugi Class - Learn The Ancient Japanese Art of Golden Repair',
   description: 'Learn how to repair broken ceramics with gold from a 30-year Kyoto master. Turn worthless into priceless with this ancient Japanese technique.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({

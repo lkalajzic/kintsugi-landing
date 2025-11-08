@@ -1,0 +1,39 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cream background -->
+  <rect width="400" height="400" fill="#FAF8F5"/>
+
+  <!-- Minimal broken bowl silhouette -->
+  <g transform="translate(200, 200)">
+    <!-- Bowl pieces in charcoal -->
+    <path d="M -80 -40 Q -80 20 -100 60 L -90 60 Q -70 22 -70 -38 Z" fill="#2B2B2B"/>
+    <path d="M -70 -38 L -65 -42 L 0 -50 L 5 -46 L 5 -38 L -70 -30 Z" fill="#2B2B2B"/>
+    <path d="M 5 -38 L 10 -42 L 75 -35 L 78 -30 L 72 -28 L 5 -30 Z" fill="#2B2B2B"/>
+    <path d="M 72 -28 L 78 -30 Q 85 0 95 55 L 85 58 Q 75 5 70 -25 Z" fill="#2B2B2B"/>
+    <path d="M -90 60 Q -50 75 0 78 L 0 68 Q -48 65 -88 52 Z" fill="#2B2B2B"/>
+    <path d="M 0 68 L 0 78 Q 55 75 85 58 L 82 50 Q 52 65 0 68 Z" fill="#2B2B2B"/>
+
+    <!-- Gold kintsugi seams - thicker and more prominent -->
+    <line x1="-80" y1="-40" x2="-70" y2="-38" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="-70" y1="-38" x2="-70" y2="-30" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="-70" y1="-30" x2="5" y2="-30" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="5" y1="-38" x2="5" y2="-30" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="5" y1="-30" x2="72" y2="-28" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="72" y1="-28" x2="70" y2="-25" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="-90" y1="60" x2="-88" y2="52" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="0" y1="68" x2="0" y2="78" stroke="#D4AF37" stroke-width="4"/>
+    <line x1="82" y1="50" x2="85" y2="58" stroke="#D4AF37" stroke-width="4"/>
+
+    <!-- Text below -->
+    <text x="0" y="120" font-family="Cormorant Garamond, serif" font-size="32" fill="#2B2B2B" text-anchor="middle" font-weight="300">
+      KINTSUGI
+    </text>
+    <text x="0" y="150" font-family="Cormorant Garamond, serif" font-size="20" fill="#2B2B2B" text-anchor="middle" font-weight="300" letter-spacing="2">
+      CLASS
+    </text>
+
+    <!-- Small kanji accent -->
+    <text x="0" y="-80" font-family="serif" font-size="24" fill="#D4AF37" text-anchor="middle">
+      金継ぎ
+    </text>
+  </g>
+</svg>
