@@ -1,5 +1,6 @@
 import StripeButton from './components/StripeButton'
 import StripeButtonAlt from './components/StripeButtonAlt'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -27,11 +28,16 @@ export default function Home() {
             How A 30-Year Kyoto Master Repairs Broken Ceramics With Gold—And Why She's Teaching This Ancient Technique Online For The First Time.
           </p>
 
-          {/* Hero Image Placeholder */}
-          <div className="mt-12 rounded-lg overflow-hidden shadow-2xl">
-            <div className="bg-warmGray aspect-[4/3] flex items-center justify-center">
-              <p className="text-charcoal/40 font-serif text-2xl">[Hero Kintsugi Image]</p>
-            </div>
+          {/* Hero Image */}
+          <div className="mt-12 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto">
+            <Image
+              src="/hero-kintsugi.jpg"
+              alt="White ceramic bowl repaired with beautiful gold kintsugi seams"
+              width={1200}
+              height={900}
+              className="w-full h-auto"
+              priority
+            />
           </div>
 
           {/* Scroll Indicator */}
