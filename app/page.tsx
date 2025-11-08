@@ -34,8 +34,8 @@ export default function Home() {
           {/* Hero Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto">
             <Image
-              src="/kintsugishisho.jpg"
-              alt="Master Yuki Tanaka in her Kyoto studio"
+              src="/kintsugihero.jpeg"
+              alt="White ceramic bowl repaired with beautiful gold kintsugi seams"
               width={1200}
               height={900}
               className="w-full h-auto"
@@ -153,10 +153,14 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Yuki Portrait */}
-            <div className="bg-warmGray aspect-[3/4] rounded-lg flex items-center justify-center order-2 md:order-1">
-              <p className="text-charcoal/40 font-serif text-xl">
-                [Master Yuki Tanaka Portrait]
-              </p>
+            <div className="order-2 md:order-1">
+              <Image
+                src="/kintsugishisho.jpg"
+                alt="Master Yuki Tanaka in her Kyoto studio"
+                width={1200}
+                height={1600}
+                className="w-full h-auto rounded-lg"
+              />
             </div>
 
             {/* Story Text */}
@@ -536,7 +540,7 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <Image
-            src="/kintsugi.jpeg"
+            src="/abovepricingkintsugi.avif"
             alt="Beautiful kintsugi repair detail showing gold seams"
             width={1200}
             height={800}
@@ -575,9 +579,12 @@ export default function Home() {
           <StripeButton price={47} />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
-            <p className="text-lg font-medium text-charcoal mb-2">🛡️ 30-Day Money-Back Guarantee</p>
+            <p className="text-lg font-medium text-charcoal mb-2">
+              🛡️ 30-Day Money-Back Guarantee
+            </p>
             <p className="text-sm text-charcoal/70">
-              Try the entire class. Do your first repair. If you don't love it, email us within 30 days for a full refund. No questions asked.
+              Try the entire class. Do your first repair. If you don't love it,
+              email us within 30 days for a full refund. No questions asked.
             </p>
           </div>
 
@@ -671,7 +678,8 @@ export default function Home() {
                 use modern, food-safe epoxy alternatives that cost $30-50 and
                 work beautifully. You get the same golden result without the
                 expense or health risks. The technique and wabi-sabi philosophy
-                remain authentic.
+                remain authentic. If you are not allergic, the same technique
+                applies and you can use it.
               </p>
             </details>
 
@@ -721,7 +729,12 @@ export default function Home() {
                 What's your refund policy?
               </summary>
               <p className="mt-4 text-charcoal/80">
-                We offer a simple 30-day money-back guarantee. Try the entire class. Watch all the videos. Do your first repair. Share it with friends. If you don't absolutely love it, just email us within 30 days and we'll refund you in full. No questions asked. No hoops to jump through. We only want students who love learning this craft.
+                We offer a simple 30-day money-back guarantee. Try the entire
+                class. Watch all the videos. Do your first repair. Share it with
+                friends. If you don't absolutely love it, just email us within
+                30 days and we'll refund you in full. No questions asked. No
+                hoops to jump through. We only want students who love learning
+                this craft.
               </p>
             </details>
           </div>
