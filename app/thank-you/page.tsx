@@ -1,0 +1,53 @@
+export const metadata = {
+  title: 'Thank You - Kintsugi Class',
+  description: 'Welcome to your kintsugi journey',
+}
+
+export default function ThankYouPage() {
+  return (
+    <div className="min-h-screen bg-cream flex items-center justify-center px-6">
+      <div className="max-w-2xl text-center space-y-8">
+        {/* Kanji decoration */}
+        <div className="text-6xl text-gold/20 font-serif">
+          金継ぎ
+        </div>
+
+        <h1 className="text-4xl md:text-5xl font-light text-charcoal">
+          Welcome to Your Practice
+        </h1>
+
+        <div className="space-y-4 text-lg text-charcoal/80 leading-relaxed">
+          <p>
+            Thank you for joining the Kintsugi Class.
+          </p>
+          <p>
+            You'll receive an email within the next few minutes with:
+          </p>
+          <ul className="text-left max-w-md mx-auto space-y-2">
+            <li>✓ Your class access details</li>
+            <li>✓ Materials list and sourcing guide</li>
+            <li>✓ Welcome video from Master Yuki</li>
+          </ul>
+          <p className="pt-4">
+            Check your inbox (and spam folder) for an email from us.
+          </p>
+        </div>
+
+        <div className="pt-8">
+          <p className="text-sm text-charcoal/60">
+            Questions? Email us at hello@kintsugiclass.com
+          </p>
+        </div>
+
+        {/* Gold decorative line */}
+        <div className="pt-12">
+          <div className="h-px bg-gold/30 max-w-md mx-auto"></div>
+        </div>
+
+        <p className="text-charcoal/60 italic font-light">
+          "Every broken thing is an opportunity for beauty."
+        </p>
+      </div>
+    </div>
+  )
+}
