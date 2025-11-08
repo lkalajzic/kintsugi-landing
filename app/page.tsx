@@ -80,7 +80,7 @@ export default function Home() {
             <p>When they break, we lose the story.</p>
           </div>
 
-          <h3 className="text-2xl md:text-3xl font-light pt-8">But Here's What Really Keeps You Up At Night</h3>
+          <h3 className="text-2xl md:text-3xl font-light pt-8 text-center">But Here's What Really Keeps You Up At Night</h3>
 
           <div className="space-y-4">
             <p>You scroll. You consume. You watch. You buy things made by machines in factories.</p>
@@ -167,17 +167,39 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto space-y-8">
           <h2 className="text-5xl md:text-6xl font-light text-center mb-12">
-            The Wabi-Sabi Principle <span className="text-3xl">(侘寂)</span>
+            The Philosophy Behind The Gold
           </h2>
 
-          <div className="space-y-6 text-lg leading-relaxed">
-            <p>Most hobbies punish mistakes. Mess up a painting? Start over. Ruin the recipe? Throw it out.</p>
-            <p className="font-medium text-2xl">Kintsugi is the OPPOSITE.</p>
-            <p>The "mistake" - the break - is where the art begins.</p>
-            <p>In Japanese philosophy, this is called wabi-sabi: finding beauty in imperfection.</p>
-            <p>You're not creating something perfect. You're highlighting the imperfection with gold.</p>
-            <p className="italic">The cracks become rivers of light. The chips become character. The break becomes the story.</p>
-            <p className="font-medium pt-6">My mother always teaches: "The bowl is more beautiful for having been broken."</p>
+          <div className="space-y-8 text-lg leading-relaxed">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-light">Wabi-Sabi (侘寂)</h3>
+              <p>Most hobbies punish mistakes. Mess up a painting? Start over. Ruin the recipe? Throw it out.</p>
+              <p className="font-medium">Kintsugi is the opposite.</p>
+              <p>Wabi-sabi is the Japanese philosophy of finding beauty in imperfection and impermanence. Embracing asymmetry, roughness, and the marks of weathering as elements that deepen character rather than diminish it.</p>
+              <p className="italic">The cracks become rivers of light. The chips become character. The break becomes the story.</p>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl font-light">Mottainai (もったいない)</h3>
+              <p>In a world of fast fashion and planned obsolescence, the Japanese concept of <em>mottainai</em> - regret for waste - offers a different path.</p>
+              <p>Kintsugi treats broken objects as worthy of care and investment rather than replacement. Your grandmother's teacup doesn't end up in a landfill. It becomes an heirloom.</p>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl font-light">Mono no Aware (物の哀れ)</h3>
+              <p>The pathos of things. The poignant beauty that comes from impermanence.</p>
+              <p>A pristine bowl is beautiful. But a bowl that's been loved, broken, and repaired with gold? That bowl has lived. That bowl has a story. That bowl understands what it means to survive.</p>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl font-light">More Than Pottery</h3>
+              <p className="font-medium">Here's what students don't expect:</p>
+              <p>Kintsugi becomes a metaphor. Your breaks, your scars, your healing - they don't make you damaged. They make you more valuable. More beautiful. More yourself.</p>
+              <p>Contemporary psychology calls this post-traumatic growth. The Japanese have known it for 500 years: what breaks you can make you whole in ways you never were before.</p>
+              <p className="italic">You came to repair a bowl. You might leave understanding how to repair yourself.</p>
+            </div>
+
+            <p className="font-medium pt-8 text-xl text-center">My mother always teaches: "The bowl is more beautiful for having been broken."</p>
           </div>
         </div>
       </section>
