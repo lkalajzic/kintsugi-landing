@@ -45,6 +45,8 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-light mb-8">When Something Breaks</h2>
+
             <p className="text-lg leading-relaxed">
               Your grandmother's teapot slips from your hands.
             </p>
@@ -52,9 +54,9 @@ export default function Home() {
             <p className="text-lg leading-relaxed">
               In the West, you'd throw it away. Broken = worthless. Another thing lost. Another memory gone.
             </p>
-            <p className="text-lg leading-relaxed font-medium">
-              But what if I told you that's exactly when the real work begins?
-            </p>
+
+            <h3 className="text-2xl font-light pt-6">What If That's Wrong?</h3>
+
             <p className="text-lg leading-relaxed font-medium">
               What if that break wasn't the end - but the beginning of something more beautiful than the original ever was?
             </p>
@@ -67,57 +69,92 @@ export default function Home() {
 
       {/* Problem Dig-in */}
       <section className="py-20 px-6 bg-warmGray/30">
-        <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
-          <p>We're taught that broken things lose their value.</p>
-          <p>A cracked mug? Trash.<br/>A chipped bowl? Donate pile.<br/>Your favorite ceramic piece that fell? Gone.</p>
-          <p>And it's not just about the object.</p>
-          <p>It's the memory. Your grandmother's hands wrapping around that teacup every morning. The bowl you made in that pottery class. The vase from your first apartment.</p>
-          <p>When they break, we lose the story.</p>
-          <p className="pt-6">But here's what keeps you up at night:</p>
-          <p>You scroll. You consume. You watch. You buy things made by machines in factories.</p>
-          <p className="font-medium">When was the last time you CREATED something?</p>
-          <p className="font-medium">When was the last time you made art with your hands that made someone say "Wait... YOU made this?"</p>
-          <p className="font-medium">When was the last time you felt completely present - not thinking about work, not checking your phone, just... creating?</p>
-          <p className="pt-6">You want a hobby that's actually meaningful. Something meditative. Something therapeutic.</p>
-          <p className="font-medium">Not another thing to consume. Something to CREATE.</p>
+        <div className="max-w-4xl mx-auto space-y-8 text-lg leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-8">We've Lost Something</h2>
+
+          <div className="space-y-4">
+            <p>We're taught that broken things lose their value.</p>
+            <p>A cracked mug? Trash.<br/>A chipped bowl? Donate pile.<br/>Your favorite ceramic piece that fell? Gone.</p>
+            <p>And it's not just about the object.</p>
+            <p>It's the memory. Your grandmother's hands wrapping around that teacup every morning. The bowl you made in that pottery class. The vase from your first apartment.</p>
+            <p>When they break, we lose the story.</p>
+          </div>
+
+          <h3 className="text-2xl md:text-3xl font-light pt-8">But Here's What Really Keeps You Up At Night</h3>
+
+          <div className="space-y-4">
+            <p>You scroll. You consume. You watch. You buy things made by machines in factories.</p>
+            <p className="font-medium">When was the last time you CREATED something?</p>
+            <p className="font-medium">When was the last time you made art with your hands that made someone say "Wait... YOU made this?"</p>
+            <p className="font-medium">When was the last time you felt completely present - not thinking about work, not checking your phone, just... creating?</p>
+          </div>
+
+          <div className="pt-6 space-y-4">
+            <p>You want a hobby that's actually meaningful. Something meditative. Something therapeutic.</p>
+            <p className="font-medium text-xl">Not another thing to consume. Something to CREATE.</p>
+          </div>
         </div>
       </section>
 
       {/* Story Section - Yuki */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          {/* Yuki Portrait */}
-          <div className="bg-warmGray aspect-[3/4] rounded-lg flex items-center justify-center order-2 md:order-1">
-            <p className="text-charcoal/40 font-serif text-xl">[Master Yuki Tanaka Portrait]</p>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-16">A 30-Year Practice In Kyoto</h2>
 
-          {/* Story Text */}
-          <div className="space-y-6 text-lg leading-relaxed order-1 md:order-2">
-            <p className="font-medium">My name is Emiko Tanaka (田中恵美子).</p>
-            <p>My mother is Master Yuki Tanaka (田中由紀), a third-generation kintsugi artist in Kyoto.</p>
-            <p>For 30 years, she's practiced kintsugi in our family's small ceramic repair studio tucked away in Kyoto's Higashiyama district.</p>
-            <p>She learned from her grandmother, who learned from HER grandmother. Three generations of women repairing broken things with gold.</p>
-            <p>Growing up, I watched her work.</p>
-            <p>A woman would bring in her mother's rice bowl, cracked down the middle. "Can you save it?"</p>
-            <p className="italic">My mother would hold it gently. "It's not about saving it. It's about showing what it survived."</p>
-            <p>Weeks later, the woman would return. The crack was still there - but now it glowed with gold.</p>
-            <p>She cried. Every time they cried.</p>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Yuki Portrait */}
+            <div className="bg-warmGray aspect-[3/4] rounded-lg flex items-center justify-center order-2 md:order-1">
+              <p className="text-charcoal/40 font-serif text-xl">[Master Yuki Tanaka Portrait]</p>
+            </div>
+
+            {/* Story Text */}
+            <div className="space-y-6 text-lg leading-relaxed order-1 md:order-2">
+              <div className="space-y-4">
+                <p className="font-medium">My name is Emiko Tanaka (田中恵美子).</p>
+                <p>My mother is Master Yuki Tanaka (田中由紀), a third-generation kintsugi artist in Kyoto.</p>
+                <p>For 30 years, she's practiced kintsugi in our family's small ceramic repair studio tucked away in Kyoto's Higashiyama district.</p>
+                <p>She learned from her grandmother, who learned from HER grandmother. Three generations of women repairing broken things with gold.</p>
+              </div>
+
+              <h3 className="text-2xl font-light pt-6">Growing Up In The Studio</h3>
+
+              <div className="space-y-4">
+                <p>A woman would bring in her mother's rice bowl, cracked down the middle. "Can you save it?"</p>
+                <p className="italic">My mother would hold it gently. "It's not about saving it. It's about showing what it survived."</p>
+                <p>Weeks later, the woman would return. The crack was still there - but now it glowed with gold.</p>
+                <p>She cried. Every time they cried.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Story Continuation */}
       <section className="py-20 px-6 bg-warmGray/30">
-        <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
-          <p>One man brought his late wife's teacup. "She used this every morning. I dropped it."</p>
-          <p>My mother repaired it with gold so delicate it looked like morning light caught in the crack.</p>
-          <p>He came back six months later with his daughter. "Can you teach her? My granddaughter wants to learn."</p>
-          <p className="pt-6">Before 2020, my mother only taught tourists who found our studio by accident. A few students at a time, sitting at the long wooden table, learning in broken Japanese and hand gestures.</p>
-          <p>Then COVID closed international travel.</p>
-          <p>For the first time in 30 years, the studio was quiet.</p>
-          <p className="pt-6 font-medium">That's when I asked her: "Okaasan, you've taught hundreds of people in person. Why not teach online? Why not share this with people who'll never make it to Kyoto?"</p>
-          <p>She was hesitant. "Can you really teach wabi-sabi through a screen?"</p>
-          <p>But we tried.</p>
+        <div className="max-w-4xl mx-auto space-y-8 text-lg leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-8">Why We're Teaching Online For The First Time</h2>
+
+          <div className="space-y-4">
+            <p>One man brought his late wife's teacup. "She used this every morning. I dropped it."</p>
+            <p>My mother repaired it with gold so delicate it looked like morning light caught in the crack.</p>
+            <p>He came back six months later with his daughter. "Can you teach her? My granddaughter wants to learn."</p>
+          </div>
+
+          <h3 className="text-2xl font-light pt-6">Before COVID</h3>
+
+          <div className="space-y-4">
+            <p>My mother only taught tourists who found our studio by accident. A few students at a time, sitting at the long wooden table, learning in broken Japanese and hand gestures.</p>
+            <p>Then COVID closed international travel.</p>
+            <p>For the first time in 30 years, the studio was quiet.</p>
+          </div>
+
+          <h3 className="text-2xl font-light pt-6">The Question That Changed Everything</h3>
+
+          <div className="space-y-4">
+            <p className="font-medium">"Okaasan, you've taught hundreds of people in person. Why not teach online? Why not share this with people who'll never make it to Kyoto?"</p>
+            <p>She was hesitant. "Can you really teach wabi-sabi through a screen?"</p>
+            <p>But we tried.</p>
+          </div>
         </div>
       </section>
 
@@ -145,7 +182,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Course Modules */}
+      {/* Class Modules */}
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-16">
@@ -298,7 +335,7 @@ export default function Home() {
           </h2>
 
           <div className="space-y-4 text-lg">
-            <p className="text-charcoal/70">Complete Course Value:</p>
+            <p className="text-charcoal/70">Complete Class Value:</p>
             <div className="space-y-1 text-charcoal/70">
               <p>5 Core Modules ($297)</p>
               <p>3 Bonus Trainings ($111)</p>
@@ -321,7 +358,7 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-charcoal/70 max-w-xl mx-auto pt-8">
-            You're among the first 50 students my mother is teaching online. After this founding group, the course returns to $97 and we'll be adding live Q&A sessions (which we can't offer yet at this price).
+            You're among the first 50 students my mother is teaching online. After this founding group, the class returns to $97 and we'll be adding live Q&A sessions (which we can't offer yet at this price).
           </p>
         </div>
       </section>
