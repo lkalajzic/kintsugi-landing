@@ -14,7 +14,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
           {/* Founding Students Badge */}
           <p className="text-sm text-charcoal/60 tracking-wide">
-            First 50 students online • November 2024
+            First 50 students online • November 2025
           </p>
 
           {/* Main Headline */}
@@ -23,7 +23,7 @@ export default function Home() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl font-sans text-charcoal/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-charcoal/80 max-w-3xl mx-auto leading-relaxed font-light">
             How A 30-Year Kyoto Master Repairs Broken Ceramics With Gold—And Why She's Teaching This Ancient Technique Online For The First Time.
           </p>
 
