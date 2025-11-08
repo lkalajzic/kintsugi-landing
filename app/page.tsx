@@ -34,8 +34,8 @@ export default function Home() {
           {/* Hero Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto">
             <Image
-              src="/kintsugi.jpeg"
-              alt="White ceramic bowl repaired with beautiful gold kintsugi seams"
+              src="/kintsugishisho.jpg"
+              alt="Master Yuki Tanaka in her Kyoto studio"
               width={1200}
               height={900}
               className="w-full h-auto"
@@ -74,10 +74,14 @@ export default function Home() {
               more beautiful than the original ever was?
             </p>
           </div>
-          <div className="bg-warmGray aspect-square rounded-lg flex items-center justify-center">
-            <p className="text-charcoal/40 font-serif text-xl">
-              [Broken teapot concept]
-            </p>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <Image
+              src="/broken3.jpg"
+              alt="Broken ceramic pieces"
+              width={800}
+              height={800}
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -532,7 +536,7 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <Image
-            src="/kintsugishisho.jpg"
+            src="/kintsugi.jpeg"
             alt="Beautiful kintsugi repair detail showing gold seams"
             width={1200}
             height={800}
