@@ -155,7 +155,7 @@ export default function Home() {
             {/* Yuki Portrait */}
             <div className="order-2 md:order-1">
               <Image
-                src="/kintsugishisho.jpg"
+                src="/yukiimage.jpg"
                 alt="Master Yuki Tanaka in her Kyoto studio"
                 width={1200}
                 height={1600}
