@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kintsugiclass.com/sitemap.xml
+Sitemap: https://www.kintsugiclass.com/sitemap.xml
