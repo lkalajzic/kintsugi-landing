@@ -1,10 +1,13 @@
 import StripeButton from "./components/StripeButton";
 import StripeButtonAlt from "./components/StripeButtonAlt";
+import CountdownTimer from "./components/CountdownTimer";
+import StickyHeader from "./components/StickyHeader";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
+      <StickyHeader />
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20">
         {/* Background Kanji */}
@@ -21,15 +24,10 @@ export default function Home() {
           </p>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-8xl font-light tracking-tight">
-            Broken can be more beautiful.
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight max-w-3xl mx-auto leading-relaxed">
+            Kintsugi: How A Third-Generation Kyoto Master Repairs Broken Ceramics With Gold—And Why
+            She's Teaching This 500-Year Old Technique Online For The First Time (Learn In 3 Hours)
           </h1>
-
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-charcoal/80 max-w-3xl mx-auto leading-relaxed font-light">
-            How A 30-Year Kyoto Master Repairs Broken Ceramics With Gold—And Why
-            She's Teaching This Ancient Technique Online For The First Time.
-          </p>
 
           {/* Hero Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto">
@@ -550,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="py-32 px-6 bg-warmGray/30">
+      <section id="pricing-section" className="py-32 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-light mb-8">
             Founding Student Pricing
@@ -559,7 +557,7 @@ export default function Home() {
           <div className="space-y-4 text-lg">
             <p className="text-charcoal/70">Complete Class Value:</p>
             <div className="space-y-1 text-charcoal/70">
-              <p>5 Core Modules ($297)</p>
+              <p>5 Core Modules - 3 hours of video ($297)</p>
               <p>3 Bonus Trainings ($111)</p>
               <p>Lifetime Access (Priceless)</p>
             </div>
@@ -587,6 +585,8 @@ export default function Home() {
               email us within 30 days for a full refund. No questions asked.
             </p>
           </div>
+
+          <CountdownTimer />
 
           <div className="pt-4 space-y-1 text-sm text-charcoal/60">
             <p>💳 Secure Payment via Stripe</p>
