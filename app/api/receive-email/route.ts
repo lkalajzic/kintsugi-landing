@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
             <p><em>To view the full email content and reply, check the Resend dashboard or use the Resend API to fetch email ID: ${emailId}</em></p>
           </div>
         `,
-        reply_to: emailData.from,
+        replyTo: emailData.from,
       });
 
       console.log('Forwarded email to lukakalajzic@gmail.com');
