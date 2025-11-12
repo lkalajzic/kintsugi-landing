@@ -25,8 +25,9 @@ export default function Home() {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl font-light tracking-tight max-w-3xl mx-auto leading-relaxed">
-            Kintsugi: How A Third-Generation Kyoto Master Repairs Broken Ceramics With Gold—And Why
-            She's Teaching This 500-Year Old Technique Online For The First Time (Learn In 3 Hours)
+            Kintsugi (金継ぎ): How A Third-Generation Kyoto Master Repairs Broken
+            Ceramics With Gold... And Why She's Teaching This 500-Year Old
+            Technique Online For The First Time (You Can Learn It In 3 Hours)
           </h1>
 
           {/* Hero Image */}
@@ -200,7 +201,6 @@ export default function Home() {
                   Weeks later, the woman would return. The crack was still there
                   - but now it glowed with gold.
                 </p>
-                <p>She cried. Every time they cried.</p>
               </div>
             </div>
           </div>
@@ -555,13 +555,13 @@ export default function Home() {
           </h2>
 
           <div className="space-y-4 text-lg">
-            <p className="text-charcoal/70">Complete Class Value:</p>
+            <p className="text-charcoal/70">Complete Guide Value:</p>
             <div className="space-y-1 text-charcoal/70">
-              <p>5 Core Modules - 3 hours of video ($297)</p>
+              <p>Comprehensive Kintsugi Guide Ebook ($147)</p>
               <p>3 Bonus Trainings ($111)</p>
-              <p>Lifetime Access (Priceless)</p>
+              <p>Lifetime Access & Updates (Priceless)</p>
             </div>
-            <p className="text-2xl font-medium pt-4">Total Value: $408</p>
+            <p className="text-2xl font-medium pt-4">Total Value: $258</p>
           </div>
 
           <div className="py-8">
@@ -570,33 +570,87 @@ export default function Home() {
             </p>
             <p className="text-6xl font-serif text-gold mb-4">$47</p>
             <p className="text-sm text-charcoal/60">
-              Founding student pricing • First 50 students
+              Founding student pricing • 37 of 50 students enrolled
+            </p>
+            <p className="text-sm text-gold font-medium mt-2">
+              ✨ Your first repair: This weekend
             </p>
           </div>
 
-          <StripeButton price={47} />
+          {/* What Happens After You Buy */}
+          <div className="bg-cream rounded-lg p-8 mb-8 text-left">
+            <h3 className="text-2xl font-medium mb-6 text-center">
+              What Happens After You Click Buy:
+            </h3>
+            <ul className="space-y-3 text-lg">
+              <li className="flex items-start">
+                <span className="text-gold mr-3">✓</span>
+                <span>
+                  <strong>Instant access</strong> - comprehensive ebook guide
+                  delivered to your email in 2 minutes
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-3">✓</span>
+                <span>
+                  <strong>Complete 90-page guide</strong> - step-by-step
+                  techniques, gift wrapping ideas, materials list,
+                  troubleshooting, everything you need
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-3">✓</span>
+                <span>
+                  <strong>Bonus: Christmas Gift Guide</strong> - how to create
+                  unforgettable presents, presentation tips, repair timeline for
+                  December gifting
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gold mr-3">✓</span>
+                <span>
+                  <strong>Lifetime access</strong> to all future updates and
+                  improvements
+                </span>
+              </li>
+            </ul>
+          </div>
 
-          <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
-            <p className="text-lg font-medium text-charcoal mb-2">
-              🛡️ 30-Day Money-Back Guarantee
+          <div className="max-w-lg mx-auto bg-cream rounded-xl p-8 border-2 border-gold/20 mb-8">
+            <p className="text-2xl font-medium text-charcoal mb-4 text-center">
+              🛡️ 90-Day Money-Back Guarantee
             </p>
-            <p className="text-sm text-charcoal/70">
-              Try the entire class. Do your first repair. If you don't love it,
-              email us within 30 days for a full refund. No questions asked.
+            <p className="text-charcoal/80 leading-relaxed text-center">
+              Try the entire guide. Do your first repair. If you don't love it,
+              email us within 90 days for a full refund. No questions asked.
+            </p>
+          </div>
+
+          <div className="text-center mb-8">
+            <StripeButton price={47} />
+          </div>
+
+          <div className="text-center mb-8">
+            <p className="text-sm text-charcoal/60">
+              💳 Secure Payment via Stripe
             </p>
           </div>
 
           <CountdownTimer />
 
-          <div className="pt-4 space-y-1 text-sm text-charcoal/60">
-            <p>💳 Secure Payment via Stripe</p>
+          <div className="max-w-2xl mx-auto pt-8 text-center space-y-4">
+            <p className="text-lg font-medium text-charcoal">Why only $47?</p>
+            <p className="text-charcoal/80 leading-relaxed">
+              You're among the first 50 students my mother is teaching online.
+              We want to see what you create—your first repairs, your gift
+              projects, your restored heirlooms. Once we have those stories and
+              photos from students like you, the price increases to $97.
+            </p>
+            <p className="text-charcoal/80 leading-relaxed">
+              You get the best price. We get to share your beautiful work. Fair
+              trade (等価交換).
+            </p>
           </div>
-
-          <p className="text-sm text-charcoal/70 max-w-xl mx-auto pt-8">
-            You're among the first 50 students my mother is teaching online.
-            After this founding group, the class returns to $97 and we'll be
-            adding live Q&A sessions (which we can't offer yet at this price).
-          </p>
         </div>
       </section>
 
@@ -647,11 +701,12 @@ export default function Home() {
                 I'm not artistic or good with my hands - can I still do this?
               </summary>
               <p className="mt-4 text-charcoal/80">
-                Yes. Most students who come to our Kyoto studio say the same
-                thing. This isn't about natural talent. It's about following a
-                technique that's been refined over generations. If you can hold
-                a brush and follow instructions, you can do this. My mother
-                always says: "Kintsugi requires patience, not perfection."
+                Yes. Almost all of my mother's students start with zero
+                experience and these exact same doubts. This isn't about natural
+                talent. It's about following a technique that's been refined
+                over generations. If you can hold a brush and follow
+                instructions, you can do this. My mother always says: "Kintsugi
+                requires patience, not perfection."
               </p>
             </details>
 
@@ -729,12 +784,11 @@ export default function Home() {
                 What's your refund policy?
               </summary>
               <p className="mt-4 text-charcoal/80">
-                We offer a simple 30-day money-back guarantee. Try the entire
-                class. Watch all the videos. Do your first repair. Share it with
-                friends. If you don't absolutely love it, just email us within
-                30 days and we'll refund you in full. No questions asked. No
-                hoops to jump through. We only want students who love learning
-                this craft.
+                We offer a simple 90-day money-back guarantee. Try the entire
+                guide. Do your first repair. Share it with friends. If you don't
+                absolutely love it, just email us within 90 days and we'll
+                refund you in full. No questions asked. No hoops to jump
+                through. We only want students who love learning this craft.
               </p>
             </details>
           </div>
@@ -758,10 +812,20 @@ export default function Home() {
               Now she wants to teach you.
             </h2>
 
+            {/* Testimonial before button */}
+            <div className="bg-warmGray/50 rounded-lg p-8 my-8">
+              <p className="text-lg italic mb-4">
+                "I've never been crafty, but this made me feel like an artist. I
+                repaired my mom's broken bowl from her wedding set - she cried
+                when I gave it to her. Best gift I've ever given."
+              </p>
+              <p className="font-medium">— Sarah M., Chicago</p>
+            </div>
+
             <StripeButtonAlt />
 
             <p className="text-sm text-charcoal/60">
-              🛡️ 30-Day Money-Back Guarantee • 💳 Secure Checkout • Instant
+              🛡️ 90-Day Money-Back Guarantee • 💳 Secure Checkout • Instant
               Access
             </p>
           </div>
