@@ -39,6 +39,12 @@ export async function POST(req: NextRequest) {
     }
 
     try {
+      // Fetch the PDF from Google Drive
+      const pdfUrl = process.env.KINTSUGI_EBOOK_URL!;
+      const pdfResponse = await fetch(pdfUrl);
+      const pdfBuffer = await pdfResponse.arrayBuffer();
+      const pdfBase64 = Buffer.from(pdfBuffer).toString('base64');
+
       // Send the email with Resend
       await resend.emails.send({
         from: 'Kintsugi Class <support@kintsugiclass.com>',
@@ -50,7 +56,7 @@ export async function POST(req: NextRequest) {
 
             <p style="color: #34495e; line-height: 1.6;">Hi ${customerName},</p>
 
-            <p style="color: #34495e; line-height: 1.6;">Welcome! Your comprehensive Kintsugi guide is ready.</p>
+            <p style="color: #34495e; line-height: 1.6;">Welcome! Your comprehensive Kintsugi guide is attached to this email.</p>
 
             <div style="background: #f8f9fa; border-left: 4px solid #c9a961; padding: 20px; margin: 20px 0;">
               <h2 style="margin-top: 0; color: #2c3e50; font-size: 18px;">WHAT YOU GET TODAY:</h2>
@@ -72,12 +78,7 @@ export async function POST(req: NextRequest) {
               </ul>
             </div>
 
-            <div style="text-align: center; margin: 30px 0;">
-              <a href="${process.env.NEXT_PUBLIC_KINTSUGI_EBOOK_URL}"
-                 style="display: inline-block; background: #c9a961; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">
-                Download Your Ebook Now
-              </a>
-            </div>
+            <p style="color: #34495e; line-height: 1.6; font-weight: bold;">Your ebook is attached to this email - check your attachments!</p>
 
             <p style="color: #34495e; line-height: 1.6;">Start with the ebook today. Videos will be sent to this email automatically when ready.</p>
 
@@ -93,6 +94,12 @@ export async function POST(req: NextRequest) {
             <p style="color: #7f8c8d; font-size: 14px; font-style: italic; margin-top: 30px;">P.S. Post your first piece on Instagram and tag #kintsugijourney - we reshare the best ones!</p>
           </div>
         `,
+        attachments: [
+          {
+            filename: 'Kintsugi-Beginners-Guide.pdf',
+            content: pdfBase64,
+          },
+        ],
       });
 
       console.log(`Email sent successfully to ${customerEmail}`);
