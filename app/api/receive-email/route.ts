@@ -5,7 +5,30 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function POST(req: NextRequest) {
   try {
-    const event = await req.json();
+    const body = await req.text();
+    const signature = req.headers.get('svix-signature');
+    const svixId = req.headers.get('svix-id');
+    const svixTimestamp = req.headers.get('svix-timestamp');
+
+    // Verify webhook signature
+    if (process.env.RESEND_WEBHOOK_SECRET) {
+      try {
+        resend.webhooks.verify({
+          payload: body,
+          headers: {
+            'svix-id': svixId!,
+            'svix-timestamp': svixTimestamp!,
+            'svix-signature': signature!,
+          },
+          webhookSecret: process.env.RESEND_WEBHOOK_SECRET,
+        });
+      } catch (err) {
+        console.error('Webhook verification failed:', err);
+        return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
+      }
+    }
+
+    const event = JSON.parse(body);
 
     // Only process email.received events
     if (event.type === 'email.received') {
