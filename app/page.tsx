@@ -557,7 +557,7 @@ export default function Home() {
           <div className="space-y-4 text-lg">
             <p className="text-charcoal/70">Complete Class Value:</p>
             <div className="space-y-1 text-charcoal/70">
-              <p>5 Core Modules - 3 hours of video ($297)</p>
+              <p>5 Core Modules - 3 hours ($297)</p>
               <p>3 Bonus Trainings ($111)</p>
               <p>Lifetime Access (Priceless)</p>
             </div>
@@ -730,7 +730,7 @@ export default function Home() {
               </summary>
               <p className="mt-4 text-charcoal/80">
                 We offer a simple 30-day money-back guarantee. Try the entire
-                class. Watch all the videos. Do your first repair. Share it with
+                class. Do your first repair. Share it with
                 friends. If you don't absolutely love it, just email us within
                 30 days and we'll refund you in full. No questions asked. No
                 hoops to jump through. We only want students who love learning
