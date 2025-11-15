@@ -21,13 +21,8 @@ export default function ThankYouPage() {
             Thank you for joining the Kintsugi Class.
           </p>
           <p>
-            You'll receive an email within the next few minutes with:
+            You'll receive an email with your access in the next few minutes.
           </p>
-          <ul className="text-left max-w-md mx-auto space-y-2">
-            <li>✓ Your class access details</li>
-            <li>✓ Materials list and sourcing guide</li>
-            <li>✓ Welcome video from Master Yuki</li>
-          </ul>
           <p className="pt-4">
             Check your inbox (and spam folder) for an email from us.
           </p>
@@ -35,7 +30,7 @@ export default function ThankYouPage() {
 
         <div className="pt-8">
           <p className="text-sm text-charcoal/60">
-            Questions? Email us at hello@kintsugiclass.com
+            Questions? Email us at support@kintsugiclass.com
           </p>
         </div>
 
