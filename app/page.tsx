@@ -534,9 +534,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Before Pricing */}
+      {/* Images Before Pricing */}
       <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           <Image
             src="/abovepricingkintsugi.avif"
             alt="Beautiful kintsugi repair detail showing gold seams"
@@ -544,6 +544,50 @@ export default function Home() {
             height={800}
             className="w-full h-auto rounded-lg shadow-xl"
           />
+
+          {/* Additional example images */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <Image
+              src="/eg1.webp"
+              alt="Kintsugi repair example 1"
+              width={600}
+              height={600}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+            <Image
+              src="/eg2.webp"
+              alt="Kintsugi repair example 2"
+              width={600}
+              height={600}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Student Testimonials Before Pricing */}
+      <section className="py-12 px-6">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="bg-warmGray/50 rounded-lg p-6">
+            <p className="text-lg italic mb-3">
+              "First time trying anything like this. Repaired my mom's ceramic bird and it turned out way better than I expected. She's so happy"
+            </p>
+            <p className="font-medium text-charcoal/80">— Rachel T.</p>
+          </div>
+
+          <div className="bg-warmGray/50 rounded-lg p-6">
+            <p className="text-lg italic mb-3">
+              "Broke my favorite espresso mug. Kintsugi saved it, and now it's one of a kind. I love it even more now!"
+            </p>
+            <p className="font-medium text-charcoal/80">— Marcus L.</p>
+          </div>
+
+          <div className="bg-warmGray/50 rounded-lg p-6">
+            <p className="text-lg italic mb-3">
+              "I love this. We may break, but become stronger than before. Those scars are beautiful, they all tell our stories."
+            </p>
+            <p className="font-medium text-charcoal/80">— Amy K.</p>
+          </div>
         </div>
       </section>
 
