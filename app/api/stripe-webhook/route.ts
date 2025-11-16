@@ -39,14 +39,26 @@ export async function POST(req: NextRequest) {
     }
 
     try {
+      const startTime = Date.now();
+
       // Fetch the PDF from Google Drive
+      console.log(`[${customerEmail}] Fetching PDF from Google Drive...`);
       const pdfUrl = process.env.KINTSUGI_EBOOK_URL!;
       const pdfResponse = await fetch(pdfUrl);
+
+      if (!pdfResponse.ok) {
+        throw new Error(`Failed to fetch PDF: ${pdfResponse.status} ${pdfResponse.statusText}`);
+      }
+
       const pdfBuffer = await pdfResponse.arrayBuffer();
       const pdfBase64 = Buffer.from(pdfBuffer).toString('base64');
+      console.log(`[${customerEmail}] PDF fetched in ${Date.now() - startTime}ms`);
 
       // Send the email with Resend
-      await resend.emails.send({
+      console.log(`[${customerEmail}] Sending email via Resend...`);
+      const emailStartTime = Date.now();
+
+      const result = await resend.emails.send({
         from: 'Kintsugi Class <support@kintsugiclass.com>',
         to: customerEmail,
         subject: 'Your Kintsugi Class Access ✨',
@@ -69,10 +81,12 @@ export async function POST(req: NextRequest) {
         ],
       });
 
-      console.log(`Email sent successfully to ${customerEmail}`);
-      return NextResponse.json({ received: true });
+      console.log(`[${customerEmail}] Email sent in ${Date.now() - emailStartTime}ms. Total: ${Date.now() - startTime}ms. Resend ID: ${result.data?.id}`);
+      console.log(`[${customerEmail}] Full Resend response:`, JSON.stringify(result));
+
+      return NextResponse.json({ received: true, emailId: result.data?.id });
     } catch (error: any) {
-      console.error('Error sending email:', error);
+      console.error(`[${customerEmail}] Error sending email:`, error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
   }
