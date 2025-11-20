@@ -13,11 +13,24 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     setMounted(true);
-    // Target: November 20, 2025 at 6:16 PM CET (5:16 PM UTC)
-    const targetDate = new Date("2025-11-20T17:16:00Z");
+
+    const getNext8amCET = () => {
+      const now = new Date();
+      // 8am CET = 7am UTC (CET is UTC+1 in winter)
+      const target = new Date(now);
+      target.setUTCHours(7, 0, 0, 0);
+
+      // If we're past 8am CET today, target tomorrow
+      if (now.getTime() > target.getTime()) {
+        target.setUTCDate(target.getUTCDate() + 1);
+      }
+
+      return target;
+    };
 
     const updateTimer = () => {
       const now = new Date();
+      const targetDate = getNext8amCET();
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
