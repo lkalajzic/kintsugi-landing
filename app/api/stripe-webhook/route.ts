@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <p style="color: #34495e; line-height: 1.6;">Hi there,</p>
 
-            <p style="color: #34495e; line-height: 1.6;">Your Kintsugi guide is attached to this email - check your attachments!</p>
+            <p style="color: #34495e; line-height: 1.6;">Your Kintsugi digital book is attached to this email - check your attachments!</p>
 
             <p style="color: #34495e; line-height: 1.6;">Questions? Reply to this email anytime.</p>
 

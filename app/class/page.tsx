@@ -636,11 +636,6 @@ export default function Home() {
             <p>💳 Secure Payment via Stripe</p>
           </div>
 
-          <p className="text-sm text-charcoal/70 max-w-xl mx-auto pt-8">
-            You're among the first 50 students my mother is teaching online.
-            After this founding group, the class returns to $97 and we'll be
-            adding live Q&A sessions (which we can't offer yet at this price).
-          </p>
         </div>
       </section>
 

@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Kintsugi Class - Learn The Ancient Japanese Art of Golden Repair',
-  description: 'Learn how to repair broken ceramics with gold from a 30-year Kyoto master. Turn worthless into priceless with this ancient Japanese technique.',
+  title: 'Learn Kintsugi - Japanese Golden Repair for Beginners',
+  description: 'Learn how to kintsugi with our beginner-friendly digital book. Master the ancient Japanese art of repairing broken pottery with gold. Step-by-step techniques from Kyoto tradition.',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
