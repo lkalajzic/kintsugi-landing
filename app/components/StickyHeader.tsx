@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import StripeButton from "./StripeButton";
 
 export default function StickyHeader() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,16 +33,10 @@ export default function StickyHeader() {
               •
             </span>
             <span className="hidden sm:inline text-sm text-charcoal/60">
-              First 50 students
+              Presale - First 100 students
             </span>
           </div>
           <div className="flex items-center gap-3 sm:gap-4">
-            <div className="hidden md:flex items-baseline gap-2">
-              <span className="text-sm text-charcoal/60 line-through">
-                $97
-              </span>
-              <span className="text-2xl font-serif text-gold">$47</span>
-            </div>
             <button
               onClick={() => {
                 document
@@ -52,7 +45,7 @@ export default function StickyHeader() {
               }}
               className="bg-gold hover:bg-gold/90 text-cream px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-sm sm:text-base font-medium transition-colors shadow-sm"
             >
-              Enroll Now
+              Pre-Order Now
             </button>
           </div>
         </div>

@@ -14,23 +14,10 @@ export default function CountdownTimer() {
   useEffect(() => {
     setMounted(true);
 
-    const getNext8amCET = () => {
-      const now = new Date();
-      // 8am CET = 7am UTC (CET is UTC+1 in winter)
-      const target = new Date(now);
-      target.setUTCHours(7, 0, 0, 0);
-
-      // If we're past 8am CET today, target tomorrow
-      if (now.getTime() > target.getTime()) {
-        target.setUTCDate(target.getUTCDate() + 1);
-      }
-
-      return target;
-    };
-
     const updateTimer = () => {
       const now = new Date();
-      const targetDate = getNext8amCET();
+      // Presale ends Dec 11, 2025 at midnight UTC
+      const targetDate = new Date("2025-12-11T00:00:00Z");
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
@@ -59,7 +46,7 @@ export default function CountdownTimer() {
     <div className="pt-6 max-w-lg mx-auto">
       <div className="bg-gold/10 border-2 border-gold/30 rounded-xl p-6">
         <p className="text-sm font-medium text-charcoal mb-3 text-center">
-          ⏰ Enrollment closes in:
+          Presale ends in:
         </p>
         <div className="grid grid-cols-4 gap-3">
           <div className="text-center">
