@@ -38,6 +38,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No email found' }, { status: 400 });
     }
 
+    // LOG PURCHASE FOR MANUAL DELIVERY (video course)
+    console.log(`🎉 NEW PURCHASE - Email manually: ${customerEmail} (Name: ${customerName})`);
+    console.log(`   Amount: ${session.amount_total ? session.amount_total / 100 : 'N/A'} ${session.currency?.toUpperCase()}`);
+    console.log(`   Session ID: ${session.id}`);
+
+    return NextResponse.json({ received: true, manualDelivery: true });
+
+    // DISABLED: Auto PDF delivery - now sending video course manually
+    /*
     try {
       const startTime = Date.now();
 
@@ -89,6 +98,7 @@ export async function POST(req: NextRequest) {
       console.error(`[${customerEmail}] Error sending email:`, error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
+    */
   }
 
   return NextResponse.json({ received: true });
