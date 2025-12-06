@@ -1,5 +1,4 @@
-import StripeButton from "../components/StripeButtonClassFork";
-import StripeButtonAlt from "../components/StripeButtonAlt";
+import StripeButton from "../components/StripeButtonModern";
 import CountdownTimerDaily from "./CountdownTimerDaily";
 import StickyHeaderModern from "./StickyHeaderModern";
 import Image from "next/image";
@@ -702,7 +701,7 @@ export default function Home() {
               Create something beautiful.
             </h2>
 
-            <StripeButtonAlt />
+            <StripeButton price={47} />
             <p className="text-sm text-charcoal/60">🔒 Secure Payment via Stripe</p>
             <p className="text-sm text-charcoal/60">
               90-Day Money-Back Guarantee • Instant Access
