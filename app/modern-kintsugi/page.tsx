@@ -155,7 +155,7 @@ export default function Home() {
             {/* Hands Image - will be replaced with actual photo */}
             <div className="order-2 md:order-1">
               <Image
-                src="/hands-working1.jpg"
+                src="/hands-working2.jpg"
                 alt="Hands carefully applying gold to ceramic repair"
                 width={1200}
                 height={1600}
@@ -175,8 +175,10 @@ export default function Home() {
                   What I found was{" "}
                   <strong>scattered across dozens of resources</strong>.
                   Traditional urushi lacquer costs $200+ and{" "}
-                  <strong>contains urushiol - the same compound in poison ivy</strong>.{" "}
-                  <strong>90% of Americans are allergic to it</strong>.
+                  <strong>
+                    contains urushiol - the same compound in poison ivy
+                  </strong>
+                  . <strong>90% of Americans are allergic to it</strong>.
                 </p>
                 <p>
                   So I developed a method using{" "}
@@ -191,12 +193,13 @@ export default function Home() {
                 </p>
                 <p>
                   Then people started asking me to teach them. One woman wrote:
-                  <em> "I need to learn this. I have scars, and kintsugi reminds me
-                  that what's broken can become more beautiful than before."</em>
+                  <em>
+                    {" "}
+                    "I need to learn this. I have scars, and kintsugi reminds me
+                    that what's broken can become more beautiful than before."
+                  </em>
                 </p>
-                <p>
-                  That's when I knew I had to share this.
-                </p>
+                <p>That's when I knew I had to share this.</p>
                 <p className="text-charcoal/60 text-base pt-2">— Kenji M.</p>
               </div>
             </div>
@@ -216,7 +219,11 @@ export default function Home() {
               Traditional kintsugi uses urushi lacquer - beautiful, but
               impractical for most people. It costs hundreds of dollars,
               requires months of curing time, and{" "}
-              <strong>contains urushiol (the same compound in poison ivy - 90% of Americans are allergic)</strong>.
+              <strong>
+                contains urushiol (the same compound in poison ivy - 90% of
+                Americans are allergic)
+              </strong>
+              .
             </p>
             <p className="font-medium">
               Modern kintsugi uses food-safe epoxy that's just as beautiful,
@@ -387,7 +394,9 @@ export default function Home() {
                   </p>
                   <ul className="space-y-2 text-charcoal/80">
                     <li>• Filling small chips (hotsu) with gold</li>
-                    <li>• Tracing hairline fractures (nyuu) that haven't separated</li>
+                    <li>
+                      • Tracing hairline fractures (nyuu) that haven't separated
+                    </li>
                     <li>• Mixing ratios and consistency for fine work</li>
                     <li>• Brush techniques for thin, luminous lines</li>
                     <li>• Perfect first project: your first golden repair</li>
@@ -432,7 +441,9 @@ export default function Home() {
                   <ul className="space-y-2 text-charcoal/80">
                     <li>• Building up missing fragments (yobi)</li>
                     <li>• Filling larger losses (kake) with gold</li>
-                    <li>• Creating structural integrity without original pieces</li>
+                    <li>
+                      • Creating structural integrity without original pieces
+                    </li>
                     <li>• Blending new material with existing ceramic</li>
                     <li>• Turning missing pieces into design features</li>
                   </ul>
@@ -483,9 +494,7 @@ export default function Home() {
           </div>
 
           <div className="py-8">
-            <p className="text-xl line-through text-charcoal/50 mb-2">
-              $278
-            </p>
+            <p className="text-xl line-through text-charcoal/50 mb-2">$278</p>
             <p className="text-6xl font-serif text-gold mb-4">$47</p>
             <p className="text-sm text-charcoal/60">
               Founding student pricing • First 50 students only
@@ -493,7 +502,9 @@ export default function Home() {
           </div>
 
           <StripeButton price={47} />
-          <p className="text-sm text-charcoal/60">🔒 Secure Payment via Stripe</p>
+          <p className="text-sm text-charcoal/60">
+            🔒 Secure Payment via Stripe
+          </p>
 
           <div className="pt-6 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
             <p className="text-lg font-medium text-charcoal mb-2">
@@ -521,9 +532,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-warmGray/50 rounded-lg p-8">
-              <h3 className="text-xl font-serif mb-4">
-                Beyond Ceramics Guide
-              </h3>
+              <h3 className="text-xl font-serif mb-4">Beyond Ceramics Guide</h3>
               <p className="text-charcoal/70 mb-4">
                 Repair more than just pottery
               </p>
@@ -547,9 +556,7 @@ export default function Home() {
             </div>
 
             <div className="bg-warmGray/50 rounded-lg p-8">
-              <h3 className="text-xl font-serif mb-4">
-                Troubleshooting Guide
-              </h3>
+              <h3 className="text-xl font-serif mb-4">Troubleshooting Guide</h3>
               <p className="text-charcoal/70 mb-4">Fix common mistakes fast</p>
               <ul className="space-y-2 text-sm text-charcoal/80">
                 <li>• Epoxy too thick or thin?</li>
@@ -569,7 +576,9 @@ export default function Home() {
               <p className="text-5xl font-serif text-gold">$47</p>
             </div>
             <StripeButton price={47} />
-            <p className="text-sm text-charcoal/60">🔒 Secure Payment via Stripe</p>
+            <p className="text-sm text-charcoal/60">
+              🔒 Secure Payment via Stripe
+            </p>
             <div className="pt-2 max-w-md mx-auto bg-cream rounded-lg p-4 border border-gold/20">
               <p className="text-sm font-medium text-charcoal">
                 90-Day Money-Back Guarantee
@@ -702,7 +711,9 @@ export default function Home() {
             </h2>
 
             <StripeButton price={47} />
-            <p className="text-sm text-charcoal/60">🔒 Secure Payment via Stripe</p>
+            <p className="text-sm text-charcoal/60">
+              🔒 Secure Payment via Stripe
+            </p>
             <p className="text-sm text-charcoal/60">
               90-Day Money-Back Guarantee • Instant Access
             </p>
