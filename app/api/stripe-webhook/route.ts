@@ -38,67 +38,49 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No email found' }, { status: 400 });
     }
 
-    // LOG PURCHASE FOR MANUAL DELIVERY (video course)
-    console.log(`🎉 NEW PURCHASE - Email manually: ${customerEmail} (Name: ${customerName})`);
+    // Log purchase
+    console.log(`🎉 NEW PURCHASE: ${customerEmail} (${customerName})`);
     console.log(`   Amount: ${session.amount_total ? session.amount_total / 100 : 'N/A'} ${session.currency?.toUpperCase()}`);
     console.log(`   Session ID: ${session.id}`);
 
-    return NextResponse.json({ received: true, manualDelivery: true });
-
-    // DISABLED: Auto PDF delivery - now sending video course manually
-    /*
+    // Send course access email
     try {
-      const startTime = Date.now();
-
-      // Fetch the PDF from Google Drive
-      console.log(`[${customerEmail}] Fetching PDF from Google Drive...`);
-      const pdfUrl = process.env.KINTSUGI_EBOOK_URL!;
-      const pdfResponse = await fetch(pdfUrl);
-
-      if (!pdfResponse.ok) {
-        throw new Error(`Failed to fetch PDF: ${pdfResponse.status} ${pdfResponse.statusText}`);
-      }
-
-      const pdfBuffer = await pdfResponse.arrayBuffer();
-      const pdfBase64 = Buffer.from(pdfBuffer).toString('base64');
-      console.log(`[${customerEmail}] PDF fetched in ${Date.now() - startTime}ms`);
-
-      // Send the email with Resend
-      console.log(`[${customerEmail}] Sending email via Resend...`);
-      const emailStartTime = Date.now();
-
       const result = await resend.emails.send({
         from: 'Kintsugi Class <support@kintsugiclass.com>',
         to: customerEmail,
-        subject: 'Your Kintsugi Class Access ✨',
+        subject: 'Your Kintsugi Course is Ready! 🎨',
         html: `
-          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-            <p style="color: #34495e; line-height: 1.6;">Hi there,</p>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <h1 style="color: #2c3e50; font-weight: 400; margin-bottom: 24px;">Welcome to Your Kintsugi Journey</h1>
 
-            <p style="color: #34495e; line-height: 1.6;">Your Kintsugi digital book is attached to this email - check your attachments!</p>
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Hi ${customerName},</p>
 
-            <p style="color: #34495e; line-height: 1.6;">Questions? Reply to this email anytime.</p>
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Thank you for joining the Kintsugi Class! Your course is ready and waiting for you.</p>
 
-            <p style="color: #34495e; line-height: 1.6;">We wish you all the best on your journey,<br>Kintsugi Class Team</p>
+            <div style="text-align: center; margin: 32px 0;">
+              <a href="https://course.kintsugiclass.com" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Access Your Course</a>
+            </div>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Inside, you'll find 8 video lessons covering everything from materials to advanced repair techniques.</p>
+
+            <p style="color: #7f8c8d; line-height: 1.6; font-size: 14px; margin-top: 32px;">Questions? Just reply to this email - we're here to help!</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Happy creating,<br>The Kintsugi Class Team</p>
+
+            <div style="border-top: 1px solid #eee; margin-top: 40px; padding-top: 20px;">
+              <p style="color: #95a5a6; font-size: 12px; font-style: italic;">"Every broken thing is an opportunity for beauty."</p>
+            </div>
           </div>
         `,
-        attachments: [
-          {
-            filename: 'Kintsugi-Beginners-Guide.pdf',
-            content: pdfBase64,
-          },
-        ],
       });
 
-      console.log(`[${customerEmail}] Email sent in ${Date.now() - emailStartTime}ms. Total: ${Date.now() - startTime}ms. Resend ID: ${result.data?.id}`);
-      console.log(`[${customerEmail}] Full Resend response:`, JSON.stringify(result));
-
+      console.log(`[${customerEmail}] Course access email sent. Resend ID: ${result.data?.id}`);
       return NextResponse.json({ received: true, emailId: result.data?.id });
     } catch (error: any) {
       console.error(`[${customerEmail}] Error sending email:`, error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      // Still return success - they can access via thank-you page
+      return NextResponse.json({ received: true, emailFailed: true })
     }
-    */
   }
 
   return NextResponse.json({ received: true });

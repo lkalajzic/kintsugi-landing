@@ -21,12 +21,20 @@ export default function ThankYouPage() {
             Thank you for joining the Kintsugi Class.
           </p>
           <p>
-            You'll receive an email with your access in the next few minutes.
-          </p>
-          <p className="pt-4">
-            Check your inbox (and spam folder) for an email from us.
+            Your course is ready. Click below to access it now:
           </p>
         </div>
+
+        <a
+          href="https://course.kintsugiclass.com"
+          className="inline-block bg-gold hover:bg-gold/90 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors"
+        >
+          Access Your Course
+        </a>
+
+        <p className="text-sm text-charcoal/60">
+          We've also sent a confirmation email with this link.
+        </p>
 
         <div className="pt-8">
           <p className="text-sm text-charcoal/60">
