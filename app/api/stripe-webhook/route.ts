@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
             <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Thank you for joining the Kintsugi Class! Your course is ready and waiting for you.</p>
 
             <div style="text-align: center; margin: 32px 0;">
-              <a href="https://course.kintsugiclass.com" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Access Your Course</a>
+              <a href="https://course.kintsugiclass.com/sign-up" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Access Your Course</a>
             </div>
 
             <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Inside, you'll find 8 video lessons covering everything from materials to advanced repair techniques.</p>
