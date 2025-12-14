@@ -26,7 +26,7 @@ export default function ThankYouPage() {
         </div>
 
         <a
-          href="https://course.kintsugiclass.com"
+          href="https://course.kintsugiclass.com/sign-up"
           className="inline-block bg-gold hover:bg-gold/90 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors"
         >
           Access Your Course
