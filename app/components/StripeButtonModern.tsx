@@ -2,10 +2,7 @@
 
 export default function StripeButtonModern({ price = 47 }: { price?: number }) {
   const handleCheckout = async () => {
-    const stripePaymentLink = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK
-      || 'https://buy.stripe.com/eVqcN605YcPVgIN3Z843S0b'
-
-    window.location.href = `${stripePaymentLink}?prefilled_promo_code=FOUNDING`
+    window.location.href = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00'
   }
 
   return (

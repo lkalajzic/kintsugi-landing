@@ -8,6 +8,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
+const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature')!;
@@ -23,6 +25,107 @@ export async function POST(req: NextRequest) {
   } catch (err: any) {
     console.error('Webhook signature verification failed:', err.message);
     return NextResponse.json({ error: 'Webhook error' }, { status: 400 });
+  }
+
+  // Handle async payment failed (PayPal, bank transfers, etc.)
+  if (event.type === 'checkout.session.async_payment_failed') {
+    const session = event.data.object as Stripe.Checkout.Session;
+    const customerEmail = session.customer_details?.email || session.customer_email;
+
+    if (!customerEmail) {
+      console.log('Async payment failed but no email found');
+      return NextResponse.json({ received: true });
+    }
+
+    console.log(`❌ ASYNC PAYMENT FAILED: ${customerEmail}`);
+
+    try {
+      await resend.emails.send({
+        from: 'Yuki from Kintsugi Class <support@kintsugiclass.com>',
+        to: customerEmail,
+        subject: 'Your payment didn\'t go through - here\'s what to do',
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <h1 style="color: #2c3e50; font-weight: 400; margin-bottom: 24px;">Your payment didn't go through</h1>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Hi there,</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I wanted to let you know that your payment for the Kintsugi Class didn't go through.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">On our end, the bank's response code said "try again" - so it seems like a temporary issue on their side, not anything wrong with your account.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I kept your enrollment open. We accept both <strong>cards and PayPal</strong>, so if one doesn't work, the other usually does:</p>
+
+            <div style="text-align: center; margin: 32px 0;">
+              <a href="${PAYMENT_LINK}" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Try Again</a>
+            </div>
+
+            <p style="color: #7f8c8d; line-height: 1.6; font-size: 14px; margin-top: 32px;">If you run into any issues, just reply - I read every message personally.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Best,<br>Yuki<br>Kintsugi Class</p>
+          </div>
+        `,
+      });
+
+      console.log(`[${customerEmail}] Recovery email sent for failed async payment`);
+    } catch (error) {
+      console.error(`[${customerEmail}] Failed to send recovery email:`, error);
+    }
+
+    return NextResponse.json({ received: true });
+  }
+
+  // Handle abandoned checkout (session expired without payment)
+  if (event.type === 'checkout.session.expired') {
+    const session = event.data.object as Stripe.Checkout.Session;
+    const customerEmail = session.customer_details?.email || session.customer_email;
+
+    if (!customerEmail) {
+      console.log('Expired session but no email found - cannot recover');
+      return NextResponse.json({ received: true });
+    }
+
+    console.log(`⏰ ABANDONED CHECKOUT: ${customerEmail}`);
+
+    try {
+      await resend.emails.send({
+        from: 'Yuki from Kintsugi Class <support@kintsugiclass.com>',
+        to: customerEmail,
+        subject: 'I kept your spot open',
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <h1 style="color: #2c3e50; font-weight: 400; margin-bottom: 24px;">I kept your spot open</h1>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Hi there,</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I noticed you started enrolling in the Kintsugi Class but didn't complete checkout.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">No worries - I kept your spot open in case you want to come back. We accept both <strong>cards and PayPal</strong>:</p>
+
+            <div style="text-align: center; margin: 32px 0;">
+              <a href="${PAYMENT_LINK}" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Complete Your Enrollment</a>
+            </div>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">As a reminder, you'll get:</p>
+            <ul style="color: #34495e; line-height: 1.8; font-size: 16px;">
+              <li>8 video lessons from beginner to advanced techniques</li>
+              <li>Complete materials guide</li>
+              <li>Lifetime access</li>
+            </ul>
+
+            <p style="color: #7f8c8d; line-height: 1.6; font-size: 14px; margin-top: 32px;">If you had any issues or questions, just reply - I read every message personally.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Best,<br>Yuki<br>Kintsugi Class</p>
+          </div>
+        `,
+      });
+
+      console.log(`[${customerEmail}] Recovery email sent for abandoned checkout`);
+    } catch (error) {
+      console.error(`[${customerEmail}] Failed to send recovery email:`, error);
+    }
+
+    return NextResponse.json({ received: true });
   }
 
   // Handle the checkout.session.completed event
