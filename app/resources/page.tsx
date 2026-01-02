@@ -52,6 +52,9 @@ export default function ResourcesPage() {
                 <li>
                   <a href="https://amzn.to/495g2ma" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">ATLASBOND Ceramic Glue</a> - Food safe, quick-setting
                 </li>
+                <li>
+                  <a href="https://amzn.to/4pkLYYi" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Puduo Epoxy Resin Kit</a> - Crystal clear, includes cups, sticks & gloves
+                </li>
               </ul>
             </div>
 
