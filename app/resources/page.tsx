@@ -38,19 +38,35 @@ export default function ResourcesPage() {
             If you prefer to source your own materials (often better quality than kits):
           </p>
 
+          <p className="text-sm text-charcoal/60 italic mb-6">
+            Note: The epoxy options below are food-safe and the mica powders are cosmetic grade. However, always do your own research for your specific use case.
+          </p>
+
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-medium text-charcoal mb-2">Adhesive</h3>
-              <ul className="list-disc list-inside text-charcoal/80 space-y-1">
-                <li><strong>2-Part Epoxy Glue</strong> - Clear, slow-setting (5-30 min) works best. Look for "clear" or "crystal" epoxy at your local hardware store.</li>
+              <h3 className="text-lg font-medium text-charcoal mb-2">Adhesive (Food-Safe Epoxy)</h3>
+              <ul className="list-disc list-inside text-charcoal/80 space-y-2">
+                <li>
+                  <a href="https://amzn.to/3MV9L3T" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Cocomfix Ceramic Glue</a> - Food grade, waterproof, heat resistant
+                </li>
+                <li>
+                  <a href="https://amzn.to/495g2ma" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">ATLASBOND Ceramic Glue</a> - Food safe, quick-setting
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-lg font-medium text-charcoal mb-2">Metal Powder (for the gold/silver lines)</h3>
-              <ul className="list-disc list-inside text-charcoal/80 space-y-1">
-                <li><strong>Bronze Powder</strong> - Traditional warm gold look</li>
-                <li><strong>Mica Powder</strong> - Available in many colors (gold, silver, copper, rose gold). Get a variety pack to experiment!</li>
+              <ul className="list-disc list-inside text-charcoal/80 space-y-2">
+                <li>
+                  <a href="https://amzn.to/4quOa0s" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">MEYSPRING Royal Gold Mica</a> - Most popular for kintsugi, cosmetic grade
+                </li>
+                <li>
+                  <a href="https://amzn.to/4qAo6kr" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Gold Mica Powder Set</a> - Great value option
+                </li>
+                <li>
+                  <a href="https://amzn.to/4qyHmin" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Alternative Gold Powder</a> - High quality option
+                </li>
               </ul>
             </div>
 
@@ -85,7 +101,7 @@ export default function ResourcesPage() {
 
           <div className="space-y-4">
             <a
-              href="https://amzn.to/4rUcAC4"
+              href="https://amzn.to/4stdFBk"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-4 border border-gold/30 rounded-lg hover:border-gold/50 hover:bg-gold/5 transition-colors"
@@ -100,7 +116,7 @@ export default function ResourcesPage() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://amzn.to/3L23WAT"
+                  href="https://amzn.to/4pkL9ia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gold hover:text-gold/80 underline"
@@ -110,7 +126,7 @@ export default function ResourcesPage() {
               </li>
               <li>
                 <a
-                  href="https://amzn.to/3XQEilw"
+                  href="https://amzn.to/3YSwsIn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gold hover:text-gold/80 underline"
@@ -120,7 +136,7 @@ export default function ResourcesPage() {
               </li>
               <li>
                 <a
-                  href="https://amzn.to/3MLSLwF"
+                  href="https://amzn.to/4qzLQoU"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gold hover:text-gold/80 underline"
