@@ -16,7 +16,7 @@ const failedCheckoutEmails = [
 ];
 
 // Set to true to actually send, false for dry run
-const DRY_RUN = true;
+const DRY_RUN = false;
 
 // Payment link
 const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';

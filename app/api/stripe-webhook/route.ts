@@ -10,6 +10,12 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
 
+// Kintsugi payment link IDs - only handle these
+const KINTSUGI_PAYMENT_LINKS = [
+  'plink_1SgmRrIWj0la69bvsOFfPrb4',  // main link
+  'plink_1SRID9IWj0la69bvZLLLn0hT',  // older link
+];
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature')!;
@@ -131,6 +137,13 @@ export async function POST(req: NextRequest) {
   // Handle the checkout.session.completed event
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
+
+    // Only handle Kintsugi purchases
+    const paymentLinkId = session.payment_link as string | null;
+    if (!paymentLinkId || !KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId)) {
+      console.log(`Ignoring non-Kintsugi purchase (payment_link: ${paymentLinkId})`);
+      return NextResponse.json({ received: true });
+    }
 
     // Get customer email
     const customerEmail = session.customer_details?.email || session.customer_email;
