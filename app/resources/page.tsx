@@ -75,19 +75,33 @@ export default function ResourcesPage() {
 
             <div>
               <h3 className="text-lg font-medium text-charcoal mb-2">Tools</h3>
-              <ul className="list-disc list-inside text-charcoal/80 space-y-1">
+              <ul className="list-disc list-inside text-charcoal/80 space-y-2">
                 <li><strong>Small mixing container</strong> - Disposable cups or silicone cups work well</li>
                 <li><strong>Mixing sticks</strong> - Toothpicks, popsicle sticks, or small spatulas</li>
-                <li><strong>Fine brush</strong> - For applying the mixture to cracks</li>
-                <li><strong>Sandpaper</strong> (fine grit, 400-600) - For smoothing dried epoxy</li>
-                <li><strong>Masking tape</strong> - To hold pieces in place while drying</li>
+                <li>
+                  <a href="https://amzn.to/3N0wETs" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Masking Tape</a> - To hold pieces in place while drying
+                </li>
+                <li>
+                  <a href="https://amzn.to/4pjVGKs" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Masking Tape (alternative)</a> - Another good option
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="text-lg font-medium text-charcoal mb-2">Optional</h3>
-              <ul className="list-disc list-inside text-charcoal/80 space-y-1">
-                <li><strong>Acetone or rubbing alcohol</strong> - For cleaning up mistakes before the epoxy sets</li>
+              <ul className="list-disc list-inside text-charcoal/80 space-y-2">
+                <li>
+                  <a href="https://amzn.to/4seSu5E" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Fine Brush Set</a> - Only needed for hairline cracks
+                </li>
+                <li>
+                  <a href="https://amzn.to/49Be1hE" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Sandpaper</a> - Fine grit (400-600) for smoothing dried epoxy
+                </li>
+                <li>
+                  <a href="https://amzn.to/4qz0SLJ" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Acetone</a> - For cleaning up mistakes before epoxy sets
+                </li>
+                <li>
+                  <a href="https://amzn.to/3LnTZhn" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Rubbing Alcohol 99%</a> - Alternative cleaner, evaporates fast
+                </li>
               </ul>
             </div>
           </div>
