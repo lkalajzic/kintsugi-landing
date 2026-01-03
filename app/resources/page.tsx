@@ -47,13 +47,10 @@ export default function ResourcesPage() {
               <h3 className="text-lg font-medium text-charcoal mb-2">Adhesive (Food-Safe Epoxy)</h3>
               <ul className="list-disc list-inside text-charcoal/80 space-y-2">
                 <li>
-                  <a href="https://amzn.to/3MV9L3T" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Cocomfix Ceramic Glue</a> - Food grade, waterproof, heat resistant
+                  <a href="https://amzn.to/495g2ma" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">ATLASBOND Ceramic Glue</a> - Food safe, quick-setting
                 </li>
                 <li>
-                  <a href="https://amzn.to/495g2ma" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">ATLASBOND Ceramic Glue</a> - Food safe, quick-setting
-                </li>
-                <li>
-                  <a href="https://amzn.to/4pkLYYi" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Puduo Epoxy Resin Kit</a> - Crystal clear, includes cups, sticks & gloves
+                  <a href="https://amzn.to/4pkLYYi" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Puduo Epoxy Resin Kit</a> - Crystal clear, includes cups, sticks & gloves
                 </li>
               </ul>
             </div>
@@ -62,13 +59,13 @@ export default function ResourcesPage() {
               <h3 className="text-lg font-medium text-charcoal mb-2">Metal Powder (for the gold/silver lines)</h3>
               <ul className="list-disc list-inside text-charcoal/80 space-y-2">
                 <li>
-                  <a href="https://amzn.to/4quOa0s" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">MEYSPRING Royal Gold Mica</a> - Most popular for kintsugi, cosmetic grade
+                  <a href="https://amzn.to/4quOa0s" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">MEYSPRING Royal Gold Mica</a> - Most popular for kintsugi, cosmetic grade
                 </li>
                 <li>
-                  <a href="https://amzn.to/4qAo6kr" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Gold Mica Powder Set</a> - Great value option
+                  <a href="https://amzn.to/4qAo6kr" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Gold Mica Powder Set</a> - Great value option
                 </li>
                 <li>
-                  <a href="https://amzn.to/4qyHmin" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Alternative Gold Powder</a> - High quality option
+                  <a href="https://amzn.to/4qyHmin" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Alternative Gold Powder</a> - High quality option
                 </li>
               </ul>
             </div>
@@ -79,10 +76,10 @@ export default function ResourcesPage() {
                 <li><strong>Small mixing container</strong> - Disposable cups or silicone cups work well</li>
                 <li><strong>Mixing sticks</strong> - Toothpicks, popsicle sticks, or small spatulas</li>
                 <li>
-                  <a href="https://amzn.to/3N0wETs" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Masking Tape</a> - To hold pieces in place while drying
+                  <a href="https://amzn.to/3N0wETs" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Masking Tape</a> - To hold pieces in place while drying
                 </li>
                 <li>
-                  <a href="https://amzn.to/4pjVGKs" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Masking Tape (alternative)</a> - Another good option
+                  <a href="https://amzn.to/4pjVGKs" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Masking Tape (alternative)</a> - Another good option
                 </li>
               </ul>
             </div>
@@ -91,16 +88,16 @@ export default function ResourcesPage() {
               <h3 className="text-lg font-medium text-charcoal mb-2">Optional</h3>
               <ul className="list-disc list-inside text-charcoal/80 space-y-2">
                 <li>
-                  <a href="https://amzn.to/4seSu5E" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Fine Brush Set</a> - Only needed for hairline cracks
+                  <a href="https://amzn.to/4seSu5E" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Fine Brush Set</a> - Only needed for hairline cracks
                 </li>
                 <li>
-                  <a href="https://amzn.to/49Be1hE" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Sandpaper</a> - Fine grit (400-600) for smoothing dried epoxy
+                  <a href="https://amzn.to/49Be1hE" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Sandpaper</a> - Fine grit (400-600) for smoothing dried epoxy
                 </li>
                 <li>
-                  <a href="https://amzn.to/4qz0SLJ" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Acetone</a> - For cleaning up mistakes before epoxy sets
+                  <a href="https://amzn.to/4qz0SLJ" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Acetone</a> - For cleaning up mistakes before epoxy sets
                 </li>
                 <li>
-                  <a href="https://amzn.to/3LnTZhn" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">Rubbing Alcohol 99%</a> - Alternative cleaner, evaporates fast
+                  <a href="https://amzn.to/3LnTZhn" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 underline">Rubbing Alcohol 99%</a> - Alternative cleaner, evaporates fast
                 </li>
               </ul>
             </div>
@@ -136,7 +133,7 @@ export default function ResourcesPage() {
                   href="https://amzn.to/4pkL9ia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold/80 underline"
+                  className="text-amber-700 hover:text-amber-800 underline"
                 >
                   Kintsugi Kit Option 1
                 </a>
@@ -146,7 +143,7 @@ export default function ResourcesPage() {
                   href="https://amzn.to/3YSwsIn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold/80 underline"
+                  className="text-amber-700 hover:text-amber-800 underline"
                 >
                   Kintsugi Kit Option 2
                 </a>
@@ -156,7 +153,7 @@ export default function ResourcesPage() {
                   href="https://amzn.to/4qzLQoU"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gold hover:text-gold/80 underline"
+                  className="text-amber-700 hover:text-amber-800 underline"
                 >
                   Kintsugi Kit Option 3
                 </a>
