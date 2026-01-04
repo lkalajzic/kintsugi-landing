@@ -81,6 +81,61 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ received: true });
   }
 
+  // Handle card declined (instant payment failures)
+  if (event.type === 'payment_intent.payment_failed') {
+    const paymentIntent = event.data.object as Stripe.PaymentIntent;
+
+    // Try to get email from various sources
+    const customerEmail =
+      paymentIntent.receipt_email ||
+      paymentIntent.last_payment_error?.payment_method?.billing_details?.email ||
+      (typeof paymentIntent.last_payment_error?.payment_method === 'object'
+        ? paymentIntent.last_payment_error.payment_method.billing_details?.email
+        : null);
+
+    if (!customerEmail) {
+      console.log('Payment failed but no email found');
+      return NextResponse.json({ received: true });
+    }
+
+    console.log(`💳 CARD DECLINED: ${customerEmail}`);
+
+    try {
+      await resend.emails.send({
+        from: 'Yuki from Kintsugi Class <support@kintsugiclass.com>',
+        to: customerEmail,
+        subject: 'Your payment didn\'t go through - here\'s what to do',
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <h1 style="color: #2c3e50; font-weight: 400; margin-bottom: 24px;">Your payment didn't go through</h1>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Hi there,</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I wanted to let you know that your payment for the Kintsugi Class didn't go through.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">This happens sometimes - banks can be overly cautious. It's usually a temporary issue on their side, not anything wrong with your account.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I kept your enrollment open. We accept both <strong>cards and PayPal</strong>, so if one doesn't work, the other usually does:</p>
+
+            <div style="text-align: center; margin: 32px 0;">
+              <a href="${PAYMENT_LINK}" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Try Again</a>
+            </div>
+
+            <p style="color: #7f8c8d; line-height: 1.6; font-size: 14px; margin-top: 32px;">If you run into any issues, just reply - I read every message personally.</p>
+
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Best,<br>Yuki<br>Kintsugi Class</p>
+          </div>
+        `,
+      });
+
+      console.log(`[${customerEmail}] Recovery email sent for declined card`);
+    } catch (error) {
+      console.error(`[${customerEmail}] Failed to send recovery email:`, error);
+    }
+
+    return NextResponse.json({ received: true });
+  }
+
   // Handle abandoned checkout (session expired without payment)
   if (event.type === 'checkout.session.expired') {
     const session = event.data.object as Stripe.Checkout.Session;
