@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
 
             <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I wanted to let you know that your payment for the Kintsugi Class didn't go through.</p>
 
-            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">This happens sometimes - banks can be overly cautious. It's usually a temporary issue on their side, not anything wrong with your account.</p>
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">The bank returned a code that usually means "try again" - so it's typically a temporary issue that resolves on a second or third attempt, or with a different payment method.</p>
 
             <p style="color: #34495e; line-height: 1.8; font-size: 16px;">I kept your enrollment open. We accept both <strong>cards and PayPal</strong>, so if one doesn't work, the other usually does:</p>
 
