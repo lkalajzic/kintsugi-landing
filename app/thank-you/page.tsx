@@ -1,3 +1,6 @@
+import { Suspense } from 'react'
+import PurchaseTracker from '../components/PurchaseTracker'
+
 export const metadata = {
   title: 'Thank You - Kintsugi Class',
   description: 'Welcome to your kintsugi journey',
@@ -6,6 +9,11 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-cream flex items-center justify-center px-6">
+      {/* Track purchase via CAPI (reads session_id from URL) */}
+      <Suspense fallback={null}>
+        <PurchaseTracker />
+      </Suspense>
+
       <div className="max-w-2xl text-center space-y-8">
         {/* Kanji decoration */}
         <div className="text-6xl text-gold/20 font-serif">
