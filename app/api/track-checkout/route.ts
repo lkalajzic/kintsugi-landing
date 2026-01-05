@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
     // Get referer URL for event_source_url
     const referer = req.headers.get('referer') || 'https://kintsugiclass.com';
 
-    // Send to Meta CAPI
-    const result = await sendInitiateCheckoutEvent({
+    // Send to Meta CAPI (non-blocking - don't delay checkout)
+    sendInitiateCheckoutEvent({
       eventId,
       eventTime,
       eventSourceUrl: referer,
@@ -41,12 +41,11 @@ export async function POST(req: NextRequest) {
       },
       value: 37.5,      // Approximate EUR (matches Purchase currency)
       currency: 'EUR',
+    }).then(result => {
+      if (!result.success) {
+        console.error(`[track-checkout] CAPI failed:`, result.error);
+      }
     });
-
-    if (!result.success) {
-      console.error(`[track-checkout] CAPI failed:`, result.error);
-      // Still return success to not block checkout - logging is enough
-    }
 
     // Return event_id for GTM deduplication
     return NextResponse.json({

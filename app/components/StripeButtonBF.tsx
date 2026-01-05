@@ -39,7 +39,7 @@ export default function StripeButtonBF({ price = 47 }: { price?: number }) {
       disabled={isLoading}
       className="bg-gold hover:bg-darkGold text-charcoal px-12 py-4 rounded-lg text-xl font-medium transition-all hover:shadow-lg disabled:opacity-70"
     >
-      {isLoading ? 'Redirecting...' : `Begin Your Practice - $${price}`}
+      {isLoading ? 'Taking you to checkout...' : `Begin Your Practice - $${price}`}
     </button>
   )
 }

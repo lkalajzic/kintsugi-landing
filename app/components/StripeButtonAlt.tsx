@@ -46,7 +46,7 @@ export default function StripeButtonAlt() {
       disabled={isLoading}
       className="bg-gold hover:bg-darkGold text-charcoal px-12 py-4 rounded-lg text-xl font-medium transition-all hover:shadow-lg disabled:opacity-70"
     >
-      {isLoading ? 'Redirecting...' : 'Yes - Teach Me Kintsugi - $47'}
+      {isLoading ? 'Taking you to checkout...' : 'Yes - Teach Me Kintsugi - $47'}
     </button>
   )
 }
