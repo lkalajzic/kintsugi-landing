@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { after } from 'next/server';
 import { sendInitiateCheckoutEvent } from '../../lib/meta-capi';
 import { cookies } from 'next/headers';
 
@@ -28,20 +29,21 @@ export async function POST(req: NextRequest) {
     // Get referer URL for event_source_url
     const referer = req.headers.get('referer') || 'https://kintsugiclass.com';
 
-    // Send to Meta CAPI (non-blocking - don't delay checkout)
-    sendInitiateCheckoutEvent({
-      eventId,
-      eventTime,
-      eventSourceUrl: referer,
-      browserData: {
-        clientIpAddress,
-        clientUserAgent,
-        fbc,
-        fbp,
-      },
-      value: 37.5,      // Approximate EUR (matches Purchase currency)
-      currency: 'EUR',
-    }).then(result => {
+    // Send to Meta CAPI after response (non-blocking but guaranteed to complete)
+    after(async () => {
+      const result = await sendInitiateCheckoutEvent({
+        eventId,
+        eventTime,
+        eventSourceUrl: referer,
+        browserData: {
+          clientIpAddress,
+          clientUserAgent,
+          fbc,
+          fbp,
+        },
+        value: 37.5,      // Approximate EUR (matches Purchase currency)
+        currency: 'EUR',
+      });
       if (!result.success) {
         console.error(`[track-checkout] CAPI failed:`, result.error);
       }
