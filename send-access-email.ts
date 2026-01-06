@@ -21,11 +21,8 @@ async function sendAccessEmail() {
 
           <p style="color: #34495e; line-height: 1.8; font-size: 16px;">We've recorded the video course for Kintsugi Class. Although I refunded you, I'd like to extend access since I'm sorry for not meeting your expectations.</p>
 
-          <p style="color: #34495e; line-height: 1.8; font-size: 16px;">You can access it here:</p>
-
-          <div style="text-align: center; margin: 32px 0;">
-            <a href="https://course.kintsugiclass.com/sign-up" style="background-color: #C9A962; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: 500;">Access Your Course</a>
-          </div>
+          <p style="color: #34495e; line-height: 1.8; font-size: 16px;"><strong>Click this link to access your course:</strong></p>
+          <p style="margin: 16px 0;"><a href="https://course.kintsugiclass.com/sign-up" style="color: #C9A962; font-size: 16px;">https://course.kintsugiclass.com/sign-up</a></p>
 
           <p style="color: #34495e; line-height: 1.8; font-size: 16px;">– Kintsugi Class Team</p>
         </div>
