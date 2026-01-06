@@ -16,6 +16,31 @@ const KINTSUGI_PAYMENT_LINKS = [
   'plink_1SRID9IWj0la69bvZLLLn0hT',  // older link
 ];
 
+/**
+ * Check if customer already completed a purchase recently
+ * Used to avoid sending "payment failed" emails to people who retried and succeeded
+ */
+async function hasRecentSuccessfulPurchase(email: string): Promise<boolean> {
+  try {
+    const oneHourAgo = Math.floor(Date.now() / 1000) - 3600;
+    const sessions = await stripe.checkout.sessions.list({
+      limit: 5,
+      created: { gte: oneHourAgo },
+    });
+
+    // Filter by email and completed status
+    const successfulSession = sessions.data.find(
+      s => s.status === 'complete' &&
+           (s.customer_details?.email === email || s.customer_email === email)
+    );
+
+    return !!successfulSession;
+  } catch (error) {
+    console.error('Error checking for recent purchase:', error);
+    return false; // On error, proceed with sending email
+  }
+}
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature')!;
@@ -44,6 +69,12 @@ export async function POST(req: NextRequest) {
     }
 
     console.log(`❌ ASYNC PAYMENT FAILED: ${customerEmail}`);
+
+    // Check if they already succeeded with a retry
+    if (await hasRecentSuccessfulPurchase(customerEmail)) {
+      console.log(`[${customerEmail}] Already has successful purchase, skipping recovery email`);
+      return NextResponse.json({ received: true });
+    }
 
     try {
       await resend.emails.send({
@@ -100,6 +131,12 @@ export async function POST(req: NextRequest) {
 
     console.log(`💳 CARD DECLINED: ${customerEmail}`);
 
+    // Check if they already succeeded with a retry
+    if (await hasRecentSuccessfulPurchase(customerEmail)) {
+      console.log(`[${customerEmail}] Already has successful purchase, skipping recovery email`);
+      return NextResponse.json({ received: true });
+    }
+
     try {
       await resend.emails.send({
         from: 'Yuki from Kintsugi Class <support@kintsugiclass.com>',
@@ -147,6 +184,12 @@ export async function POST(req: NextRequest) {
     }
 
     console.log(`⏰ ABANDONED CHECKOUT: ${customerEmail}`);
+
+    // Check if they already succeeded with a retry
+    if (await hasRecentSuccessfulPurchase(customerEmail)) {
+      console.log(`[${customerEmail}] Already has successful purchase, skipping recovery email`);
+      return NextResponse.json({ received: true });
+    }
 
     try {
       await resend.emails.send({
