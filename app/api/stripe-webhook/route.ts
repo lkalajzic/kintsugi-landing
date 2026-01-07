@@ -14,6 +14,7 @@ const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
 const KINTSUGI_PAYMENT_LINKS = [
   'plink_1SgmRrIWj0la69bvsOFfPrb4',  // main link
   'plink_1SRID9IWj0la69bvZLLLn0hT',  // older link
+  'plink_1Sn3Q7IWj0la69bvgsrTURp5',  // $49 New Years sale
 ];
 
 /**
