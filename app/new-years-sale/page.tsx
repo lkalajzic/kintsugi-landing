@@ -215,11 +215,13 @@ export default function NewYearsSaleV2() {
               />
             </div>
             <div className="text-xl md:text-2xl leading-relaxed">
-              <p className="text-2xl md:text-3xl font-light mb-4">My name is Yuki Tanaka (田中由紀).</p>
+              <p className="text-2xl md:text-3xl font-light mb-4">
+                My name is Yuki Tanaka (田中由紀).
+              </p>
               <p>
                 I spent countless hours learning from Japanese masters and
-                practicing on dozens of pieces—so you can skip straight to creating
-                something beautiful.
+                practicing on dozens of pieces—so you can skip straight to
+                creating something beautiful.
               </p>
             </div>
           </div>
@@ -232,8 +234,8 @@ export default function NewYearsSaleV2() {
             </p>
 
             <p className="italic text-xl md:text-2xl border-l-4 border-gold/40 pl-6">
-              &quot;It&apos;s not about saving it. It&apos;s about showing what it
-              survived.&quot;
+              &quot;It&apos;s not about saving it. It&apos;s about showing what
+              it survived.&quot;
             </p>
 
             <p>
@@ -249,27 +251,30 @@ export default function NewYearsSaleV2() {
             </h3>
 
             <p>
-              Most people aren&apos;t able to spend thousands of dollars to travel to Japan any time soon.
-              They&apos;ll never sit in a studio with a master. Never experience the meditative practice
-              of repairing something broken with gold.
+              Most people aren&apos;t able to spend thousands of dollars to
+              travel to Japan any time soon. They&apos;ll never sit in a studio
+              with a master. Never experience the meditative practice of
+              repairing something broken with gold.
             </p>
 
             <p>People started asking me to teach them. One woman wrote:</p>
 
             <p className="italic text-xl md:text-2xl border-l-4 border-gold/40 pl-6">
-              &quot;I need to learn this. I have scars, and kintsugi reminds me that what&apos;s broken
-              can become more beautiful than before.&quot;
+              &quot;I need to learn this. I have scars, and kintsugi reminds me
+              that what&apos;s broken can become more beautiful than
+              before.&quot;
             </p>
 
             <p>
-              That&apos;s when I knew I had to share this. Not just the technique—but the philosophy.
-              The meditation. The meaning.
+              That&apos;s when I knew I had to share this. Not just the
+              technique—but the philosophy. The meditation. The meaning.
             </p>
 
             <p className="font-bold">
-              I put everything I&apos;ve learned into a 2-hour video course. The exact techniques,
-              the philosophy, the materials that cost under $30, not $200 or more. Everything you
-              need to start your first repair.
+              I put everything I&apos;ve learned into a 2-hour video course. The
+              exact techniques, the philosophy, the materials that cost under
+              $30, not $200 or more. Everything you need to start your first
+              repair.
             </p>
           </div>
         </div>
@@ -736,7 +741,8 @@ export default function NewYearsSaleV2() {
                       • <strong>Entering flow state</strong>
                     </li>
                     <li>
-                      • <strong>Journaling prompts</strong> on beauty & brokenness
+                      • <strong>Journaling prompts</strong> on beauty &
+                      brokenness
                     </li>
                   </ul>
                 </div>
@@ -818,7 +824,9 @@ export default function NewYearsSaleV2() {
 
           <div className="space-y-8 text-xl md:text-2xl leading-relaxed">
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-light">Wabi-Sabi (侘寂)</h3>
+              <h3 className="text-2xl md:text-3xl font-light">
+                Wabi-Sabi (侘寂)
+              </h3>
               <p>
                 Most hobbies punish mistakes. Mess up a painting? Start over.
                 Ruin the recipe? Throw it out.
@@ -837,7 +845,9 @@ export default function NewYearsSaleV2() {
             </div>
 
             <div className="space-y-4 pt-6">
-              <h3 className="text-2xl md:text-3xl font-light">Mottainai (もったいない)</h3>
+              <h3 className="text-2xl md:text-3xl font-light">
+                Mottainai (もったいない)
+              </h3>
               <p>
                 In a world of fast fashion and planned obsolescence, the
                 Japanese concept of <em>mottainai</em> - regret for waste -
@@ -845,13 +855,15 @@ export default function NewYearsSaleV2() {
               </p>
               <p>
                 Kintsugi treats broken objects as worthy of care and investment
-                rather than replacement. Your grandmother&apos;s teacup doesn&apos;t end
-                up in a landfill. It becomes an heirloom.
+                rather than replacement. Your grandmother&apos;s teacup
+                doesn&apos;t end up in a landfill. It becomes an heirloom.
               </p>
             </div>
 
             <div className="space-y-4 pt-6">
-              <h3 className="text-2xl md:text-3xl font-light">Mono no Aware (物の哀れ)</h3>
+              <h3 className="text-2xl md:text-3xl font-light">
+                Mono no Aware (物の哀れ)
+              </h3>
               <p>
                 The pathos of things. The poignant beauty that comes from
                 impermanence.
@@ -864,8 +876,12 @@ export default function NewYearsSaleV2() {
             </div>
 
             <div className="space-y-4 pt-6">
-              <h3 className="text-2xl md:text-3xl font-light">More Than Pottery</h3>
-              <p className="font-medium">Here&apos;s what students don&apos;t expect:</p>
+              <h3 className="text-2xl md:text-3xl font-light">
+                More Than Pottery
+              </h3>
+              <p className="font-medium">
+                Here&apos;s what students don&apos;t expect:
+              </p>
               <p>
                 Kintsugi becomes a metaphor. Your breaks, your scars, your
                 healing - they don&apos;t make you damaged. They make you more
@@ -903,12 +919,34 @@ export default function NewYearsSaleV2() {
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gold/10 rounded-xl p-10 md:p-12 border-2 border-gold/30 text-center">
-            <h3 className="text-3xl md:text-4xl font-light mb-8">With Kintsugi…</h3>
+            <h3 className="text-3xl md:text-4xl font-light mb-8">
+              With Kintsugi…
+            </h3>
             <p className="text-xl md:text-2xl leading-relaxed">
-              That same broken piece, revived and displayed proudly. The break
-              is now a feature, not a flaw. Gold veins telling the story of what
-              it survived. Every time someone asks about it, you get to share
-              that memory again—kept alive, made more beautiful.
+              That same broken piece will be revived and displayed proudly. The
+              break is now a feature, not a flaw. Gold veins telling the story
+              of what it survived. Every time someone asks about it, you get to
+              share that memory again; kept alive, made more beautiful.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-16 px-6 bg-warmGray/30">
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-light mb-10">
+            Students' friends can&apos;t help saying things like...
+          </h3>
+          <div className="space-y-6 text-xl md:text-2xl italic text-charcoal/80">
+            <p>
+              &quot;Wow, this is beautiful! Did you really repair this
+              yourself?&quot;
+            </p>
+            <p>&quot;I love this piece. How did you do it?&quot;</p>
+            <p>
+              &quot;This looks like museum-quality work... I had no idea you
+              were so talented.&quot;
             </p>
           </div>
         </div>
