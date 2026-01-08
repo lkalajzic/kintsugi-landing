@@ -41,24 +41,24 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
 
           {/* Curved text paths */}
           <defs>
-            <path id="topArc" d="M 20,60 A 40,40 0 0,1 100,60" fill="none" />
-            <path id="bottomArc" d="M 100,60 A 40,40 0 0,1 20,60" fill="none" />
+            <path id="topArc" d="M 18,60 A 42,42 0 0,1 102,60" fill="none" />
+            <path id="bottomArc" d="M 18,60 A 42,42 0 0,0 102,60" fill="none" />
           </defs>
 
           {/* Top text - MONEY-BACK */}
-          <text className="fill-charcoal" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}>
+          <text className="fill-charcoal" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}>
             <textPath href="#topArc" startOffset="50%" textAnchor="middle">
               MONEY-BACK
             </textPath>
           </text>
 
           {/* Center number */}
-          <text x="60" y="68" textAnchor="middle" className="fill-gold" style={{ fontSize: '36px', fontWeight: 700 }}>
+          <text x="60" y="67" textAnchor="middle" className="fill-gold" style={{ fontSize: '38px', fontWeight: 700 }}>
             90
           </text>
 
           {/* Bottom text - DAY GUARANTEE */}
-          <text className="fill-charcoal" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}>
+          <text className="fill-charcoal" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}>
             <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
               DAY GUARANTEE
             </textPath>
