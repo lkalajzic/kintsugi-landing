@@ -42,10 +42,19 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
         />
       </div>
 
-      {/* Payment Methods - Clean text */}
-      <p className="text-sm text-charcoal/60 text-center">
-        Secure checkout • Visa, Mastercard, Amex, PayPal, Apple Pay
-      </p>
+      {/* Payment Methods */}
+      <div className="flex flex-col items-center gap-2">
+        <span className="text-sm text-charcoal/50">Secure checkout</span>
+        <div className="flex items-center gap-3 flex-wrap justify-center">
+          <Image src="/visa.svg" alt="Visa" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/mastercard.svg" alt="Mastercard" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/american-express.svg" alt="American Express" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/discover.svg" alt="Discover" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/paypal.svg" alt="PayPal" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/apple-pay.svg" alt="Apple Pay" width={50} height={32} className="h-8 w-auto" />
+          <Image src="/google-pay.svg" alt="Google Pay" width={50} height={32} className="h-8 w-auto" />
+        </div>
+      </div>
 
       {/* Timer */}
       {showTimer && <CountdownTimerNewYear />}
