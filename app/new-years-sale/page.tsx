@@ -9,6 +9,9 @@ import Image from "next/image";
 function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
   return (
     <div className="space-y-8">
+      {/* Timer - above price */}
+      {showTimer && <CountdownTimerNewYear />}
+
       {/* Price with value stacking */}
       <div className="text-center">
         <p className="text-3xl md:text-4xl text-charcoal/60 line-through mb-2">
@@ -95,9 +98,6 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           className="w-40 h-40 md:w-44 md:h-44"
         />
       </div>
-
-      {/* Timer */}
-      {showTimer && <CountdownTimerNewYear />}
     </div>
   );
 }
@@ -517,6 +517,9 @@ export default function NewYearsSaleV2() {
       {/* Second Full CTA Section */}
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
+            New Year&apos;s Sale — 80% Off
+          </h2>
           <FullCTASection />
         </div>
       </section>
@@ -676,6 +679,9 @@ export default function NewYearsSaleV2() {
       {/* Third Full CTA Section */}
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
+            New Year&apos;s Sale — 80% Off
+          </h2>
           <FullCTASection />
         </div>
       </section>
@@ -809,6 +815,9 @@ export default function NewYearsSaleV2() {
       {/* Fourth Full CTA Section */}
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
+            New Year&apos;s Sale — 80% Off
+          </h2>
           <FullCTASection />
         </div>
       </section>
