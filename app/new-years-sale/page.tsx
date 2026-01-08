@@ -31,45 +31,21 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
         />
       </div>
 
-      {/* Money Back Guarantee Badge */}
+      {/* Money Back Guarantee Badge - 20% larger */}
       <div className="flex justify-center">
         <Image
           src="/guarantee1.png"
           alt="90 Days 100% Money Back Guarantee"
-          width={140}
-          height={140}
-          className="w-32 h-32 md:w-36 md:h-36"
+          width={170}
+          height={170}
+          className="w-40 h-40 md:w-44 md:h-44"
         />
       </div>
 
-      {/* Payment Methods */}
-      <div className="flex flex-col items-center gap-3">
-        <span className="text-sm text-charcoal/50">We accept:</span>
-        <div className="flex items-center gap-3">
-          {/* Visa */}
-          <div className="bg-[#1A1F71] rounded px-3 py-2">
-            <span className="text-white font-bold text-sm">VISA</span>
-          </div>
-          {/* Mastercard */}
-          <div className="bg-gray-100 rounded px-2 py-2 flex items-center">
-            <div className="w-4 h-4 bg-red-500 rounded-full -mr-1"></div>
-            <div className="w-4 h-4 bg-yellow-500 rounded-full opacity-80"></div>
-          </div>
-          {/* Amex */}
-          <div className="bg-[#006FCF] rounded px-2 py-2">
-            <span className="text-white font-bold text-xs">AMEX</span>
-          </div>
-          {/* PayPal */}
-          <div className="bg-[#003087] rounded px-2 py-2">
-            <span className="text-white font-bold text-xs">Pay</span>
-            <span className="text-[#009CDE] font-bold text-xs">Pal</span>
-          </div>
-          {/* Apple Pay */}
-          <div className="bg-black rounded px-2 py-2">
-            <span className="text-white font-bold text-xs"> Pay</span>
-          </div>
-        </div>
-      </div>
+      {/* Payment Methods - Clean text */}
+      <p className="text-sm text-charcoal/60 text-center">
+        Secure checkout • Visa, Mastercard, Amex, PayPal, Apple Pay
+      </p>
 
       {/* Timer */}
       {showTimer && <CountdownTimerNewYear />}
