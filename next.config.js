@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'vz-e9524ece-36a.b-cdn.net',
+      },
+    ],
+  },
   async headers() {
     return [
       {

@@ -40,7 +40,7 @@ export default function StripeButtonNewYear({ price = 49 }: { price?: number }) 
       disabled={isLoading}
       className="bg-gold hover:bg-darkGold text-charcoal px-12 py-4 rounded-lg text-xl font-medium transition-all hover:shadow-lg disabled:opacity-70"
     >
-      {isLoading ? 'Taking you to checkout...' : `Start Learning - $${price}`}
+      {isLoading ? 'Taking you to checkout...' : `Start learning kintsugi today for only $${price}`}
     </button>
   )
 }
