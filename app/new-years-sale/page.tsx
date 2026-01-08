@@ -16,7 +16,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
         </p>
         <p className="text-6xl md:text-7xl font-serif text-gold mb-2">$49</p>
         <p className="text-lg text-charcoal/60">
-          80% off • Limited time only
+          80% off • Today only
         </p>
       </div>
 
@@ -28,17 +28,6 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           valueCapi={39}
           ctaText="Begin Your Practice - $49"
           fallbackPaymentLink="https://buy.stripe.com/test_xxx"
-        />
-      </div>
-
-      {/* Money Back Guarantee Badge - 20% larger */}
-      <div className="flex justify-center">
-        <Image
-          src="/guarantee1.png"
-          alt="90 Days 100% Money Back Guarantee"
-          width={170}
-          height={170}
-          className="w-40 h-40 md:w-44 md:h-44"
         />
       </div>
 
@@ -54,6 +43,17 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           <Image src="/apple-pay.svg" alt="Apple Pay" width={50} height={32} className="h-8 w-auto" />
           <Image src="/google-pay.svg" alt="Google Pay" width={50} height={32} className="h-8 w-auto" />
         </div>
+      </div>
+
+      {/* Money Back Guarantee Badge */}
+      <div className="flex justify-center">
+        <Image
+          src="/guarantee1.png"
+          alt="90 Days 100% Money Back Guarantee"
+          width={170}
+          height={170}
+          className="w-40 h-40 md:w-44 md:h-44"
+        />
       </div>
 
       {/* Timer */}
@@ -208,7 +208,7 @@ export default function NewYearsSaleV2() {
       <section id="pricing-section" className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            New Year Sale
+            New Year&apos;s Sale — 80% Off
           </h2>
           <FullCTASection />
         </div>

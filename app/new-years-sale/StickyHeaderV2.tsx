@@ -16,16 +16,28 @@ export default function StickyHeaderV2() {
   }, []);
 
   useEffect(() => {
+    const getNextReset = () => {
+      const now = new Date();
+      // 8am Zagreb = 7am UTC (winter time)
+      const resetHourUTC = 7;
+      const todayReset = new Date(now);
+      todayReset.setUTCHours(resetHourUTC, 0, 0, 0);
+      // If past today's reset, target tomorrow
+      if (now >= todayReset) {
+        todayReset.setUTCDate(todayReset.getUTCDate() + 1);
+      }
+      return todayReset;
+    };
+
     const calculateTimeLeft = () => {
       const now = new Date();
-      const endOfDay = new Date();
-      endOfDay.setHours(23, 59, 59, 999);
-      const diff = endOfDay.getTime() - now.getTime();
+      const target = getNextReset();
+      const diff = target.getTime() - now.getTime();
 
       if (diff > 0) {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / 1000 / 60) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
         setTimeLeft({ hours, minutes, seconds });
       }
     };
