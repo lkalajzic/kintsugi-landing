@@ -45,26 +45,28 @@ export default function StickyHeaderV2() {
           : "-translate-y-full opacity-0"
       }`}
     >
-      {/* Dark bar like iPhone Photography School */}
-      <div className="bg-[#1a1a1a] text-white py-3">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4 sm:gap-8">
-          <span className="text-sm sm:text-base font-medium">
-            80% New Year's Sale Ends Tonight
+      {/* Dark bar with gold accent */}
+      <div className="bg-[#1a1a1a] text-white py-4">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-6 sm:gap-10">
+          <span className="text-base sm:text-lg md:text-xl font-medium tracking-wide">
+            <span className="text-gold">80% Off</span> — Sale Ends Tonight
           </span>
 
           {/* Timer */}
-          <div className="flex items-center gap-1 sm:gap-2 font-mono">
-            <div className="bg-white/10 rounded px-2 py-1">
-              <span className="text-lg sm:text-xl font-bold">{pad(timeLeft.hours)}</span>
-              <span className="text-[10px] block text-white/60">Hours</span>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="text-center">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold tabular-nums">{pad(timeLeft.hours)}</span>
+              <span className="text-xs sm:text-sm block text-white/70 uppercase tracking-wider">hrs</span>
             </div>
-            <div className="bg-white/10 rounded px-2 py-1">
-              <span className="text-lg sm:text-xl font-bold">{pad(timeLeft.minutes)}</span>
-              <span className="text-[10px] block text-white/60">Minutes</span>
+            <span className="text-2xl sm:text-3xl text-gold font-light">:</span>
+            <div className="text-center">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold tabular-nums">{pad(timeLeft.minutes)}</span>
+              <span className="text-xs sm:text-sm block text-white/70 uppercase tracking-wider">min</span>
             </div>
-            <div className="bg-white/10 rounded px-2 py-1">
-              <span className="text-lg sm:text-xl font-bold">{pad(timeLeft.seconds)}</span>
-              <span className="text-[10px] block text-white/60">Seconds</span>
+            <span className="text-2xl sm:text-3xl text-gold font-light">:</span>
+            <div className="text-center">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold tabular-nums">{pad(timeLeft.seconds)}</span>
+              <span className="text-xs sm:text-sm block text-white/70 uppercase tracking-wider">sec</span>
             </div>
           </div>
         </div>
