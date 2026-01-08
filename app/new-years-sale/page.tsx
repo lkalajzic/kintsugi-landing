@@ -240,15 +240,36 @@ export default function NewYearsSaleV2() {
               When she came back and saw the crack glowing with gold, she cried.
               They always cry.
             </p>
+          </div>
+
+          {/* Why Teaching Online */}
+          <div className="max-w-3xl mx-auto mt-12 space-y-6 text-lg md:text-xl leading-relaxed">
+            <h3 className="text-2xl md:text-3xl font-light">
+              Why I&apos;m Teaching This Online For The First Time
+            </h3>
 
             <p>
-              Then came the emails. People who couldn&apos;t travel to learn in person.
-              One woman, Sarah, wrote: &quot;I have scars, and that&apos;s why I need to learn this.&quot;
+              Most people aren&apos;t able to spend thousands of dollars to travel to Japan any time soon.
+              They&apos;ll never sit in a studio with a master. Never experience the meditative practice
+              of repairing something broken with gold.
+            </p>
+
+            <p>People started asking me to teach them. One woman wrote:</p>
+
+            <p className="italic text-xl md:text-2xl border-l-4 border-gold/40 pl-6">
+              &quot;I need to learn this. I have scars, and kintsugi reminds me that what&apos;s broken
+              can become more beautiful than before.&quot;
             </p>
 
             <p>
-              After enough messages like hers, I knew I had to record everything I&apos;d learned—so
-              anyone could practice kintsugi from home. This course is that.
+              That&apos;s when I knew I had to share this. Not just the technique—but the philosophy.
+              The meditation. The meaning.
+            </p>
+
+            <p>
+              I put everything I&apos;ve learned into a 2-hour video course. The exact techniques,
+              the philosophy, the materials that cost under $30, not $200 or more. Everything you
+              need to start your first repair.
             </p>
           </div>
         </div>
