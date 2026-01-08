@@ -240,6 +240,16 @@ export default function NewYearsSaleV2() {
               When she came back and saw the crack glowing with gold, she cried.
               They always cry.
             </p>
+
+            <p>
+              Then came the emails. People who couldn&apos;t travel to learn in person.
+              One woman, Sarah, wrote: &quot;I have scars, and that&apos;s why I need to learn this.&quot;
+            </p>
+
+            <p>
+              After enough messages like hers, I knew I had to record everything I&apos;d learned—so
+              anyone could practice kintsugi from home. This course is that.
+            </p>
           </div>
         </div>
       </section>
