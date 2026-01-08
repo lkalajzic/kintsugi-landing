@@ -11,8 +11,16 @@ import { cookies } from 'next/headers';
  */
 export async function POST(req: NextRequest) {
   try {
-    // Generate unique event ID for deduplication
-    const eventId = `ic_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+    // Try to get eventId from request body (sent by sendBeacon)
+    let eventId: string;
+    try {
+      const body = await req.text();
+      const parsed = body ? JSON.parse(body) : {};
+      eventId = parsed.eventId || `ic_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+    } catch {
+      // Fallback if no body or invalid JSON
+      eventId = `ic_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
+    }
     const eventTime = Math.floor(Date.now() / 1000);
 
     // Get browser data from request
