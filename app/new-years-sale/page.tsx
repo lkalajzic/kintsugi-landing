@@ -99,13 +99,13 @@ export default function NewYearsSaleV2() {
           </p>
 
           {/* Hero Image - Smaller on desktop */}
-          <div className="rounded-lg overflow-hidden shadow-2xl max-w-xl mx-auto">
+          <div className="rounded-lg overflow-hidden shadow-2xl max-w-xs md:max-w-sm mx-auto">
             <Image
               src="/brokenteapot.png"
               alt="Broken ceramic pieces waiting to be transformed"
-              width={600}
-              height={750}
-              className="w-full h-auto"
+              width={400}
+              height={500}
+              className="w-full h-auto max-h-[400px] object-cover"
               priority
             />
           </div>
