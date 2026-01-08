@@ -27,7 +27,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
           displayPrice={49}
           valueCapi={39}
-          ctaText="Begin Your Practice - $49"
+          ctaText="Start learning kintsugi today for only $49"
           fallbackPaymentLink="https://buy.stripe.com/test_xxx"
         />
       </div>
@@ -174,7 +174,7 @@ export default function NewYearsSaleV2() {
             Not many know this:
           </h2>
 
-          <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+          <div className="space-y-6 text-xl md:text-2xl leading-relaxed">
             <p>
               There&apos;s a 500-year-old Japanese secret for turning broken
               ceramics into art worth more than the original...
@@ -214,7 +214,7 @@ export default function NewYearsSaleV2() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-lg md:text-xl leading-relaxed">
+            <div className="text-xl md:text-2xl leading-relaxed">
               <p className="text-2xl md:text-3xl font-light mb-4">My name is Yuki Tanaka (田中由紀).</p>
               <p>
                 I spent countless hours learning from Japanese masters and
@@ -225,7 +225,7 @@ export default function NewYearsSaleV2() {
           </div>
 
           {/* Story continues */}
-          <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl leading-relaxed">
+          <div className="max-w-3xl mx-auto space-y-6 text-xl md:text-2xl leading-relaxed">
             <p>
               A woman brought in her late mother&apos;s rice bowl, cracked down
               the middle. &quot;Can you save it?&quot; she asked.
@@ -243,7 +243,7 @@ export default function NewYearsSaleV2() {
           </div>
 
           {/* Why Teaching Online */}
-          <div className="max-w-3xl mx-auto mt-12 space-y-6 text-lg md:text-xl leading-relaxed">
+          <div className="max-w-3xl mx-auto mt-12 space-y-6 text-xl md:text-2xl leading-relaxed">
             <h3 className="text-2xl md:text-3xl font-light">
               Why I&apos;m Teaching This Online For The First Time
             </h3>
@@ -266,7 +266,7 @@ export default function NewYearsSaleV2() {
               The meditation. The meaning.
             </p>
 
-            <p>
+            <p className="font-bold">
               I put everything I&apos;ve learned into a 2-hour video course. The exact techniques,
               the philosophy, the materials that cost under $30, not $200 or more. Everything you
               need to start your first repair.
@@ -308,31 +308,21 @@ export default function NewYearsSaleV2() {
         </div>
       </section>
 
-      {/* First Full CTA Section */}
-      <section id="pricing-section" className="py-20 px-6 bg-warmGray/30">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            New Year&apos;s Sale — 80% Off
-          </h2>
-          <FullCTASection />
-        </div>
-      </section>
-
       {/* Modules Section - With Screenshots */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-4">
             What&apos;s Inside Kintsugi Class
           </h2>
-          <p className="text-xl text-center text-charcoal/60 mb-16">
+          <p className="text-xl text-center text-charcoal/60 font-bold mb-16">
             8 HD video lessons • Lifetime access • Complete beginner friendly
           </p>
 
           <div className="space-y-12">
             {/* Module 1 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/1the history of kintsugi.jpg"
                     alt="Module 1: History of Kintsugi"
@@ -341,15 +331,15 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">1.</span> The History &
                     Philosophy
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     Understand the 500-year tradition before you begin
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>
                       • The origin story of kintsugi in 15th century Japan
                     </li>
@@ -369,8 +359,8 @@ export default function NewYearsSaleV2() {
 
             {/* Module 2 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/2materials.jpg"
                     alt="Module 2: Materials"
@@ -379,14 +369,14 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">2.</span> Materials & Setup
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     Everything you need before your first repair
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>
                       • Complete shopping list with exact product links (under
                       $30 total)
@@ -405,8 +395,8 @@ export default function NewYearsSaleV2() {
 
             {/* Module 3 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/3chips and hairlines.jpg"
                     alt="Module 3: Chips & Hairlines"
@@ -415,14 +405,14 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">3.</span> Chips & Hairlines
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     Start with the easiest repairs
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>• Filling small chips (hotsu) with gold</li>
                     <li>
                       • Tracing hairline fractures (nyuu) that haven&apos;t
@@ -438,8 +428,8 @@ export default function NewYearsSaleV2() {
 
             {/* Module 4 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/4clean breaks.jpg"
                     alt="Module 4: Clean Breaks"
@@ -448,14 +438,14 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">4.</span> Clean Breaks
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     Repair pieces that have broken apart
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>• Aligning broken pieces perfectly</li>
                     <li>
                       • Adhesion technique for bonds stronger than original
@@ -470,8 +460,8 @@ export default function NewYearsSaleV2() {
 
             {/* Module 5 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/5missing piecess.jpg"
                     alt="Module 5: Missing Pieces"
@@ -480,14 +470,14 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">5.</span> Missing Pieces
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     The most advanced repairs: filling gaps
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>• Building up missing fragments (yobi technique)</li>
                     <li>• Filling larger losses (kake) with gold</li>
                     <li>
@@ -503,8 +493,8 @@ export default function NewYearsSaleV2() {
 
             {/* Module 6 */}
             <div className="bg-cream rounded-xl p-6 md:p-8 shadow-md">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-1/3">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="md:w-2/5">
                   <Image
                     src="/6troubleshooting.jpg"
                     alt="Module 6: Troubleshooting"
@@ -513,15 +503,15 @@ export default function NewYearsSaleV2() {
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
-                <div className="md:w-2/3">
+                <div className="md:w-3/5">
                   <h3 className="text-2xl md:text-3xl font-serif mb-3">
                     <span className="text-gold">6.</span> Finishing &
                     Troubleshooting
                   </h3>
-                  <p className="text-charcoal/70 mb-4">
+                  <p className="text-lg md:text-xl text-charcoal/70 mb-4">
                     Polish, seal, and fix common mistakes
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>• Polishing for maximum shine (togi technique)</li>
                     <li>• Food-safe sealing for daily use</li>
                     <li>• Dishwasher care (top rack, gentle cycle)</li>
@@ -549,7 +539,7 @@ export default function NewYearsSaleV2() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-4">
-            Plus Three Bonuses
+            Plus Six Bonuses
           </h2>
           <p className="text-lg md:text-xl text-center text-charcoal/60 mb-16">
             Included FREE when you enroll today
@@ -577,7 +567,7 @@ export default function NewYearsSaleV2() {
                     Repair more than just pottery—expand your skills to new
                     materials
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>
                       • <strong>Glass repair techniques</strong> – wine glasses,
                       mirrors, decorative pieces
@@ -619,7 +609,7 @@ export default function NewYearsSaleV2() {
                   <p className="text-lg text-charcoal/70 mb-4">
                     Printable cheat sheet to keep at your workspace
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>
                       • <strong>Exact mixing ratios</strong> – never guess
                       proportions again
@@ -661,7 +651,7 @@ export default function NewYearsSaleV2() {
                   <p className="text-lg text-charcoal/70 mb-4">
                     Fix every common mistake—nothing will stop your progress
                   </p>
-                  <ul className="space-y-2 text-charcoal/80">
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
                     <li>
                       • <strong>Epoxy too thick or thin?</strong> – exact fixes
                       for consistency issues
@@ -682,13 +672,118 @@ export default function NewYearsSaleV2() {
                 </div>
               </div>
             </div>
+
+            {/* Bonus 4 */}
+            <div className="bg-cream rounded-xl p-8 md:p-10 shadow-md border-2 border-gold/20">
+              <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-4xl">📸</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-serif">
+                      Sharing Your Work
+                    </h3>
+                    <span className="text-gold font-bold text-xl">
+                      $47 value
+                    </span>
+                  </div>
+                  <p className="text-lg text-charcoal/70 mb-4">
+                    Build confidence and share your craft
+                  </p>
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
+                    <li>
+                      • <strong>Photography tips</strong> for showing the gold
+                    </li>
+                    <li>
+                      • <strong>How to talk about your work</strong>
+                    </li>
+                    <li>
+                      • <strong>Teaching kintsugi</strong> to friends
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Bonus 5 */}
+            <div className="bg-cream rounded-xl p-8 md:p-10 shadow-md border-2 border-gold/20">
+              <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-4xl">🧘</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-serif">
+                      Meditation & Mindfulness
+                    </h3>
+                    <span className="text-gold font-bold text-xl">
+                      $37 value
+                    </span>
+                  </div>
+                  <p className="text-lg text-charcoal/70 mb-4">
+                    Deepen the therapeutic practice
+                  </p>
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
+                    <li>
+                      • <strong>Breathwork</strong> while repairing
+                    </li>
+                    <li>
+                      • <strong>Entering flow state</strong>
+                    </li>
+                    <li>
+                      • <strong>Journaling prompts</strong> on beauty & brokenness
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Bonus 6 */}
+            <div className="bg-cream rounded-xl p-8 md:p-10 shadow-md border-2 border-gold/20">
+              <div className="flex flex-col md:flex-row md:items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center">
+                    <span className="text-4xl">🎁</span>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-serif">
+                      Gift Creation Guide
+                    </h3>
+                    <span className="text-gold font-bold text-xl">
+                      $27 value
+                    </span>
+                  </div>
+                  <p className="text-lg text-charcoal/70 mb-4">
+                    Create meaningful gifts for loved ones
+                  </p>
+                  <ul className="space-y-2 text-lg md:text-xl text-charcoal/80">
+                    <li>
+                      • <strong>10 best thrift store finds</strong> under $5
+                    </li>
+                    <li>
+                      • <strong>Gift presentation ideas</strong>
+                    </li>
+                    <li>
+                      • <strong>Repair timeline</strong> for any occasion
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Value Stacking Total */}
           <div className="mt-12 text-center bg-gold/10 rounded-xl p-8 border-2 border-gold/30">
             <p className="text-2xl md:text-3xl font-medium">
               Total bonus value:{" "}
-              <span className="text-gold font-bold">$357</span>
+              <span className="text-gold font-bold">$468</span>
             </p>
             <p className="text-xl text-charcoal/70 mt-2">
               FREE if you sign up today
@@ -709,6 +804,7 @@ export default function NewYearsSaleV2() {
 
       {/* Philosophy Section */}
       <section className="relative py-24 px-6">
+        {/* Background Kanji */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
           <span className="text-[20rem] font-serif text-charcoal leading-none">
             侘寂
@@ -720,48 +816,94 @@ export default function NewYearsSaleV2() {
             The Philosophy Behind The Gold
           </h2>
 
-          <div className="space-y-8 text-lg md:text-xl leading-relaxed">
+          <div className="space-y-8 text-xl md:text-2xl leading-relaxed">
             <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-light">
-                Wabi-Sabi (侘寂)
-              </h3>
+              <h3 className="text-2xl md:text-3xl font-light">Wabi-Sabi (侘寂)</h3>
               <p>
                 Most hobbies punish mistakes. Mess up a painting? Start over.
                 Ruin the recipe? Throw it out.
               </p>
               <p className="font-medium">Kintsugi is the opposite.</p>
               <p>
-                The Japanese philosophy of finding beauty in imperfection. The
-                cracks become rivers of light.
+                Wabi-sabi is the Japanese philosophy of finding beauty in
+                imperfection and impermanence. Embracing asymmetry, roughness,
+                and the marks of weathering as elements that deepen character
+                rather than diminish it.
+              </p>
+              <p className="italic">
+                The cracks become rivers of light. The chips become character.
+                The break becomes the story.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-light">
-                Mottainai (もったいない)
-              </h3>
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl md:text-3xl font-light">Mottainai (もったいない)</h3>
               <p>
-                In a world of fast fashion and planned obsolescence,{" "}
-                <em>mottainai</em>—regret for waste—offers a different path.
+                In a world of fast fashion and planned obsolescence, the
+                Japanese concept of <em>mottainai</em> - regret for waste -
+                offers a different path.
               </p>
               <p>
-                A grandmother&apos;s teacup doesn&apos;t end up in a landfill.
-                It becomes an heirloom.
+                Kintsugi treats broken objects as worthy of care and investment
+                rather than replacement. Your grandmother&apos;s teacup doesn&apos;t end
+                up in a landfill. It becomes an heirloom.
               </p>
             </div>
 
-            <p className="italic text-xl md:text-2xl text-center pt-4">
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl md:text-3xl font-light">Mono no Aware (物の哀れ)</h3>
+              <p>
+                The pathos of things. The poignant beauty that comes from
+                impermanence.
+              </p>
+              <p>
+                A pristine bowl is beautiful. But a bowl that&apos;s been loved,
+                broken, and repaired with gold? That bowl has lived. That bowl
+                has a story. That bowl understands what it means to survive.
+              </p>
+            </div>
+
+            <div className="space-y-4 pt-6">
+              <h3 className="text-2xl md:text-3xl font-light">More Than Pottery</h3>
+              <p className="font-medium">Here&apos;s what students don&apos;t expect:</p>
+              <p>
+                Kintsugi becomes a metaphor. Your breaks, your scars, your
+                healing - they don&apos;t make you damaged. They make you more
+                valuable. More beautiful. More yourself.
+              </p>
+              <p>
+                Contemporary psychology calls this post-traumatic growth. The
+                Japanese have known it for 500 years: what breaks you can make
+                you whole in ways you never were before.
+              </p>
+              <p className="italic">
+                You came to repair a bowl. You might leave understanding how to
+                repair yourself.
+              </p>
+            </div>
+
+            <p className="font-medium pt-8 text-xl md:text-2xl text-center">
               &quot;The bowl is more beautiful for having been broken.&quot;
             </p>
           </div>
         </div>
       </section>
 
-      {/* With This Section */}
-      <section className="py-16 px-6 bg-warmGray/30">
+      {/* Pricing Section */}
+      <section className="py-20 px-6 bg-warmGray/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
+            New Year&apos;s Sale — 80% Off
+          </h2>
+          <FullCTASection />
+        </div>
+      </section>
+
+      {/* With Kintsugi Section */}
+      <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gold/10 rounded-xl p-10 md:p-12 border-2 border-gold/30 text-center">
-            <h3 className="text-3xl md:text-4xl font-light mb-8">With this…</h3>
+            <h3 className="text-3xl md:text-4xl font-light mb-8">With Kintsugi…</h3>
             <p className="text-xl md:text-2xl leading-relaxed">
               That same broken piece, revived and displayed proudly. The break
               is now a feature, not a flaw. Gold veins telling the story of what
@@ -786,7 +928,7 @@ export default function NewYearsSaleV2() {
             {/* Option 1 */}
             <div className="bg-warmGray/50 rounded-xl p-8 md:p-10">
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Option 1:</h3>
-              <p className="text-lg md:text-xl leading-relaxed text-charcoal/80">
+              <p className="text-xl md:text-2xl leading-relaxed text-charcoal/80">
                 Ignore everything you&apos;ve just read. Probably spend time in
                 the endless, empty scroll of social media and consumption.
                 Don&apos;t learn a new hobby. A beautiful art that is meditative
@@ -800,7 +942,7 @@ export default function NewYearsSaleV2() {
               <h3 className="text-2xl md:text-3xl font-bold mb-6">
                 Option 2: Try Kintsugi Class for 90 days!
               </h3>
-              <div className="space-y-4 text-lg md:text-xl leading-relaxed">
+              <div className="space-y-4 text-xl md:text-2xl leading-relaxed">
                 <p>
                   Get all your money back if you&apos;re not happy for any
                   reason. Just send one email. No questions asked.
@@ -855,7 +997,7 @@ export default function NewYearsSaleV2() {
               <summary className="font-medium cursor-pointer text-lg md:text-xl">
                 I&apos;m not artistic or good with my hands—can I still do this?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 Yes. This isn&apos;t about natural talent. It&apos;s about
                 following a technique that&apos;s been refined over 500 years.
                 If you can hold a brush and follow instructions, you can do
@@ -867,7 +1009,7 @@ export default function NewYearsSaleV2() {
               <summary className="font-medium cursor-pointer text-lg md:text-xl">
                 How much do the materials cost?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 Under $30 for your complete starter kit. This includes
                 everything: food-safe epoxy, gold powder (or cheaper
                 alternatives), brushes, mixing tools. These materials will last
@@ -880,7 +1022,7 @@ export default function NewYearsSaleV2() {
               <summary className="font-medium cursor-pointer text-lg md:text-xl">
                 Is this traditional kintsugi with urushi lacquer?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 No. Traditional urushi lacquer costs $200+, can cause severe
                 allergic reactions (same compound as poison ivy), and requires
                 extensive safety equipment. We use modern, food-safe epoxy that
@@ -894,7 +1036,7 @@ export default function NewYearsSaleV2() {
                 Will the repair actually be strong enough to use the piece
                 again?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 Yes, absolutely. The epoxy adhesives we use are incredibly
                 strong—stronger than the original ceramic in many cases.
                 Repaired pieces are fully functional and dishwasher-safe (after
@@ -906,7 +1048,7 @@ export default function NewYearsSaleV2() {
               <summary className="font-medium cursor-pointer text-lg md:text-xl">
                 How long does a repair take?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 A simple crack: 30-45 minutes of active work (plus drying time
                 overnight). Complex pieces with multiple breaks: 2-3 hours
                 spread over a few days. The pace is part of the
@@ -918,7 +1060,7 @@ export default function NewYearsSaleV2() {
               <summary className="font-medium cursor-pointer text-lg md:text-xl">
                 What&apos;s your refund policy?
               </summary>
-              <p className="mt-4 text-base md:text-lg text-charcoal/80 leading-relaxed">
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
                 90-day money-back guarantee. Try the entire class. Do your first
                 repair. If you don&apos;t love it, email us within 90 days for a
                 full refund. No questions asked. No hoops.
