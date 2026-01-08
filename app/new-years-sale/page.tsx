@@ -31,39 +31,15 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
         />
       </div>
 
-      {/* Money Back Guarantee Badge - SVG with curved text */}
+      {/* Money Back Guarantee Badge */}
       <div className="flex justify-center">
-        <svg width="120" height="120" viewBox="0 0 120 120" className="w-28 h-28 md:w-32 md:h-32">
-          {/* Outer circle */}
-          <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A227" strokeWidth="3" />
-          {/* Inner circle */}
-          <circle cx="60" cy="60" r="48" fill="none" stroke="#C9A227" strokeWidth="1" />
-
-          {/* Curved text paths */}
-          <defs>
-            <path id="topArc" d="M 18,60 A 42,42 0 0,1 102,60" fill="none" />
-            <path id="bottomArc" d="M 18,60 A 42,42 0 0,0 102,60" fill="none" />
-          </defs>
-
-          {/* Top text - MONEY-BACK */}
-          <text className="fill-charcoal" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}>
-            <textPath href="#topArc" startOffset="50%" textAnchor="middle">
-              MONEY-BACK
-            </textPath>
-          </text>
-
-          {/* Center number */}
-          <text x="60" y="67" textAnchor="middle" className="fill-gold" style={{ fontSize: '38px', fontWeight: 700 }}>
-            90
-          </text>
-
-          {/* Bottom text - DAY GUARANTEE */}
-          <text className="fill-charcoal" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em' }}>
-            <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-              DAY GUARANTEE
-            </textPath>
-          </text>
-        </svg>
+        <Image
+          src="/guarantee1.png"
+          alt="90 Days 100% Money Back Guarantee"
+          width={140}
+          height={140}
+          className="w-32 h-32 md:w-36 md:h-36"
+        />
       </div>
 
       {/* Payment Methods */}
