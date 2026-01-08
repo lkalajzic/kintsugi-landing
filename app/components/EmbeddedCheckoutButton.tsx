@@ -70,7 +70,7 @@ export default function EmbeddedCheckoutButton({
   };
 
   const defaultClassName =
-    'bg-gold hover:bg-darkGold text-charcoal px-12 py-4 rounded-lg text-xl font-medium transition-all hover:shadow-lg disabled:opacity-70';
+    'bg-gold hover:bg-darkGold text-charcoal px-14 py-5 rounded-xl text-2xl font-semibold transition-all hover:shadow-xl hover:scale-105 disabled:opacity-70 animate-pulse-subtle shadow-lg shadow-gold/30';
   const defaultCtaText = `Begin Your Practice - $${displayPrice}`;
 
   return (
