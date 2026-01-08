@@ -1,6 +1,6 @@
 "use client";
 
-import StripeButtonNewYear from "../new-year-sale/StripeButtonNewYear";
+import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
 import CountdownTimerNewYear from "../new-year-sale/CountdownTimerNewYear";
 import StickyHeaderV2 from "./StickyHeaderV2";
 import Image from "next/image";
@@ -22,7 +22,13 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
 
       {/* CTA Button - Using custom styled version */}
       <div className="flex justify-center">
-        <StripeButtonNewYear price={49} />
+        <EmbeddedCheckoutButton
+          priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
+          displayPrice={49}
+          valueCapi={39}
+          ctaText="Begin Your Practice - $49"
+          fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+        />
       </div>
 
       {/* Money Back Guarantee Badge */}

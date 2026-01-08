@@ -1,4 +1,4 @@
-import StripeButtonNewYear from "./StripeButtonNewYear";
+import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
 import CountdownTimerNewYear from "./CountdownTimerNewYear";
 import StickyHeaderNewYear from "./StickyHeaderNewYear";
 import Image from "next/image";
@@ -592,7 +592,13 @@ export default function NewYearSale() {
             </p>
           </div>
 
-          <StripeButtonNewYear price={49} />
+          <EmbeddedCheckoutButton
+                priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
+                displayPrice={49}
+                valueCapi={39}
+                ctaText="Begin Your Practice - $49"
+                fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+              />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
             <p className="text-lg font-medium text-charcoal mb-2">
@@ -730,7 +736,13 @@ export default function NewYearSale() {
               Now I want to teach you.
             </h2>
 
-            <StripeButtonNewYear price={49} />
+            <EmbeddedCheckoutButton
+                priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
+                displayPrice={49}
+                valueCapi={39}
+                ctaText="Begin Your Practice - $49"
+                fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+              />
 
             <p className="text-sm text-charcoal/60">
               🛡️ 90-Day Money-Back Guarantee • 💳 Secure Checkout • Instant

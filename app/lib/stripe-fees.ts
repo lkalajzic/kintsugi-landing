@@ -50,12 +50,12 @@ export async function getStripeFees(paymentIntentId: string): Promise<StripeFeeR
 }
 
 /**
- * Fetch a Stripe checkout session with customer details
+ * Fetch a Stripe checkout session with customer details and line items
  */
 export async function getCheckoutSession(sessionId: string): Promise<Stripe.Checkout.Session | null> {
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId, {
-      expand: ['customer_details'],
+      expand: ['customer_details', 'line_items'],
     });
     return session;
   } catch (error) {

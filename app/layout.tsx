@@ -19,6 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to Stripe for faster checkout */}
+        <link rel="preconnect" href="https://js.stripe.com" />
+        <link rel="preconnect" href="https://api.stripe.com" />
+        <link rel="dns-prefetch" href="https://js.stripe.com" />
+        {/* Lazy-load Stripe.js after page is idle (doesn't block hero) */}
+        <Script
+          src="https://js.stripe.com/v3/"
+          strategy="lazyOnload"
+        />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

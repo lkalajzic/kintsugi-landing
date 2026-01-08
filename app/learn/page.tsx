@@ -1,4 +1,4 @@
-import StripeButton from "../components/StripeButtonModern";
+import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
 import CountdownTimerDaily from "./CountdownTimerDaily";
 import StickyHeaderModern from "./StickyHeaderModern";
 import Image from "next/image";
@@ -592,7 +592,12 @@ export default function Home() {
             </p>
           </div>
 
-          <StripeButton price={47} />
+          <EmbeddedCheckoutButton
+                priceId="price_1SRIBMIWj0la69bvC5K0xZes"
+                displayPrice={47}
+                valueCapi={37.5}
+                fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+              />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
             <p className="text-lg font-medium text-charcoal mb-2">
@@ -730,7 +735,12 @@ export default function Home() {
               Now I want to teach you.
             </h2>
 
-            <StripeButton price={47} />
+            <EmbeddedCheckoutButton
+                priceId="price_1SRIBMIWj0la69bvC5K0xZes"
+                displayPrice={47}
+                valueCapi={37.5}
+                fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+              />
 
             <p className="text-sm text-charcoal/60">
               🛡️ 90-Day Money-Back Guarantee • 💳 Secure Checkout • Instant
