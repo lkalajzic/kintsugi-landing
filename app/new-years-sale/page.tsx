@@ -31,18 +31,39 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
         />
       </div>
 
-      {/* Money Back Guarantee Badge */}
+      {/* Money Back Guarantee Badge - SVG with curved text */}
       <div className="flex justify-center">
-        <div className="relative w-28 h-28 md:w-32 md:h-32">
-          {/* Outer ring */}
-          <div className="absolute inset-0 rounded-full border-4 border-gold"></div>
-          {/* Inner content */}
-          <div className="absolute inset-2 rounded-full border-2 border-gold/50 flex flex-col items-center justify-center bg-cream">
-            <span className="text-[10px] md:text-xs font-bold text-charcoal/70 uppercase tracking-wider">Money-Back</span>
-            <span className="text-3xl md:text-4xl font-bold text-gold">90</span>
-            <span className="text-[10px] md:text-xs font-bold text-charcoal/70 uppercase tracking-wider">Day Guarantee</span>
-          </div>
-        </div>
+        <svg width="120" height="120" viewBox="0 0 120 120" className="w-28 h-28 md:w-32 md:h-32">
+          {/* Outer circle */}
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A227" strokeWidth="3" />
+          {/* Inner circle */}
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#C9A227" strokeWidth="1" />
+
+          {/* Curved text paths */}
+          <defs>
+            <path id="topArc" d="M 20,60 A 40,40 0 0,1 100,60" fill="none" />
+            <path id="bottomArc" d="M 100,60 A 40,40 0 0,1 20,60" fill="none" />
+          </defs>
+
+          {/* Top text - MONEY-BACK */}
+          <text className="fill-charcoal" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}>
+            <textPath href="#topArc" startOffset="50%" textAnchor="middle">
+              MONEY-BACK
+            </textPath>
+          </text>
+
+          {/* Center number */}
+          <text x="60" y="68" textAnchor="middle" className="fill-gold" style={{ fontSize: '36px', fontWeight: 700 }}>
+            90
+          </text>
+
+          {/* Bottom text - DAY GUARANTEE */}
+          <text className="fill-charcoal" style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em' }}>
+            <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
+              DAY GUARANTEE
+            </textPath>
+          </text>
+        </svg>
       </div>
 
       {/* Payment Methods */}
