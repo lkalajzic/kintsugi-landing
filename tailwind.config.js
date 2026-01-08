@@ -17,12 +17,18 @@ module.exports = {
         serif: ['Cormorant Garamond', 'serif'],
       },
       animation: {
-        'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 1.5s ease-in-out infinite',
       },
       keyframes: {
-        'pulse-subtle': {
-          '0%, 100%': { boxShadow: '0 10px 15px -3px rgba(212, 175, 55, 0.3)' },
-          '50%': { boxShadow: '0 10px 25px -3px rgba(212, 175, 55, 0.5)' },
+        'pulse-glow': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 20px 5px rgba(212, 175, 55, 0.4)',
+          },
+          '50%': {
+            transform: 'scale(1.03)',
+            boxShadow: '0 0 35px 10px rgba(212, 175, 55, 0.6)',
+          },
         },
       },
     },
