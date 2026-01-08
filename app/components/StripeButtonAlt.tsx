@@ -11,7 +11,7 @@ declare global {
 export default function StripeButtonAlt() {
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleCheckout = async () => {
+  const handleCheckout = () => {
     const stripePaymentLink = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK || '#'
 
     if (stripePaymentLink === '#') {
@@ -21,22 +21,23 @@ export default function StripeButtonAlt() {
 
     setIsLoading(true)
 
-    try {
-      const response = await fetch('/api/track-checkout', { method: 'POST' })
-      const data = await response.json()
+    // Generate eventId client-side for deduplication
+    const eventId = crypto.randomUUID()
 
-      if (window.fbq && data.eventId) {
-        window.fbq('track', 'InitiateCheckout', {
-          value: 37.5,
-          currency: 'EUR',
-          content_name: 'Kintsugi Class',
-          content_category: 'Online Course',
-        }, { eventID: data.eventId })
-      }
-    } catch (error) {
-      console.error('Failed to track checkout:', error)
+    // Fire pixel immediately
+    if (window.fbq) {
+      window.fbq('track', 'InitiateCheckout', {
+        value: 37.5,
+        currency: 'EUR',
+        content_name: 'Kintsugi Class',
+        content_category: 'Online Course',
+      }, { eventID: eventId })
     }
 
+    // Send CAPI via sendBeacon (non-blocking, guaranteed delivery)
+    navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }))
+
+    // Redirect immediately - no waiting
     window.location.href = stripePaymentLink
   }
 
