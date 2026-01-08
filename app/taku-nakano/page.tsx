@@ -49,7 +49,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
           {/* Founding Students Badge */}
           <p className="text-sm text-charcoal/60 tracking-wide">
-            First 100 founding students • December 2025
+            First 100 founding students • January 2026
           </p>
 
           {/* Main Headline */}
