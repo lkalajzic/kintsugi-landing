@@ -265,20 +265,24 @@ export default function NewYearsSaleV2() {
             className="w-full h-auto rounded-lg shadow-xl"
           />
           <div className="grid md:grid-cols-2 gap-6">
-            <Image
-              src="/eg1.webp"
-              alt="Kintsugi repair example"
-              width={600}
-              height={600}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-            <Image
-              src="/eg2.webp"
-              alt="Kintsugi repair example"
-              width={600}
-              height={600}
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
+            <div className="aspect-square rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src="/eg1.webp"
+                alt="Kintsugi repair example"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="aspect-square rounded-lg shadow-lg overflow-hidden">
+              <Image
+                src="/eg2.webp"
+                alt="Kintsugi repair example"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
