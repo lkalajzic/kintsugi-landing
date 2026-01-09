@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { Resend } from 'resend';
+import { addToPurchasersAudience, addToRefundsAudience, removeFromPurchasersAudience, parseFullName, type CustomerData } from '../../lib/fb-audience';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-10-29.clover',
@@ -10,11 +11,12 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
 
-// Kintsugi payment link IDs - only handle these
-const KINTSUGI_PAYMENT_LINKS = [
-  'plink_1SgmRrIWj0la69bvsOFfPrb4',  // main link
-  'plink_1SRID9IWj0la69bvZLLLn0hT',  // older link
-  'plink_1Sn3Q7IWj0la69bvgsrTURp5',  // $49 New Years sale
+// Kintsugi price IDs - only handle these
+const KINTSUGI_PRICE_IDS = [
+  'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default ($47)
+  'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
+  'price_1SVCYvIWj0la69bvDzMTfYa4', // Kintsugi old ($47) - discontinued
+  'price_1SVCbDIWj0la69bvGLruK7Et', // Kintsugi old ($97) - discontinued
 ];
 
 /**
@@ -237,16 +239,26 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
 
-    // Only handle Kintsugi purchases
-    const paymentLinkId = session.payment_link as string | null;
-    if (!paymentLinkId || !KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId)) {
-      console.log(`Ignoring non-Kintsugi purchase (payment_link: ${paymentLinkId})`);
+    // Expand line items to check price IDs
+    const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
+      expand: ['line_items'],
+    });
+
+    // Only handle Kintsugi purchases (check if any line item has a Kintsugi price)
+    const lineItems = fullSession.line_items?.data || [];
+    const isKintsugiPurchase = lineItems.some(item =>
+      item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
+    );
+
+    if (!isKintsugiPurchase) {
+      console.log(`Ignoring non-Kintsugi purchase (no matching price IDs)`);
       return NextResponse.json({ received: true });
     }
 
-    // Get customer email
+    // Get customer details
     const customerEmail = session.customer_details?.email || session.customer_email;
     const customerName = session.customer_details?.name || 'there';
+    const address = session.customer_details?.address;
 
     if (!customerEmail) {
       console.error('No customer email found in session');
@@ -257,6 +269,23 @@ export async function POST(req: NextRequest) {
     console.log(`🎉 NEW PURCHASE: ${customerEmail} (${customerName})`);
     console.log(`   Amount: ${session.amount_total ? session.amount_total / 100 : 'N/A'} ${session.currency?.toUpperCase()}`);
     console.log(`   Session ID: ${session.id}`);
+
+    // Build full customer data for FB audience (better match rates)
+    const { firstName, lastName } = parseFullName(customerName !== 'there' ? customerName : undefined);
+    const customerData: CustomerData = {
+      email: customerEmail,
+      firstName,
+      lastName,
+      zip: address?.postal_code || undefined,
+      city: address?.city || undefined,
+      state: address?.state || undefined,
+      country: address?.country || undefined,
+    };
+
+    // Add to FB Custom Audience for exclusion
+    addToPurchasersAudience(customerData).catch(err => {
+      console.error(`[${customerEmail}] Failed to add to purchasers audience:`, err);
+    });
 
     // Send course access email
     try {
@@ -295,6 +324,78 @@ export async function POST(req: NextRequest) {
       // Still return success - they can access via thank-you page
       return NextResponse.json({ received: true, emailFailed: true })
     }
+  }
+
+  // Handle refunds and disputes - add to refunds audience for lookalike exclusion
+  if (event.type === 'charge.refunded' || event.type === 'charge.dispute.created') {
+    const isDispute = event.type === 'charge.dispute.created';
+    const charge = isDispute
+      ? (event.data.object as Stripe.Dispute).charge as Stripe.Charge
+      : event.data.object as Stripe.Charge;
+
+    // For disputes, we need to fetch the full charge if it's just an ID
+    let fullCharge = charge;
+    if (isDispute && typeof charge === 'string') {
+      try {
+        fullCharge = await stripe.charges.retrieve(charge);
+      } catch (err) {
+        console.error('Error fetching charge for dispute:', err);
+        return NextResponse.json({ received: true });
+      }
+    }
+
+    const customerEmail = fullCharge.billing_details?.email || fullCharge.receipt_email;
+
+    if (!customerEmail) {
+      console.log(`${isDispute ? 'Dispute' : 'Refund'} processed but no email found`);
+      return NextResponse.json({ received: true });
+    }
+
+    // Check if this is for a Kintsugi purchase
+    const paymentIntentId = typeof fullCharge.payment_intent === 'string'
+      ? fullCharge.payment_intent
+      : fullCharge.payment_intent?.id;
+
+    if (paymentIntentId) {
+      try {
+        const sessions = await stripe.checkout.sessions.list({
+          payment_intent: paymentIntentId,
+          limit: 1,
+          expand: ['data.line_items'],
+        });
+
+        const session = sessions.data[0];
+        if (!session) {
+          console.log('No session found for payment intent');
+          return NextResponse.json({ received: true });
+        }
+
+        const lineItems = session.line_items?.data || [];
+        const isKintsugiPurchase = lineItems.some(item =>
+          item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
+        );
+
+        if (!isKintsugiPurchase) {
+          console.log(`Ignoring non-Kintsugi ${isDispute ? 'dispute' : 'refund'} (no matching price IDs)`);
+          return NextResponse.json({ received: true });
+        }
+      } catch (err) {
+        console.error('Error checking price IDs:', err);
+        return NextResponse.json({ received: true });
+      }
+    }
+
+    console.log(`${isDispute ? '⚠️ DISPUTE' : '💸 REFUND'}: ${customerEmail}`);
+
+    // Add to refunds audience and remove from purchasers
+    addToRefundsAudience(customerEmail).catch(err => {
+      console.error(`[${customerEmail}] Failed to add to refunds audience:`, err);
+    });
+    removeFromPurchasersAudience(customerEmail).catch(err => {
+      console.error(`[${customerEmail}] Failed to remove from purchasers audience:`, err);
+    });
+
+    return NextResponse.json({ received: true });
   }
 
   return NextResponse.json({ received: true });
