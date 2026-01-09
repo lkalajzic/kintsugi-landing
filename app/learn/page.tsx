@@ -751,8 +751,15 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-charcoal text-cream/60 text-center text-sm">
-        <p>© 2025 Kintsugi Class. All rights reserved.</p>
+      <footer className="py-12 px-6 bg-charcoal text-cream/40 text-center text-xs">
+        <p>© 2026 Kintsugi Class. All rights reserved.</p>
+        <p className="mt-2 text-cream/25">
+          <a href="/privacy" className="hover:text-cream/40">Privacy</a>
+          {" · "}
+          <a href="/terms" className="hover:text-cream/40">Terms</a>
+          {" · "}
+          <a href="/cookies" className="hover:text-cream/40">Cookies</a>
+        </p>
       </footer>
     </main>
   );
