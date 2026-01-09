@@ -35,6 +35,7 @@ export default function Home() {
               alt="White ceramic bowl repaired with beautiful gold kintsugi seams"
               width={1200}
               height={900}
+              sizes="(max-width: 896px) 100vw, 896px"
               className="w-full h-auto"
               priority
             />
@@ -77,6 +78,7 @@ export default function Home() {
               alt="Broken ceramic pieces"
               width={800}
               height={800}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-auto"
             />
           </div>
@@ -186,7 +188,7 @@ export default function Home() {
               loop
               playsInline
               className="w-full h-auto"
-              poster="/course-preview-poster.jpg"
+              poster="/course-preview-poster.webp"
             >
               <source src="/course-preview.mp4" type="video/mp4" />
             </video>

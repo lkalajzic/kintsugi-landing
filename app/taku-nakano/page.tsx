@@ -66,6 +66,7 @@ export default function Home() {
                 alt="Master Taku Nakano with a 200-year-old Georgian Kvevri vessel"
                 width={1200}
                 height={800}
+                sizes="(max-width: 896px) 100vw, 896px"
                 className="w-full h-auto"
                 priority
               />
@@ -113,6 +114,7 @@ export default function Home() {
               alt="Broken ceramic pieces"
               width={800}
               height={800}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-auto"
             />
           </div>

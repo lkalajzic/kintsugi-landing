@@ -195,7 +195,7 @@ export default function NewYearsSaleV2() {
               loop
               playsInline
               className="w-full h-auto"
-              poster="/course-preview-poster.jpg"
+              poster="/course-preview-poster.webp"
             >
               <source src="/course-preview.mp4" type="video/mp4" />
             </video>
