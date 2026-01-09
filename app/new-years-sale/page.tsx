@@ -214,6 +214,7 @@ export default function NewYearsSaleV2() {
                 alt="Yuki Tanaka holding a kintsugi bowl"
                 width={224}
                 height={224}
+                sizes="(max-width: 768px) 192px, 224px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -291,6 +292,7 @@ export default function NewYearsSaleV2() {
             alt="Beautiful kintsugi repair detail showing gold seams"
             width={1200}
             height={800}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 896px"
             className="w-full h-auto rounded-lg shadow-xl"
           />
           <div className="grid md:grid-cols-2 gap-6">
@@ -300,6 +302,7 @@ export default function NewYearsSaleV2() {
                 alt="Kintsugi repair example"
                 width={600}
                 height={600}
+                sizes="(max-width: 768px) 100vw, 430px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -309,6 +312,7 @@ export default function NewYearsSaleV2() {
                 alt="Kintsugi repair example"
                 width={600}
                 height={600}
+                sizes="(max-width: 768px) 100vw, 430px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -336,6 +340,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 1: History of Kintsugi"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -374,6 +379,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 2: Materials"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -410,6 +416,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 3: Chips & Hairlines"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -443,6 +450,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 4: Clean Breaks"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -475,6 +483,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 5: Missing Pieces"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -508,6 +517,7 @@ export default function NewYearsSaleV2() {
                     alt="Module 6: Troubleshooting"
                     width={400}
                     height={225}
+                    sizes="(max-width: 768px) 100vw, 358px"
                     className="w-full h-auto rounded-lg shadow"
                   />
                 </div>
@@ -1010,6 +1020,7 @@ export default function NewYearsSaleV2() {
               alt="Beautiful kintsugi repaired bowl with gold seams"
               width={800}
               height={600}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="w-full h-auto"
             />
           </div>

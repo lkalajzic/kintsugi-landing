@@ -27,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cormorant.variable}>
       <head>
-        {/* Preconnect to Stripe for faster checkout (loadStripe handles actual loading) */}
+        {/* Preconnect to critical third-party origins */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://js.stripe.com" />
         <link rel="preconnect" href="https://api.stripe.com" />
         <Script id="google-tag-manager" strategy="afterInteractive">
