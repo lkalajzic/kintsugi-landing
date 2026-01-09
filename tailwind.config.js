@@ -14,7 +14,7 @@ module.exports = {
         darkGold: '#B8941F',
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'serif'],
+        serif: ['var(--font-cormorant)', 'Cormorant Garamond', 'serif'],
       },
       animation: {
         'pulse-glow': 'pulse-glow 1.5s ease-in-out infinite',

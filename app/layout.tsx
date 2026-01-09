@@ -1,6 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Cormorant_Garamond } from 'next/font/google'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Learn Kintsugi - Japanese Golden Repair for Beginners',
@@ -17,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={cormorant.variable}>
       <head>
         {/* Preconnect to Stripe for faster checkout (loadStripe handles actual loading) */}
         <link rel="preconnect" href="https://js.stripe.com" />
@@ -30,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WL7ZGB88');`}
         </Script>
         {/* Meta Pixel Base Code */}
-        <Script id="meta-pixel" strategy="beforeInteractive">
+        <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};

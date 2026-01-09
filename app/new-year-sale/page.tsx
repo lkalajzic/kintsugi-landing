@@ -178,17 +178,18 @@ export default function NewYearSale() {
             </p>
           </div>
 
-          {/* Course Preview GIF */}
+          {/* Course Preview Video */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-xl max-w-3xl mx-auto">
-            <Image
-              src="/course-preview.gif"
-              alt="Kintsugi repair preview from the course"
-              width={600}
-              height={338}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-auto"
-              loading="lazy"
-              unoptimized
-            />
+              poster="/course-preview-poster.jpg"
+            >
+              <source src="/course-preview.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>

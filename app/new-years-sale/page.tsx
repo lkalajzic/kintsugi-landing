@@ -132,6 +132,7 @@ export default function NewYearsSaleV2() {
               alt="Broken ceramic pieces waiting to be transformed"
               width={400}
               height={500}
+              sizes="(max-width: 768px) 320px, 384px"
               className="w-full h-auto max-h-[400px] object-cover"
               priority
             />
@@ -186,16 +187,18 @@ export default function NewYearsSaleV2() {
             </p>
           </div>
 
-          {/* Course Preview GIF */}
+          {/* Course Preview Video */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
-            <Image
-              src="/course-preview.gif"
-              alt="Kintsugi repair preview from the course"
-              width={600}
-              height={338}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-auto"
-              unoptimized
-            />
+              poster="/course-preview-poster.jpg"
+            >
+              <source src="/course-preview.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
