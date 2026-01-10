@@ -135,6 +135,7 @@ export default function NewYearsSaleV2() {
               sizes="(max-width: 768px) 320px, 384px"
               className="w-full h-auto max-h-[400px] object-cover"
               priority
+              fetchPriority="high"
             />
           </div>
         </div>

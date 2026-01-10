@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Cormorant_Garamond } from 'next/font/google'
+import { PreconnectResources } from './components/PreconnectResources'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -27,12 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={cormorant.variable}>
       <head>
-        {/* Preconnect to critical third-party origins */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://js.stripe.com" />
-        <link rel="preconnect" href="https://api.stripe.com" />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -64,6 +59,7 @@ fbq('track', 'PageView');`}
         </noscript>
       </head>
       <body>
+        <PreconnectResources />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WL7ZGB88"
