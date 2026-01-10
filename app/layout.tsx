@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Cormorant_Garamond } from 'next/font/google'
-import { PreconnectResources } from './components/PreconnectResources'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -59,7 +58,6 @@ fbq('track', 'PageView');`}
         </noscript>
       </head>
       <body>
-        <PreconnectResources />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WL7ZGB88"
