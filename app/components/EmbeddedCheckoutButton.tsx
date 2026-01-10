@@ -1,10 +1,15 @@
 'use client';
 
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useCallback } from 'react';
 import { stripePromise } from '../lib/stripe-client';
 
 // Lazy load the modal to reduce initial bundle size
 const EmbeddedCheckoutModal = lazy(() => import('./EmbeddedCheckoutModal'));
+
+// Preload function - call on hover to start loading before click
+const preloadModal = () => {
+  import('./EmbeddedCheckoutModal');
+};
 
 declare global {
   interface Window {
@@ -77,6 +82,8 @@ export default function EmbeddedCheckoutButton({
     <>
       <button
         onClick={handleClick}
+        onMouseEnter={preloadModal}
+        onFocus={preloadModal}
         disabled={isLoading}
         className={className || defaultClassName}
       >
