@@ -29,7 +29,6 @@ export async function POST(req: NextRequest) {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kintsugiclass.com';
 
     const session = await stripe.checkout.sessions.create({
-      ui_mode: 'embedded',
       mode: 'payment',
       line_items: [
         {
@@ -41,12 +40,13 @@ export async function POST(req: NextRequest) {
       managed_payments: {
         enabled: true,
       },
-      // Return URL with session ID placeholder (Stripe replaces this)
-      return_url: `${baseUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+      // Hosted checkout URLs
+      success_url: `${baseUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/new-years-sale`,
     } as any);
 
     return NextResponse.json({
-      clientSecret: session.client_secret,
+      url: session.url,
       sessionId: session.id,
     });
   } catch (error: any) {

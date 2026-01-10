@@ -1,10 +1,6 @@
 'use client';
 
-import { useState, lazy, Suspense } from 'react';
-import { stripePromise } from '../lib/stripe-client';
-
-// Lazy load the modal to reduce initial bundle size
-const EmbeddedCheckoutModal = lazy(() => import('./EmbeddedCheckoutModal'));
+import { useState } from 'react';
 
 declare global {
   interface Window {
@@ -34,10 +30,9 @@ export default function EmbeddedCheckoutButton({
   fallbackPaymentLink,
   className,
 }: EmbeddedCheckoutButtonProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsLoading(true);
 
     // Generate eventId client-side for deduplication
@@ -59,14 +54,39 @@ export default function EmbeddedCheckoutButton({
     }
 
     // CAPI disabled for testing - using GTM only
-    // navigator.sendBeacon(
-    //   '/api/track-checkout',
-    //   JSON.stringify({ eventId })
-    // );
+    // navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }));
 
-    // Open modal instead of redirect
-    setIsModalOpen(true);
-    setIsLoading(false);
+    try {
+      // Create checkout session with hosted checkout
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const data = await response.json();
+
+      // Redirect to Stripe hosted checkout
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL returned');
+      }
+    } catch (error) {
+      console.error('[EmbeddedCheckoutButton] Checkout error:', error);
+      setIsLoading(false);
+
+      // Fallback to payment link if available
+      if (fallbackPaymentLink) {
+        window.location.href = fallbackPaymentLink;
+      } else {
+        alert('Unable to start checkout. Please try again.');
+      }
+    }
   };
 
   const defaultClassName =
@@ -75,34 +95,25 @@ export default function EmbeddedCheckoutButton({
 
   return (
     <>
+      {/* Loading Overlay - same as Sashiko */}
+      {isLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/80 backdrop-blur-sm">
+          <div className="bg-cream px-8 py-6 rounded-2xl shadow-xl text-center max-w-sm mx-4">
+            <div className="w-8 h-8 border-3 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-charcoal font-medium">
+              Please wait 2-3 seconds while we redirect you to Stripe secure checkout
+            </p>
+          </div>
+        </div>
+      )}
+
       <button
         onClick={handleClick}
         disabled={isLoading}
         className={className || defaultClassName}
       >
-        {isLoading ? 'Loading...' : ctaText || defaultCtaText}
+        {isLoading ? 'Redirecting...' : ctaText || defaultCtaText}
       </button>
-
-      {isModalOpen && (
-        <Suspense
-          fallback={
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-              <div className="bg-white px-8 py-6 rounded-2xl shadow-xl flex items-center gap-3">
-                <div className="w-5 h-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
-                <span className="text-gray-700">Loading checkout...</span>
-              </div>
-            </div>
-          }
-        >
-          <EmbeddedCheckoutModal
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-            priceId={priceId}
-            fallbackPaymentLink={fallbackPaymentLink}
-            stripePromise={stripePromise}
-          />
-        </Suspense>
-      )}
     </>
   );
 }
