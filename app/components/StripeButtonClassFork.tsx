@@ -27,8 +27,8 @@ export default function StripeButtonClassFork({ price = 47 }: { price?: number }
       }, { eventID: eventId })
     }
 
-    // Send CAPI via sendBeacon (non-blocking, guaranteed delivery)
-    navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }))
+    // CAPI disabled for testing - using GTM only
+    // navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }))
 
     // This payment link redirects to /kit instead of /thank-you
     window.location.href = 'https://buy.stripe.com/6oU3cwaKC9DJeAFanw43S02'

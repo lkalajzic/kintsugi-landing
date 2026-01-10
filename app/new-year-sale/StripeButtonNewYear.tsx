@@ -27,8 +27,8 @@ export default function StripeButtonNewYear({ price = 49 }: { price?: number }) 
       }, { eventID: eventId })
     }
 
-    // Send CAPI via sendBeacon (non-blocking, guaranteed delivery)
-    navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }))
+    // CAPI disabled for testing - using GTM only
+    // navigator.sendBeacon('/api/track-checkout', JSON.stringify({ eventId }))
 
     // Redirect immediately - no waiting
     window.location.href = 'https://buy.stripe.com/aFa14o3ia17d2RX67g43S0c'

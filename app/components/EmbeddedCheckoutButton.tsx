@@ -58,11 +58,11 @@ export default function EmbeddedCheckoutButton({
       );
     }
 
-    // Send CAPI via sendBeacon (non-blocking, guaranteed delivery)
-    navigator.sendBeacon(
-      '/api/track-checkout',
-      JSON.stringify({ eventId })
-    );
+    // CAPI disabled for testing - using GTM only
+    // navigator.sendBeacon(
+    //   '/api/track-checkout',
+    //   JSON.stringify({ eventId })
+    // );
 
     // Open modal instead of redirect
     setIsModalOpen(true);
