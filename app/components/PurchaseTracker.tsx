@@ -10,8 +10,13 @@ declare global {
 }
 
 /**
- * Client component that tracks Purchase events via CAPI + Pixel
+ * Client component that tracks Purchase events via Pixel + CAPI
  * Called on thank-you page after successful checkout
+ *
+ * Flow:
+ * 1. Fire vanilla pixel IMMEDIATELY (guarantees Meta gets the event)
+ * 2. Then fire CAPI with accurate Stripe net value (same eventID for dedup)
+ * Meta will deduplicate and prefer CAPI data (better match quality)
  */
 export default function PurchaseTracker() {
   const searchParams = useSearchParams()
@@ -37,8 +42,20 @@ export default function PurchaseTracker() {
 
     hasSentRef.current = true
 
-    // Send purchase event to CAPI and fire pixel
-    const sendPurchaseEvent = async () => {
+    // 1. Fire vanilla pixel FIRST (unconditionally)
+    // This guarantees Meta gets the purchase signal even if CAPI fails
+    if (window.fbq) {
+      window.fbq('track', 'Purchase', {
+        value: 38,  // Estimated EUR net (CAPI will have accurate value)
+        currency: 'EUR',
+        content_name: 'Kintsugi Class',
+        content_type: 'product',
+      }, { eventID: sessionId })
+      console.log('[PurchaseTracker] Vanilla pixel fired with eventID:', sessionId)
+    }
+
+    // 2. Then fire CAPI with accurate Stripe net value (same eventID for dedup)
+    const sendCAPIEvent = async () => {
       try {
         console.log('[PurchaseTracker] Sending Purchase CAPI event...')
         const response = await fetch('/api/send-purchase', {
@@ -51,31 +68,23 @@ export default function PurchaseTracker() {
 
         if (result.success) {
           console.log(`[PurchaseTracker] CAPI sent (value: ${result.value} ${result.currency})`)
-
-          // Fire client-side pixel with same eventID for deduplication
-          if (window.fbq) {
-            window.fbq('track', 'Purchase', {
-              value: result.value,
-              currency: result.currency.toUpperCase(),
-              content_name: 'Kintsugi Class',
-              content_type: 'product',
-            }, { eventID: sessionId })
-            console.log('[PurchaseTracker] Pixel fired with eventID:', sessionId)
-          }
-
           sessionStorage.setItem(storageKey, 'true')
         } else if (result.skipped) {
-          console.log('[PurchaseTracker] Purchase skipped (non-Kintsugi)')
+          console.log('[PurchaseTracker] CAPI skipped (non-Kintsugi)')
           sessionStorage.setItem(storageKey, 'skipped')
         } else {
-          console.error('[PurchaseTracker] Failed:', result.error)
+          console.error('[PurchaseTracker] CAPI failed:', result.error)
+          // Still mark as tracked - vanilla pixel already fired
+          sessionStorage.setItem(storageKey, 'pixel-only')
         }
       } catch (error) {
-        console.error('[PurchaseTracker] Error:', error)
+        console.error('[PurchaseTracker] CAPI error:', error)
+        // Still mark as tracked - vanilla pixel already fired
+        sessionStorage.setItem(storageKey, 'pixel-only')
       }
     }
 
-    sendPurchaseEvent()
+    sendCAPIEvent()
   }, [sessionId])
 
   // This component doesn't render anything
