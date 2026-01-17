@@ -15,6 +15,8 @@ import { cookies } from 'next/headers';
  * - Actual net revenue after Stripe fees
  */
 export async function POST(req: NextRequest) {
+  const startTime = Date.now();
+
   try {
     const body = await req.json();
     const { sessionId } = body;
@@ -24,7 +26,9 @@ export async function POST(req: NextRequest) {
     }
 
     // Fetch Stripe checkout session
+    const stripeSessionStart = Date.now();
     const session = await getCheckoutSession(sessionId);
+    const stripeSessionTime = Date.now() - stripeSessionStart;
     if (!session) {
       return NextResponse.json({ error: 'Session not found' }, { status: 404 });
     }
@@ -70,9 +74,12 @@ export async function POST(req: NextRequest) {
     // Calculate net revenue (after Stripe fees)
     let netValue = (session.amount_total || 0) / 100;
     let currency = session.currency || 'usd';
+    let stripeFeesTime = 0;
 
     if (session.payment_intent) {
+      const stripeFeesStart = Date.now();
       const fees = await getStripeFees(session.payment_intent as string);
+      stripeFeesTime = Date.now() - stripeFeesStart;
       if (fees) {
         // Use net amount in Stripe account currency (EUR)
         netValue = fees.netAmount / 100;
@@ -99,6 +106,7 @@ export async function POST(req: NextRequest) {
     const eventTime = Math.floor(Date.now() / 1000);
 
     // Send to Meta CAPI
+    const capiStart = Date.now();
     const result = await sendPurchaseEvent({
       eventId,
       eventTime,
@@ -114,6 +122,12 @@ export async function POST(req: NextRequest) {
       currency,
       orderId: sessionId,
     });
+    const capiTime = Date.now() - capiStart;
+
+    const totalTime = Date.now() - startTime;
+
+    // Log timing breakdown
+    console.log(`[send-purchase] TIMING: total=${totalTime}ms, stripeSession=${stripeSessionTime}ms, stripeFees=${stripeFeesTime}ms, capi=${capiTime}ms`);
 
     if (result.success) {
       console.log(`[send-purchase] Purchase event sent for ${customerData.email} (event_id: ${eventId}, value: ${netValue} ${currency})`);
@@ -126,6 +140,7 @@ export async function POST(req: NextRequest) {
       eventId,
       value: netValue,
       currency,
+      _timing: { total: totalTime, stripeSession: stripeSessionTime, stripeFees: stripeFeesTime, capi: capiTime },
     });
   } catch (error) {
     console.error('[send-purchase] Error:', error);
