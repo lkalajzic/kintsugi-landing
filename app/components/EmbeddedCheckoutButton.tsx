@@ -95,13 +95,13 @@ export default function EmbeddedCheckoutButton({
 
   return (
     <>
-      {/* Loading Overlay - same as Sashiko */}
+      {/* Loading Overlay */}
       {isLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/80 backdrop-blur-sm">
-          <div className="bg-cream px-8 py-6 rounded-2xl shadow-xl text-center max-w-sm mx-4">
-            <div className="w-8 h-8 border-3 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-charcoal font-medium">
-              Please wait 2-3 seconds while we redirect you to Stripe secure checkout
+          <div className="bg-cream px-10 py-8 rounded-2xl shadow-xl text-center max-w-sm mx-4">
+            <div className="w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-5" />
+            <p className="text-charcoal text-xl font-medium">
+              🔒 Loading Secure Stripe Checkout...
             </p>
           </div>
         </div>

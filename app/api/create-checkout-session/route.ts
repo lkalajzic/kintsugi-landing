@@ -13,9 +13,12 @@ const VALID_PRICE_IDS = [
 ];
 
 export async function POST(req: NextRequest) {
+  const startTime = Date.now();
+
   try {
     const body = await req.json();
     const { priceId } = body;
+    const parseTime = Date.now();
 
     // Validate price ID
     if (!priceId || !VALID_PRICE_IDS.includes(priceId)) {
@@ -28,6 +31,7 @@ export async function POST(req: NextRequest) {
     // Determine return URL based on environment
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kintsugiclass.com';
 
+    const stripeStart = Date.now();
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       line_items: [
@@ -44,10 +48,18 @@ export async function POST(req: NextRequest) {
       success_url: `${baseUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/new-years-sale`,
     } as any);
+    const stripeEnd = Date.now();
+
+    const totalTime = Date.now() - startTime;
+    const stripeTime = stripeEnd - stripeStart;
+
+    // Log timing for analysis
+    console.log(`[create-checkout-session] TIMING: total=${totalTime}ms, stripe=${stripeTime}ms, parse=${parseTime - startTime}ms`);
 
     return NextResponse.json({
       url: session.url,
       sessionId: session.id,
+      _timing: { total: totalTime, stripe: stripeTime }, // Include in response for debugging
     });
   } catch (error: any) {
     console.error('[create-checkout-session] Error:', error);
