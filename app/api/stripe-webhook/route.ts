@@ -71,6 +71,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ received: true });
     }
 
+    // Check if this is for a Kintsugi product
+    try {
+      const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
+        expand: ['line_items'],
+      });
+      const lineItems = fullSession.line_items?.data || [];
+      const isKintsugiProduct = lineItems.some(item =>
+        item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
+      );
+
+      if (!isKintsugiProduct) {
+        console.log(`Ignoring non-Kintsugi async payment failure (no matching price IDs)`);
+        return NextResponse.json({ received: true });
+      }
+    } catch (err) {
+      console.error('Error checking price IDs for async payment failure:', err);
+      // Continue anyway - better to send recovery email than miss a customer
+    }
+
     console.log(`❌ ASYNC PAYMENT FAILED: ${customerEmail}`);
 
     // Check if they already succeeded with a retry
@@ -134,6 +153,31 @@ export async function POST(req: NextRequest) {
 
     console.log(`💳 CARD DECLINED: ${customerEmail}`);
 
+    // Check if this payment is for a Kintsugi product
+    try {
+      const sessions = await stripe.checkout.sessions.list({
+        payment_intent: paymentIntent.id,
+        limit: 1,
+        expand: ['data.line_items'],
+      });
+
+      const session = sessions.data[0];
+      if (session) {
+        const lineItems = session.line_items?.data || [];
+        const isKintsugiProduct = lineItems.some(item =>
+          item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
+        );
+
+        if (!isKintsugiProduct) {
+          console.log(`Ignoring non-Kintsugi failed payment (no matching price IDs)`);
+          return NextResponse.json({ received: true });
+        }
+      }
+    } catch (err) {
+      console.error('Error checking price IDs for failed payment:', err);
+      // Continue anyway - better to send recovery email than miss a customer
+    }
+
     // Check if they already succeeded with a retry
     if (await hasRecentSuccessfulPurchase(customerEmail)) {
       console.log(`[${customerEmail}] Already has successful purchase, skipping recovery email`);
@@ -184,6 +228,25 @@ export async function POST(req: NextRequest) {
     if (!customerEmail) {
       console.log('Expired session but no email found - cannot recover');
       return NextResponse.json({ received: true });
+    }
+
+    // Check if this is for a Kintsugi product
+    try {
+      const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
+        expand: ['line_items'],
+      });
+      const lineItems = fullSession.line_items?.data || [];
+      const isKintsugiProduct = lineItems.some(item =>
+        item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
+      );
+
+      if (!isKintsugiProduct) {
+        console.log(`Ignoring non-Kintsugi expired checkout (no matching price IDs)`);
+        return NextResponse.json({ received: true });
+      }
+    } catch (err) {
+      console.error('Error checking price IDs for expired checkout:', err);
+      // Continue anyway - better to send recovery email than miss a customer
     }
 
     console.log(`⏰ ABANDONED CHECKOUT: ${customerEmail}`);
