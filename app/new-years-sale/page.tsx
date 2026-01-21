@@ -120,7 +120,7 @@ export default function NewYearsSaleV2() {
           <p className="text-lg md:text-2xl text-charcoal/80 text-center mb-8">
             Join{" "}
             <span className="font-medium underline decoration-gold decoration-2 underline-offset-4">
-              168 students
+              354 students
             </span>{" "}
             who now turn broken pieces into stunning art
           </p>
