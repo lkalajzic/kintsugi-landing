@@ -27,9 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cormorant.variable}>
       <head>
-        {/* DNS prefetch for Stripe - speeds up checkout */}
+        {/* DNS prefetch for Stripe - lightweight, stays cached for minutes */}
         <link rel="dns-prefetch" href="https://js.stripe.com" />
         <link rel="dns-prefetch" href="https://api.stripe.com" />
+        <link rel="dns-prefetch" href="https://checkout.stripe.com" />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
