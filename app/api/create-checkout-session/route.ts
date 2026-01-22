@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 // Valid Kintsugi price IDs
 const VALID_PRICE_IDS = [
   'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
-  'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
+  'price_1SsCENIWj0la69bvJ8MwjsyJ', // Kintsugi NYS ($47 USD / €47 EUR)
 ];
 
 export async function POST(req: NextRequest) {

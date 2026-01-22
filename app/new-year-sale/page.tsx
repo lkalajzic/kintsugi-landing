@@ -587,20 +587,21 @@ export default function NewYearSale() {
 
           <div className="py-8">
             <p className="text-xl line-through text-charcoal/50 mb-2">
-              Normally: $245
+              Normally: $235
             </p>
-            <p className="text-6xl font-serif text-gold mb-4">$49</p>
+            <p className="text-6xl font-serif text-gold mb-4">$47</p>
             <p className="text-sm text-charcoal/60">
               New Year Sale • Limited Time Only
             </p>
           </div>
 
           <EmbeddedCheckoutButton
-                priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
-                displayPrice={49}
-                valueCapi={39}
-                ctaText="Begin Your Practice - $49"
-                fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+                priceId="price_1SsCENIWj0la69bvJ8MwjsyJ"
+                displayPrice={47}
+                valueCapi={38}
+                ctaText="Begin Your Practice - $47"
+                fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+                cancelPath="/new-year-sale"
               />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
@@ -740,11 +741,12 @@ export default function NewYearSale() {
             </h2>
 
             <EmbeddedCheckoutButton
-                priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
-                displayPrice={49}
-                valueCapi={39}
-                ctaText="Begin Your Practice - $49"
-                fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+                priceId="price_1SsCENIWj0la69bvJ8MwjsyJ"
+                displayPrice={47}
+                valueCapi={38}
+                ctaText="Begin Your Practice - $47"
+                fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+                cancelPath="/new-year-sale"
               />
 
             <p className="text-sm text-charcoal/60">

@@ -15,19 +15,19 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
       {/* Price with value stacking */}
       <div className="text-center">
         <p className="text-3xl md:text-4xl text-charcoal/60 line-through mb-2">
-          Normally $245
+          Normally $235
         </p>
-        <p className="text-6xl md:text-7xl font-serif text-gold mb-2">$49</p>
+        <p className="text-6xl md:text-7xl font-serif text-gold mb-2">$47</p>
         <p className="text-lg text-charcoal/60">80% off • Today only</p>
       </div>
 
       {/* CTA Button - Using custom styled version */}
       <div className="flex justify-center">
         <EmbeddedCheckoutButton
-          priceId="price_1Sn3OMIWj0la69bvHWo1KO4T"
-          displayPrice={49}
-          valueCapi={39}
-          ctaText="Start learning kintsugi today for only $49"
+          priceId="price_1SsCENIWj0la69bvJ8MwjsyJ"
+          displayPrice={47}
+          valueCapi={38}
+          ctaText="Start learning kintsugi today for only $47"
           fallbackPaymentLink="https://buy.stripe.com/test_xxx"
           cancelPath="/new-years-sale"
         />

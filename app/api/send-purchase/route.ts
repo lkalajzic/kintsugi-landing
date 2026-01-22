@@ -44,7 +44,8 @@ export async function POST(req: NextRequest) {
     const KINTSUGI_PRICE_IDS = [
       'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
       'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default OLD (USD only)
-      'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
+      'price_1SsCENIWj0la69bvJ8MwjsyJ', // Kintsugi NYS ($47 USD / €47 EUR)
+      'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi NYS OLD (USD only) - keep for past purchases
     ];
 
     // Check if purchase is via Payment Link
