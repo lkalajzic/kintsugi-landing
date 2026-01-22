@@ -42,7 +42,8 @@ export async function POST(req: NextRequest) {
       'plink_1Sn3Q7IWj0la69bvgsrTURp5', // New Year Sale
     ];
     const KINTSUGI_PRICE_IDS = [
-      'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default ($47)
+      'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
+      'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default OLD (USD only)
       'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
     ];
 

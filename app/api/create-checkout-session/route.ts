@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 // Valid Kintsugi price IDs
 const VALID_PRICE_IDS = [
-  'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default ($47)
+  'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
   'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
 ];
 
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { priceId } = body;
+    const { priceId, cancelPath } = body;
     const parseTime = Date.now();
 
     // Validate price ID
@@ -30,6 +30,9 @@ export async function POST(req: NextRequest) {
 
     // Determine return URL based on environment
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kintsugiclass.com';
+
+    // Use provided cancel path or default to /learn
+    const cancelUrl = cancelPath ? `${baseUrl}${cancelPath}` : `${baseUrl}/learn`;
 
     const stripeStart = Date.now();
     const session = await stripe.checkout.sessions.create({
@@ -46,7 +49,7 @@ export async function POST(req: NextRequest) {
       },
       // Hosted checkout URLs
       success_url: `${baseUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/new-years-sale`,
+      cancel_url: cancelUrl,
     } as any);
     const stripeEnd = Date.now();
 

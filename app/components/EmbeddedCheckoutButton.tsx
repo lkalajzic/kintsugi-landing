@@ -20,6 +20,7 @@ interface EmbeddedCheckoutButtonProps {
   valueCapi?: number; // EUR value for CAPI tracking
   fallbackPaymentLink?: string;
   className?: string;
+  cancelPath?: string; // Path to redirect on checkout cancel (e.g., '/learn')
 }
 
 export default function EmbeddedCheckoutButton({
@@ -29,6 +30,7 @@ export default function EmbeddedCheckoutButton({
   valueCapi = 37.5,
   fallbackPaymentLink,
   className,
+  cancelPath,
 }: EmbeddedCheckoutButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -61,7 +63,7 @@ export default function EmbeddedCheckoutButton({
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId }),
+        body: JSON.stringify({ priceId, cancelPath }),
       });
 
       if (!response.ok) {

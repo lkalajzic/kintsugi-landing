@@ -1,4 +1,4 @@
-import StripeButtonInstant from "../components/StripeButtonInstant";
+import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
 import CountdownTimerDaily from "../learn/CountdownTimerDaily";
 import StickyHeaderModern from "../learn/StickyHeaderModern";
 import Image from "next/image";
@@ -587,7 +587,14 @@ export default function PotteryPage() {
             </p>
           </div>
 
-          <StripeButtonInstant price={47} />
+          <EmbeddedCheckoutButton
+            priceId="price_1SsCFMIWj0la69bvd1QSZSna"
+            displayPrice={47}
+            valueCapi={38}
+            ctaText="Begin Your Practice - $47"
+            fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+            cancelPath="/for-potters"
+          />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
             <p className="text-lg font-medium text-charcoal mb-2">
@@ -739,7 +746,14 @@ export default function PotteryPage() {
               Transform your kiln casualties into gold.
             </h2>
 
-            <StripeButtonInstant price={47} />
+            <EmbeddedCheckoutButton
+              priceId="price_1SsCFMIWj0la69bvd1QSZSna"
+              displayPrice={47}
+              valueCapi={38}
+              ctaText="Begin Your Practice - $47"
+              fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
+              cancelPath="/for-potters"
+            />
 
             <p className="text-sm text-charcoal/60">
               90-Day Money-Back Guarantee • Secure Checkout • Instant Access

@@ -29,6 +29,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           valueCapi={39}
           ctaText="Start learning kintsugi today for only $49"
           fallbackPaymentLink="https://buy.stripe.com/test_xxx"
+          cancelPath="/new-years-sale"
         />
       </div>
 

@@ -13,7 +13,8 @@ const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
 
 // Kintsugi price IDs - only handle these
 const KINTSUGI_PRICE_IDS = [
-  'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default ($47)
+  'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
+  'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default OLD (USD only)
   'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi New Year Sale
   'price_1SVCYvIWj0la69bvDzMTfYa4', // Kintsugi old ($47) - discontinued
   'price_1SVCbDIWj0la69bvGLruK7Et', // Kintsugi old ($97) - discontinued
