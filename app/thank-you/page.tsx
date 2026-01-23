@@ -287,7 +287,7 @@ export default function ThankYouPage() {
         {/* CTA Button */}
         <div className="flex justify-center mb-6">
           <a
-            href="https://buy.stripe.com/sashiko-upsell-47"
+            href="https://buy.stripe.com/aFa4gA3ia7vB6490MW43S0a"
             className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
           >
             Add Sashiko Mastery — $47
@@ -410,7 +410,7 @@ export default function ThankYouPage() {
 
           <div className="flex justify-center mb-6">
             <a
-              href="https://buy.stripe.com/sashiko-upsell-47"
+              href="https://buy.stripe.com/aFa4gA3ia7vB6490MW43S0a"
               className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
             >
               Add Sashiko Mastery — $47
