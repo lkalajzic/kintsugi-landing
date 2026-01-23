@@ -83,7 +83,7 @@ export default function CreatePage() {
           </p>
 
           {/* 3x3 Gallery */}
-          <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/kintsugi_imgs/0_ChatGPT Image Jan 10, 2026, 12_54_28 AM copy.jpg"
@@ -133,15 +133,6 @@ export default function CreatePage() {
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/kintsugi_imgs/image copy.jpg"
-                alt="Kintsugi example"
-                width={400}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/kintsugi_imgs/kintsugiglassgasgrok copy.jpg"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
