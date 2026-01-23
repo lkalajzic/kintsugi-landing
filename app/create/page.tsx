@@ -157,6 +157,15 @@ export default function CreatePage() {
                 className="w-full h-full object-cover"
               />
             </div>
+            <div className="aspect-square rounded-lg overflow-hidden shadow-lg hidden md:block">
+              <Image
+                src="/eg2.webp"
+                alt="Kintsugi example"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
