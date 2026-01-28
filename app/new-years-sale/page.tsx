@@ -1,6 +1,6 @@
 "use client";
 
-import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
+import PaymentLinkButton from "../components/PaymentLinkButton";
 import CountdownTimerNewYear from "../new-year-sale/CountdownTimerNewYear";
 import StickyHeaderV2 from "./StickyHeaderV2";
 import Image from "next/image";
@@ -23,13 +23,11 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
 
       {/* CTA Button - Using custom styled version */}
       <div className="flex justify-center">
-        <EmbeddedCheckoutButton
-          priceId="price_1SsCENIWj0la69bvJ8MwjsyJ"
+        <PaymentLinkButton
+          variant="newYearSale"
           displayPrice={47}
           valueCapi={38}
           ctaText="Start learning kintsugi today for only $47"
-          fallbackPaymentLink="https://buy.stripe.com/test_xxx"
-          cancelPath="/new-years-sale"
         />
       </div>
 

@@ -24,7 +24,7 @@ async function sendAccessEmail() {
           <p style="color: #34495e; line-height: 1.8; font-size: 16px;"><strong>Click this link to access your course:</strong></p>
           <p style="margin: 16px 0;"><a href="https://course.kintsugiclass.com/sign-up" style="color: #C9A962; font-size: 16px;">https://course.kintsugiclass.com/sign-up</a></p>
 
-          <p style="color: #34495e; line-height: 1.8; font-size: 16px;">– Kintsugi Class Team</p>
+          <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Warmly,<br>Yuki</p>
         </div>
       `,
     });

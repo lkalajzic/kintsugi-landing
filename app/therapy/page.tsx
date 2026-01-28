@@ -1,4 +1,4 @@
-import EmbeddedCheckoutButton from "../components/EmbeddedCheckoutButton";
+import PaymentLinkButton from "../components/PaymentLinkButton";
 import CountdownTimerDaily from "../learn/CountdownTimerDaily";
 import StickyHeaderModern from "../learn/StickyHeaderModern";
 import Image from "next/image";
@@ -549,13 +549,11 @@ export default function TherapyPage() {
             </p>
           </div>
 
-          <EmbeddedCheckoutButton
-            priceId="price_1SsCFMIWj0la69bvd1QSZSna"
+          <PaymentLinkButton
+            variant="default"
             displayPrice={47}
             valueCapi={38}
             ctaText="Begin Your Practice - $47"
-            fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
-            cancelPath="/therapy"
           />
 
           <div className="pt-8 max-w-lg mx-auto bg-cream rounded-xl p-6 border-2 border-gold/20">
@@ -677,13 +675,11 @@ export default function TherapyPage() {
               Just your hands, broken pieces, and gold.
             </h2>
 
-            <EmbeddedCheckoutButton
-              priceId="price_1SsCFMIWj0la69bvd1QSZSna"
+            <PaymentLinkButton
+              variant="default"
               displayPrice={47}
               valueCapi={38}
               ctaText="Begin Your Practice - $47"
-              fallbackPaymentLink="https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00"
-              cancelPath="/therapy"
             />
 
             <p className="text-sm text-charcoal/60">

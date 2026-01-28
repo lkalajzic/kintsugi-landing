@@ -373,7 +373,7 @@ export async function POST(req: NextRequest) {
 
             <p style="color: #7f8c8d; line-height: 1.6; font-size: 14px; margin-top: 32px;">Questions? Just reply to this email - we're here to help!</p>
 
-            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Happy creating,<br>The Kintsugi Class Team</p>
+            <p style="color: #34495e; line-height: 1.8; font-size: 16px;">Warmly,<br>Yuki</p>
 
             <div style="border-top: 1px solid #eee; margin-top: 40px; padding-top: 20px;">
               <p style="color: #95a5a6; font-size: 12px; font-style: italic;">"Every broken thing is an opportunity for beauty."</p>
