@@ -42,10 +42,6 @@ export default function PurchaseTracker() {
 
     hasSentRef.current = true
 
-    // Mark as tracked IMMEDIATELY to prevent re-fires on refresh or remount
-    // (CAPI fetch takes 2-5s; without this, a refresh mid-flight causes duplicates)
-    sessionStorage.setItem(storageKey, 'pending')
-
     // 1. Fire vanilla pixel FIRST (unconditionally)
     // This guarantees Meta gets the purchase signal even if CAPI fails
     if (window.fbq) {
@@ -78,10 +74,12 @@ export default function PurchaseTracker() {
           sessionStorage.setItem(storageKey, 'skipped')
         } else {
           console.error('[PurchaseTracker] CAPI failed:', result.error)
+          // Still mark as tracked - vanilla pixel already fired
           sessionStorage.setItem(storageKey, 'pixel-only')
         }
       } catch (error) {
         console.error('[PurchaseTracker] CAPI error:', error)
+        // Still mark as tracked - vanilla pixel already fired
         sessionStorage.setItem(storageKey, 'pixel-only')
       }
     }
