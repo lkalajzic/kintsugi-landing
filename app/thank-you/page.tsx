@@ -55,15 +55,41 @@ export default function ThankYouPage() {
           <h1 className="text-4xl md:text-5xl font-light text-charcoal">
             Welcome to Kintsugi Class
           </h1>
-          <p className="text-xl md:text-2xl text-charcoal font-bold">
-            You&apos;ll get access on your email in 5-10 minutes depending on your email provider.
-          </p>
+
+          {/* Big Access Button */}
           <a
             href="https://course.kintsugiclass.com/sign-up"
-            className="inline-block bg-gold hover:bg-gold/90 text-white px-12 py-5 rounded-xl text-xl font-semibold transition-colors shadow-lg"
+            className="inline-block bg-gold hover:bg-gold/90 text-white px-12 py-6 rounded-xl text-2xl md:text-3xl font-bold transition-colors shadow-lg"
           >
-            Access Your Course →
+            Click Here To Access Your Course →
           </a>
+
+          <div className="text-left bg-warmGray/30 rounded-xl p-6 md:p-8 space-y-4">
+            <p className="text-xl md:text-2xl text-charcoal font-bold text-center">
+              How to get started:
+            </p>
+            <ol className="space-y-3 text-lg md:text-xl text-charcoal/80 list-decimal list-inside">
+              <li>
+                <strong>Click the button above</strong> — it will take you to the course page
+              </li>
+              <li>
+                <strong>Create an account</strong> — we recommend using{" "}
+                <strong>&quot;Continue with Google&quot;</strong> as it is the
+                easiest option
+              </li>
+              <li>
+                <strong>Save this link</strong> — bookmark the page in your
+                browser, or write down:{" "}
+                <strong className="text-charcoal">course.kintsugiclass.com</strong>
+              </li>
+            </ol>
+            <p className="text-base md:text-lg text-charcoal/60 text-center pt-2">
+              We also sent you an email with these instructions. If you
+              don&apos;t see it, check your <strong>spam</strong> or{" "}
+              <strong>trash</strong> folder — it sometimes ends up there.
+            </p>
+          </div>
+
           <p className="text-sm text-charcoal/60">
             Questions? support@kintsugiclass.com
           </p>
@@ -79,14 +105,45 @@ export default function ThankYouPage() {
       </Suspense>
 
       <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* Confirmation */}
+        {/* Confirmation + Access Instructions */}
         <div className="text-center mb-8 pb-8 border-b border-charcoal/10">
-          <p className="text-green-600 text-2xl md:text-3xl font-medium mb-3">
+          <p className="text-green-600 text-3xl md:text-4xl font-bold mb-4">
             ✓ You&apos;re in! Kintsugi Class is yours.
           </p>
-          <p className="text-xl md:text-2xl text-charcoal font-bold">
-            You&apos;ll get access on your email in 5-10 minutes depending on your email provider.
-          </p>
+
+          {/* Big Access Button */}
+          <a
+            href="https://course.kintsugiclass.com/sign-up"
+            className="inline-block bg-gold hover:bg-gold/90 text-white px-12 py-6 rounded-xl text-2xl md:text-3xl font-bold transition-colors shadow-lg mb-6"
+          >
+            Click Here To Access Your Course →
+          </a>
+
+          <div className="max-w-2xl mx-auto space-y-4 text-left bg-warmGray/30 rounded-xl p-6 md:p-8">
+            <p className="text-xl md:text-2xl text-charcoal font-bold text-center">
+              How to get started:
+            </p>
+            <ol className="space-y-3 text-lg md:text-xl text-charcoal/80 list-decimal list-inside">
+              <li>
+                <strong>Click the button above</strong> — it will take you to the course page
+              </li>
+              <li>
+                <strong>Create an account</strong> — we recommend using{" "}
+                <strong>&quot;Continue with Google&quot;</strong> as it is the
+                easiest option
+              </li>
+              <li>
+                <strong>Save this link</strong> — bookmark the page in your
+                browser, or write down:{" "}
+                <strong className="text-charcoal">course.kintsugiclass.com</strong>
+              </li>
+            </ol>
+            <p className="text-base md:text-lg text-charcoal/60 text-center pt-2">
+              We also sent you an email with these instructions. If you
+              don&apos;t see it, check your <strong>spam</strong> or{" "}
+              <strong>trash</strong> folder — it sometimes ends up there.
+            </p>
+          </div>
         </div>
 
         {/* One-Time Offer Banner */}
@@ -273,24 +330,24 @@ export default function ThankYouPage() {
         {/* Timer + Pricing */}
         <div className="text-center mb-8">
           <p className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
-            One-time offer - Learn Sashiko For The Same Price As Kintsugi - Valid only for
+            One-time offer - Learn Sashiko For 90% Off - Valid only for
           </p>
           <UpsellTimer large />
         </div>
 
         <div className="text-center mb-6">
-          <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $235</p>
-          <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$47</p>
-          <p className="text-xl text-charcoal/60">80% off - today only</p>
+          <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $297</p>
+          <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$29.99</p>
+          <p className="text-xl text-charcoal/60">90% off - today only</p>
         </div>
 
         {/* CTA Button */}
         <div className="flex justify-center mb-6">
           <a
-            href="https://buy.stripe.com/aFa4gA3ia7vB6490MW43S0a"
+            href="https://buy.stripe.com/cNi3cw7yqdTZ1NTfHQ43S0g"
             className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
           >
-            Add Sashiko Mastery — $47
+            Add Sashiko Mastery — $29.99
           </a>
         </div>
 
@@ -397,23 +454,23 @@ export default function ThankYouPage() {
         <div className="bg-warmGray/30 rounded-xl p-8 mb-10">
           <div className="text-center mb-6">
             <p className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
-              One-time offer - Learn Sashiko For The Same Price As Kintsugi - Valid only for
+              One-time offer - Learn Sashiko For 90% Off - Valid only for
             </p>
             <UpsellTimer large />
           </div>
 
           <div className="text-center mb-6">
-            <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $235</p>
-            <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$47</p>
-            <p className="text-xl text-charcoal/60">80% off - today only</p>
+            <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $297</p>
+            <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$29.99</p>
+            <p className="text-xl text-charcoal/60">90% off - today only</p>
           </div>
 
           <div className="flex justify-center mb-6">
             <a
-              href="https://buy.stripe.com/aFa4gA3ia7vB6490MW43S0a"
+              href="https://buy.stripe.com/cNi3cw7yqdTZ1NTfHQ43S0g"
               className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
             >
-              Add Sashiko Mastery — $47
+              Add Sashiko Mastery — $29.99
             </a>
           </div>
 
