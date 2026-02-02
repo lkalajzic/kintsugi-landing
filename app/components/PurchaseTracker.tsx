@@ -14,9 +14,13 @@ declare global {
  * Called on thank-you page after successful checkout
  *
  * Flow:
- * 1. Fire vanilla pixel IMMEDIATELY (guarantees Meta gets the event)
- * 2. Then fire CAPI with accurate Stripe net value (same eventID for dedup)
- * Meta will deduplicate and prefer CAPI data (better match quality)
+ * 1. Send to server which validates (payment link ID + payment_status=paid) and fires CAPI
+ * 2. Only fire vanilla pixel if server confirms it's a paid Kintsugi purchase
+ * 3. Both use the same eventID for Meta deduplication
+ * 4. Vanilla pixel uses real net-after-fees value from server (no hardcoded estimate)
+ *
+ * This prevents: cross-attribution from non-Kintsugi purchases, false events
+ * from failed/unpaid payments, and value mismatches between pixel and CAPI.
  */
 export default function PurchaseTracker() {
   const searchParams = useSearchParams()
@@ -42,22 +46,10 @@ export default function PurchaseTracker() {
 
     hasSentRef.current = true
 
-    // 1. Fire vanilla pixel FIRST (unconditionally)
-    // This guarantees Meta gets the purchase signal even if CAPI fails
-    if (window.fbq) {
-      window.fbq('track', 'Purchase', {
-        value: 38,  // Estimated EUR net (CAPI will have accurate value)
-        currency: 'EUR',
-        content_name: 'Kintsugi Class',
-        content_type: 'product',
-      }, { eventID: sessionId })
-      console.log('[PurchaseTracker] Vanilla pixel fired with eventID:', sessionId)
-    }
-
-    // 2. Then fire CAPI with accurate Stripe net value (same eventID for dedup)
-    const sendCAPIEvent = async () => {
+    // Validate with server first, then fire pixel only for confirmed Kintsugi purchases
+    const trackPurchase = async () => {
       try {
-        console.log('[PurchaseTracker] Sending Purchase CAPI event...')
+        console.log('[PurchaseTracker] Validating purchase and sending CAPI...')
         const response = await fetch('/api/send-purchase', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -66,25 +58,46 @@ export default function PurchaseTracker() {
 
         const result = await response.json()
 
-        if (result.success) {
-          console.log(`[PurchaseTracker] CAPI sent (value: ${result.value} ${result.currency})`)
-          sessionStorage.setItem(storageKey, 'true')
-        } else if (result.skipped) {
-          console.log('[PurchaseTracker] CAPI skipped (non-Kintsugi)')
+        if (result.skipped) {
+          // Not a Kintsugi purchase, or payment not completed — don't fire pixel
+          console.log('[PurchaseTracker] Skipped (non-Kintsugi or unpaid)')
           sessionStorage.setItem(storageKey, 'skipped')
+        } else if (result.success) {
+          // Confirmed paid Kintsugi purchase — fire vanilla pixel with real net value for dedup
+          if (window.fbq) {
+            window.fbq('track', 'Purchase', {
+              value: result.value,
+              currency: result.currency,
+              content_name: 'Kintsugi Class',
+              content_type: 'product',
+            }, { eventID: sessionId })
+            console.log(`[PurchaseTracker] Pixel + CAPI fired (value: ${result.value} ${result.currency})`)
+          }
+          sessionStorage.setItem(storageKey, 'true')
         } else {
           console.error('[PurchaseTracker] CAPI failed:', result.error)
-          // Still mark as tracked - vanilla pixel already fired
+          // CAPI failed but was validated as paid Kintsugi — fire pixel as fallback
+          // Only fire if server returned value/currency (won't exist for 400/404/500 errors)
+          if (window.fbq && result.value != null && result.currency) {
+            window.fbq('track', 'Purchase', {
+              value: result.value,
+              currency: result.currency,
+              content_name: 'Kintsugi Class',
+              content_type: 'product',
+            }, { eventID: sessionId })
+            console.log(`[PurchaseTracker] Pixel fired as fallback (value: ${result.value} ${result.currency})`)
+          }
           sessionStorage.setItem(storageKey, 'pixel-only')
         }
       } catch (error) {
-        console.error('[PurchaseTracker] CAPI error:', error)
-        // Still mark as tracked - vanilla pixel already fired
-        sessionStorage.setItem(storageKey, 'pixel-only')
+        console.error('[PurchaseTracker] Error:', error)
+        // Network error — can't validate, so DON'T fire pixel to avoid false attribution
+        // The CAPI from webhook will still catch it server-side
+        sessionStorage.setItem(storageKey, 'error')
       }
     }
 
-    sendCAPIEvent()
+    trackPurchase()
   }, [sessionId])
 
   // This component doesn't render anything

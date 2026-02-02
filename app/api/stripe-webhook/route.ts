@@ -11,15 +11,21 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const PAYMENT_LINK = 'https://buy.stripe.com/dRmeVe8CuaHN8chfHQ43S00';
 
-// Kintsugi price IDs - only handle these
-const KINTSUGI_PRICE_IDS = [
-  'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
-  'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default OLD (USD only)
-  'price_1SsCENIWj0la69bvJ8MwjsyJ', // Kintsugi NYS ($47 USD / €47 EUR)
-  'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi NYS OLD (USD only) - keep for past purchases
-  'price_1SVCYvIWj0la69bvDzMTfYa4', // Kintsugi old ($47) - discontinued
-  'price_1SVCbDIWj0la69bvGLruK7Et', // Kintsugi old ($97) - discontinued
+// Kintsugi payment link IDs — add new plink IDs here when creating new payment links
+const KINTSUGI_PAYMENT_LINKS = [
+  'plink_1SuYWWIWj0la69bva8rE6P14', // Kintsugi main ($47)
+  'plink_1SuYVGIWj0la69bvHSutIaZW', // Kintsugi NYS ($47)
+  'plink_1Sn3Q7IWj0la69bvgsrTURp5', // Kintsugi NYS old ($49)
+  'plink_1SRID9IWj0la69bvZLLLn0hT', // Kintsugi old main ($47)
+  'plink_1SgmRrIWj0la69bvsOFfPrb4', // Kintsugi old (inactive, keep for past refunds)
+  'plink_1SVCaTIWj0la69bvyKXz9lbz', // Kintsugi old (inactive, keep for past refunds)
 ];
+
+// Helper to check if a checkout session is a Kintsugi purchase
+function isKintsugiSession(session: Stripe.Checkout.Session): boolean {
+  const paymentLinkId = session.payment_link as string | null;
+  return !!paymentLinkId && KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId);
+}
 
 /**
  * Check if customer already completed a purchase recently
@@ -75,20 +81,13 @@ export async function POST(req: NextRequest) {
 
     // Check if this is for a Kintsugi product
     try {
-      const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
-        expand: ['line_items'],
-      });
-      const lineItems = fullSession.line_items?.data || [];
-      const isKintsugiProduct = lineItems.some(item =>
-        item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-      );
-
-      if (!isKintsugiProduct) {
-        console.log(`Ignoring non-Kintsugi async payment failure (no matching price IDs)`);
+      const fullSession = await stripe.checkout.sessions.retrieve(session.id);
+      if (!isKintsugiSession(fullSession)) {
+        console.log(`Ignoring non-Kintsugi async payment failure (payment_link: ${fullSession.payment_link})`);
         return NextResponse.json({ received: true });
       }
     } catch (err) {
-      console.error('Error checking price IDs for async payment failure:', err);
+      console.error('Error checking payment link for async payment failure:', err);
       // Continue anyway - better to send recovery email than miss a customer
     }
 
@@ -160,23 +159,15 @@ export async function POST(req: NextRequest) {
       const sessions = await stripe.checkout.sessions.list({
         payment_intent: paymentIntent.id,
         limit: 1,
-        expand: ['data.line_items'],
       });
 
       const session = sessions.data[0];
-      if (session) {
-        const lineItems = session.line_items?.data || [];
-        const isKintsugiProduct = lineItems.some(item =>
-          item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-        );
-
-        if (!isKintsugiProduct) {
-          console.log(`Ignoring non-Kintsugi failed payment (no matching price IDs)`);
-          return NextResponse.json({ received: true });
-        }
+      if (session && !isKintsugiSession(session)) {
+        console.log(`Ignoring non-Kintsugi failed payment (payment_link: ${session.payment_link})`);
+        return NextResponse.json({ received: true });
       }
     } catch (err) {
-      console.error('Error checking price IDs for failed payment:', err);
+      console.error('Error checking payment link for failed payment:', err);
       // Continue anyway - better to send recovery email than miss a customer
     }
 
@@ -234,20 +225,13 @@ export async function POST(req: NextRequest) {
 
     // Check if this is for a Kintsugi product
     try {
-      const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
-        expand: ['line_items'],
-      });
-      const lineItems = fullSession.line_items?.data || [];
-      const isKintsugiProduct = lineItems.some(item =>
-        item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-      );
-
-      if (!isKintsugiProduct) {
-        console.log(`Ignoring non-Kintsugi expired checkout (no matching price IDs)`);
+      const fullSession = await stripe.checkout.sessions.retrieve(session.id);
+      if (!isKintsugiSession(fullSession)) {
+        console.log(`Ignoring non-Kintsugi expired checkout (payment_link: ${fullSession.payment_link})`);
         return NextResponse.json({ received: true });
       }
     } catch (err) {
-      console.error('Error checking price IDs for expired checkout:', err);
+      console.error('Error checking payment link for expired checkout:', err);
       // Continue anyway - better to send recovery email than miss a customer
     }
 
@@ -304,19 +288,9 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
 
-    // Expand line items to check price IDs
-    const fullSession = await stripe.checkout.sessions.retrieve(session.id, {
-      expand: ['line_items'],
-    });
-
-    // Only handle Kintsugi purchases (check if any line item has a Kintsugi price)
-    const lineItems = fullSession.line_items?.data || [];
-    const isKintsugiPurchase = lineItems.some(item =>
-      item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-    );
-
-    if (!isKintsugiPurchase) {
-      console.log(`Ignoring non-Kintsugi purchase (no matching price IDs)`);
+    // Only handle Kintsugi purchases (check payment link ID)
+    if (!isKintsugiSession(session)) {
+      console.log(`Ignoring non-Kintsugi purchase (payment_link: ${session.payment_link})`);
       return NextResponse.json({ received: true });
     }
 
@@ -426,7 +400,6 @@ export async function POST(req: NextRequest) {
         const sessions = await stripe.checkout.sessions.list({
           payment_intent: paymentIntentId,
           limit: 1,
-          expand: ['data.line_items'],
         });
 
         const session = sessions.data[0];
@@ -435,17 +408,12 @@ export async function POST(req: NextRequest) {
           return NextResponse.json({ received: true });
         }
 
-        const lineItems = session.line_items?.data || [];
-        const isKintsugiPurchase = lineItems.some(item =>
-          item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-        );
-
-        if (!isKintsugiPurchase) {
-          console.log(`Ignoring non-Kintsugi ${isDispute ? 'dispute' : 'refund'} (no matching price IDs)`);
+        if (!isKintsugiSession(session)) {
+          console.log(`Ignoring non-Kintsugi ${isDispute ? 'dispute' : 'refund'} (payment_link: ${session.payment_link})`);
           return NextResponse.json({ received: true });
         }
       } catch (err) {
-        console.error('Error checking price IDs:', err);
+        console.error('Error checking payment link:', err);
         return NextResponse.json({ received: true });
       }
     }

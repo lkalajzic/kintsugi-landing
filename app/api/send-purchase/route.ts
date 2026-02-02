@@ -33,32 +33,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Session not found' }, { status: 404 });
     }
 
-    // Check if this is a Kintsugi purchase (safety check)
-    // Supports both Payment Links and Checkout Sessions with price IDs
+    // Validate this is a Kintsugi purchase via payment link ID
     const paymentLinkId = session.payment_link as string | null;
     const KINTSUGI_PAYMENT_LINKS = [
-      'plink_1SgmRrIWj0la69bvsOFfPrb4',
-      'plink_1SRID9IWj0la69bvZLLLn0hT',
-      'plink_1Sn3Q7IWj0la69bvgsrTURp5', // New Year Sale
-    ];
-    const KINTSUGI_PRICE_IDS = [
-      'price_1SsCFMIWj0la69bvd1QSZSna', // Kintsugi default ($47 USD / €47 EUR)
-      'price_1SRIBMIWj0la69bvC5K0xZes', // Kintsugi default OLD (USD only)
-      'price_1SsCENIWj0la69bvJ8MwjsyJ', // Kintsugi NYS ($47 USD / €47 EUR)
-      'price_1Sn3OMIWj0la69bvHWo1KO4T', // Kintsugi NYS OLD (USD only) - keep for past purchases
+      'plink_1SuYWWIWj0la69bva8rE6P14', // Kintsugi main ($47)
+      'plink_1SuYVGIWj0la69bvHSutIaZW', // Kintsugi NYS ($47)
+      'plink_1Sn3Q7IWj0la69bvgsrTURp5', // Kintsugi NYS old ($49)
+      'plink_1SRID9IWj0la69bvZLLLn0hT', // Kintsugi old main ($47)
     ];
 
-    // Check if purchase is via Payment Link
-    const isKintsugiPaymentLink = paymentLinkId && KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId);
+    if (!paymentLinkId || !KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId)) {
+      console.log(`[send-purchase] Ignoring non-Kintsugi purchase (payment_link: ${paymentLinkId})`);
+      return NextResponse.json({ success: true, skipped: true });
+    }
 
-    // Check if purchase is via Checkout Session with our price IDs
-    const lineItems = session.line_items?.data || [];
-    const isKintsugiPrice = lineItems.some(item =>
-      item.price?.id && KINTSUGI_PRICE_IDS.includes(item.price.id)
-    );
-
-    if (!isKintsugiPaymentLink && !isKintsugiPrice) {
-      console.log(`[send-purchase] Ignoring non-Kintsugi purchase (payment_link: ${paymentLinkId}, prices: ${lineItems.map(i => i.price?.id).join(',')})`);
+    // Only fire for actually paid sessions (prevents false Purchase events from failed payments)
+    if (session.payment_status !== 'paid') {
+      console.log(`[send-purchase] Ignoring unpaid session (payment_status: ${session.payment_status}, status: ${session.status})`);
       return NextResponse.json({ success: true, skipped: true });
     }
 
@@ -141,7 +132,7 @@ export async function POST(req: NextRequest) {
       success: result.success,
       eventId,
       value: netValue,
-      currency,
+      currency: currency.toUpperCase(),
       _timing: { total: totalTime, stripeSession: stripeSessionTime, stripeFees: stripeFeesTime, capi: capiTime },
     });
   } catch (error) {
