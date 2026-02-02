@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 declare global {
   interface Window {
@@ -35,6 +35,29 @@ export default function PaymentLinkButton({
   className,
 }: PaymentLinkButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
+
+  // Reset loader when user navigates back to the page (e.g. browser back from Stripe)
+  useEffect(() => {
+    const resetLoader = () => {
+      if (document.visibilityState === 'visible') {
+        setIsLoading(false);
+      }
+    };
+
+    const resetLoaderOnPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        setIsLoading(false);
+      }
+    };
+
+    document.addEventListener('visibilitychange', resetLoader);
+    window.addEventListener('pageshow', resetLoaderOnPageShow);
+
+    return () => {
+      document.removeEventListener('visibilitychange', resetLoader);
+      window.removeEventListener('pageshow', resetLoaderOnPageShow);
+    };
+  }, []);
 
   const handleClick = () => {
     setIsLoading(true);
