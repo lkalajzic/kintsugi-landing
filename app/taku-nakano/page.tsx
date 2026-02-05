@@ -62,7 +62,7 @@ export default function Home() {
           <div className="mt-12 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="/kintsugiheronew.jpg"
+                src="/kintsugiheronew.webp"
                 alt="Master Taku Nakano with a 200-year-old Georgian Kvevri vessel"
                 width={1200}
                 height={800}
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="/broken3.jpg"
+              src="/broken3.webp"
               alt="Broken ceramic pieces"
               width={800}
               height={800}
@@ -190,7 +190,7 @@ export default function Home() {
           {/* Mobile: Image first */}
           <div className="md:hidden mb-8">
             <Image
-              src="/taku.jpg"
+              src="/taku.webp"
               alt="Master Taku Nakano"
               width={1200}
               height={800}
@@ -202,7 +202,7 @@ export default function Home() {
             {/* Desktop: Taku Portrait */}
             <div className="hidden md:block">
               <Image
-                src="/taku.jpg"
+                src="/taku.webp"
                 alt="Master Taku Nakano"
                 width={1200}
                 height={800}
@@ -480,42 +480,42 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <Image
-              src="/goldwhitebowlnice.jpg"
+              src="/goldwhitebowlnice.webp"
               alt="Kintsugi repaired white bowl with gold"
               width={400}
               height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <Image
-              src="/goldteardropcup.jpeg"
+              src="/goldteardropcup.webp"
               alt="Kintsugi repaired teardrop cup"
               width={400}
               height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <Image
-              src="/glass.jpeg"
+              src="/glass.webp"
               alt="Kintsugi repaired glass"
               width={400}
               height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <Image
-              src="/goldblueplate.jpg"
+              src="/goldblueplate.webp"
               alt="Kintsugi repaired blue plate with gold"
               width={400}
               height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <Image
-              src="/platebrown.jpg"
+              src="/platebrown.webp"
               alt="Kintsugi repaired brown plate"
               width={400}
               height={400}
               className="w-full h-auto rounded-lg shadow-lg"
             />
             <Image
-              src="/moredecorativekintsugimakiewhitebowl.jpg"
+              src="/moredecorativekintsugimakiewhitebowl.webp"
               alt="Decorative kintsugi makie white bowl"
               width={400}
               height={400}
@@ -535,7 +535,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center mb-4">
               <Image
-                src="/googlereviewsscreenshot.png"
+                src="/googlereviewsscreenshot.webp"
                 alt="Google Maps reviews - 4.8 stars from 126 reviews"
                 width={300}
                 height={100}
@@ -589,7 +589,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/emperor_award.jpg"
+                src="/emperor_award.webp"
                 alt="Taku Nakano receiving the Medal with Blue Ribbon from the Emperor of Japan"
                 width={600}
                 height={400}
@@ -674,7 +674,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/kitphoto.png"
+                src="/kitphoto.webp"
                 alt="Kintsugi starter kit contents"
                 width={600}
                 height={600}

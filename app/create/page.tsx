@@ -47,7 +47,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
 
       <div className="flex justify-center">
         <Image
-          src="/guarantee1.png"
+          src="/guarantee1.webp"
           alt="90 Days 100% Money Back Guarantee"
           width={170}
           height={170}
@@ -84,7 +84,7 @@ export default function CreatePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/0_ChatGPT Image Jan 10, 2026, 12_54_28 AM copy.jpg"
+                src="/kintsugi_imgs/0_ChatGPT Image Jan 10, 2026, 12_54_28 AM copy.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -94,7 +94,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/1ChatGPT Image Jan 10, 2026, 12_57_19 AM copy 2.jpg"
+                src="/kintsugi_imgs/1ChatGPT Image Jan 10, 2026, 12_57_19 AM copy 2.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -103,7 +103,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/heart1 copy.png"
+                src="/kintsugi_imgs/heart1 copy.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -112,7 +112,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/plate ancient copy 2.jpg"
+                src="/kintsugi_imgs/plate ancient copy 2.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -121,7 +121,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/321d4aba-1e94-4ae6-a353-8029559efddf copy.png"
+                src="/kintsugi_imgs/321d4aba-1e94-4ae6-a353-8029559efddf copy.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -130,7 +130,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/image copy.jpg"
+                src="/kintsugi_imgs/image copy.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -148,7 +148,7 @@ export default function CreatePage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/ruggedbetter1 copy.png"
+                src="/kintsugi_imgs/ruggedbetter1 copy.webp"
                 alt="Kintsugi example"
                 width={400}
                 height={400}
@@ -184,7 +184,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/1the history of kintsugi.jpg"
+                    src="/1the history of kintsugi.webp"
                     alt="Module 1: History of Kintsugi"
                     width={400}
                     height={225}
@@ -214,7 +214,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/2materials.jpg"
+                    src="/2materials.webp"
                     alt="Module 2: Materials"
                     width={400}
                     height={225}
@@ -244,7 +244,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/3chips and hairlines.jpg"
+                    src="/3chips and hairlines.webp"
                     alt="Module 3: Chips & Hairlines"
                     width={400}
                     height={225}
@@ -275,7 +275,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/4clean breaks.jpg"
+                    src="/4clean breaks.webp"
                     alt="Module 4: Clean Breaks"
                     width={400}
                     height={225}
@@ -306,7 +306,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/5missing piecess.jpg"
+                    src="/5missing piecess.webp"
                     alt="Module 5: Missing Pieces"
                     width={400}
                     height={225}
@@ -336,7 +336,7 @@ export default function CreatePage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/6troubleshooting.jpg"
+                    src="/6troubleshooting.webp"
                     alt="Module 6: Troubleshooting"
                     width={400}
                     height={225}
@@ -366,7 +366,7 @@ export default function CreatePage() {
           {/* Video Player Screenshot */}
           <div className="mt-16 rounded-lg overflow-hidden shadow-xl max-w-3xl mx-auto">
             <Image
-              src="/videoplayerdemoscreenshot.png"
+              src="/videoplayerdemoscreenshot.webp"
               alt="Kintsugi Class video player"
               width={1200}
               height={675}
@@ -402,7 +402,7 @@ export default function CreatePage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.png"
+                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -411,7 +411,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/i took a small class and it was wonderful.png"
+                src="/kintsugisocialproof/i took a small class and it was wonderful.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -420,7 +420,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/lovely philosophy and object.png"
+                src="/kintsugisocialproof/lovely philosophy and object.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -429,7 +429,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/brilliant idea.png"
+                src="/kintsugisocialproof/brilliant idea.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -438,7 +438,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.png"
+                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -447,7 +447,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/like the usa breakage .png"
+                src="/kintsugisocialproof/like the usa breakage .webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -856,7 +856,7 @@ export default function CreatePage() {
           <div className="flex flex-col md:flex-row gap-8 items-center mb-10">
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-xl flex-shrink-0">
               <Image
-                src="/ruggedbetter1.png"
+                src="/ruggedbetter1.webp"
                 alt="Yuki Tanaka holding a kintsugi bowl"
                 width={224}
                 height={224}
@@ -1171,7 +1171,7 @@ export default function CreatePage() {
           {/* Decision Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/goldwhitebowlnice.jpg"
+              src="/goldwhitebowlnice.webp"
               alt="Beautiful kintsugi repaired bowl with gold seams"
               width={800}
               height={600}
@@ -1192,7 +1192,7 @@ export default function CreatePage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.png"
+                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1201,7 +1201,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/i took a small class and it was wonderful.png"
+                src="/kintsugisocialproof/i took a small class and it was wonderful.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1210,7 +1210,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/lovely philosophy and object.png"
+                src="/kintsugisocialproof/lovely philosophy and object.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1219,7 +1219,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/brilliant idea.png"
+                src="/kintsugisocialproof/brilliant idea.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1228,7 +1228,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.png"
+                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1237,7 +1237,7 @@ export default function CreatePage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/like the usa breakage .png"
+                src="/kintsugisocialproof/like the usa breakage .webp"
                 alt="Customer review"
                 width={600}
                 height={400}

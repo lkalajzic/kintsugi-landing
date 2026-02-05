@@ -90,7 +90,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
       {/* Money Back Guarantee Badge */}
       <div className="flex justify-center">
         <Image
-          src="/guarantee1.png"
+          src="/guarantee1.webp"
           alt="90 Days 100% Money Back Guarantee"
           width={170}
           height={170}
@@ -127,7 +127,7 @@ export default function NewYearsSaleV2() {
           {/* Hero Image - Smaller on desktop */}
           <div className="rounded-lg overflow-hidden shadow-2xl max-w-xs md:max-w-sm mx-auto">
             <Image
-              src="/brokenteapot.png"
+              src="/brokenteapot.webp"
               alt="Broken ceramic pieces waiting to be transformed"
               width={400}
               height={500}
@@ -209,7 +209,7 @@ export default function NewYearsSaleV2() {
           <div className="flex flex-col md:flex-row gap-8 items-center mb-10">
             <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-xl flex-shrink-0">
               <Image
-                src="/ruggedbetter1.png"
+                src="/ruggedbetter1.webp"
                 alt="Yuki Tanaka holding a kintsugi bowl"
                 width={224}
                 height={224}
@@ -335,7 +335,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/1the history of kintsugi.jpg"
+                    src="/1the history of kintsugi.webp"
                     alt="Module 1: History of Kintsugi"
                     width={400}
                     height={225}
@@ -374,7 +374,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/2materials.jpg"
+                    src="/2materials.webp"
                     alt="Module 2: Materials"
                     width={400}
                     height={225}
@@ -411,7 +411,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/3chips and hairlines.jpg"
+                    src="/3chips and hairlines.webp"
                     alt="Module 3: Chips & Hairlines"
                     width={400}
                     height={225}
@@ -445,7 +445,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/4clean breaks.jpg"
+                    src="/4clean breaks.webp"
                     alt="Module 4: Clean Breaks"
                     width={400}
                     height={225}
@@ -478,7 +478,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/5missing piecess.jpg"
+                    src="/5missing piecess.webp"
                     alt="Module 5: Missing Pieces"
                     width={400}
                     height={225}
@@ -512,7 +512,7 @@ export default function NewYearsSaleV2() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/6troubleshooting.jpg"
+                    src="/6troubleshooting.webp"
                     alt="Module 6: Troubleshooting"
                     width={400}
                     height={225}
@@ -1015,7 +1015,7 @@ export default function NewYearsSaleV2() {
           {/* Decision Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/goldwhitebowlnice.jpg"
+              src="/goldwhitebowlnice.webp"
               alt="Beautiful kintsugi repaired bowl with gold seams"
               width={800}
               height={600}

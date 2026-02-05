@@ -31,7 +31,7 @@ export default function Home() {
           {/* Hero Image */}
           <div className="mt-12 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto">
             <Image
-              src="/kintsugihero.jpeg"
+              src="/kintsugihero.webp"
               alt="White ceramic bowl repaired with beautiful gold kintsugi seams"
               width={1200}
               height={900}
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="/broken3.jpg"
+              src="/broken3.webp"
               alt="Broken ceramic pieces"
               width={800}
               height={800}

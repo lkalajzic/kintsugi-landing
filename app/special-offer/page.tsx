@@ -106,7 +106,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
       {/* Money Back Guarantee Badge */}
       <div className="flex justify-center">
         <Image
-          src="/guarantee1.png"
+          src="/guarantee1.webp"
           alt="90 Days 100% Money Back Guarantee"
           width={170}
           height={170}
@@ -148,7 +148,7 @@ export default function SpecialOfferPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/0_ChatGPT Image Jan 10, 2026, 12_54_28 AM copy.jpg"
+                src="/kintsugi_imgs/0_ChatGPT Image Jan 10, 2026, 12_54_28 AM copy.webp"
                 alt="Kintsugi vase with golden seams"
                 width={400}
                 height={400}
@@ -159,7 +159,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/1ChatGPT Image Jan 10, 2026, 12_57_19 AM copy 2.jpg"
+                src="/kintsugi_imgs/1ChatGPT Image Jan 10, 2026, 12_57_19 AM copy 2.webp"
                 alt="Kintsugi bowl with gold repair"
                 width={400}
                 height={400}
@@ -170,7 +170,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/heart1 copy.png"
+                src="/kintsugi_imgs/heart1 copy.webp"
                 alt="White heart with gold kintsugi"
                 width={400}
                 height={400}
@@ -181,7 +181,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/plate ancient copy 2.jpg"
+                src="/kintsugi_imgs/plate ancient copy 2.webp"
                 alt="Ancient plate with gold kintsugi repair"
                 width={400}
                 height={400}
@@ -192,7 +192,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/blackheart.png"
+                src="/blackheart.webp"
                 alt="Black heart with gold kintsugi"
                 width={400}
                 height={400}
@@ -203,7 +203,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugi_imgs/image copy.jpg"
+                src="/kintsugi_imgs/image copy.webp"
                 alt="Kintsugi piece with gold repair"
                 width={400}
                 height={400}
@@ -214,7 +214,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/goldteardropcup.jpeg"
+                src="/goldteardropcup.webp"
                 alt="Gold kintsugi teardrop cup"
                 width={400}
                 height={400}
@@ -224,7 +224,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/goldblueplate.jpg"
+                src="/goldblueplate.webp"
                 alt="Blue plate with gold kintsugi repair"
                 width={400}
                 height={400}
@@ -263,7 +263,7 @@ export default function SpecialOfferPage() {
           <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-xl flex-shrink-0">
               <Image
-                src="/yukiimage.jpg"
+                src="/yukiimage.webp"
                 alt="Yuki Tanaka, kintsugi instructor"
                 width={192}
                 height={192}
@@ -292,7 +292,7 @@ export default function SpecialOfferPage() {
               <div className="bg-[#1a1a1a] rounded-t-lg p-[3%] pb-0">
                 <div className="rounded-t-sm overflow-hidden">
                   <Image
-                    src="/screenshot desktop.png"
+                    src="/screenshot desktop.webp"
                     alt="Kintsugi Class course platform"
                     width={1200}
                     height={750}
@@ -312,7 +312,7 @@ export default function SpecialOfferPage() {
                 <div className="bg-[#1a1a1a] rounded-[8px] md:rounded-[12px] p-[4%] shadow-2xl -rotate-3">
                   <div className="rounded-[4px] md:rounded-[6px] overflow-hidden">
                     <Image
-                      src="/videoplayerdemoscreenshot.png"
+                      src="/videoplayerdemoscreenshot.webp"
                       alt="Kintsugi Class video player on phone"
                       width={400}
                       height={225}
@@ -329,7 +329,7 @@ export default function SpecialOfferPage() {
                   <div className="w-[35%] h-0.5 md:h-1 bg-[#2a2a2a] rounded-full mx-auto mb-[3%]" />
                   <div className="rounded-[4px] md:rounded-[6px] overflow-hidden">
                     <Image
-                      src="/screenshot mobile.png"
+                      src="/screenshot mobile.webp"
                       alt="Kintsugi Class on mobile"
                       width={400}
                       height={800}
@@ -345,7 +345,7 @@ export default function SpecialOfferPage() {
                 <div className="bg-[#1a1a1a] rounded-[10px] md:rounded-[14px] p-[4%] shadow-2xl rotate-2">
                   <div className="rounded-[4px] md:rounded-[6px] overflow-hidden">
                     <Image
-                      src="/5missing piecess.jpg"
+                      src="/5missing piecess.webp"
                       alt="Kintsugi video lesson on tablet"
                       width={400}
                       height={225}
@@ -439,7 +439,7 @@ export default function SpecialOfferPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.png"
+                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -449,7 +449,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/lovely philosophy and object.png"
+                src="/kintsugisocialproof/lovely philosophy and object.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -459,7 +459,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/brilliant idea.png"
+                src="/kintsugisocialproof/brilliant idea.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -469,7 +469,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.png"
+                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -947,7 +947,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/1the history of kintsugi.jpg"
+                    src="/1the history of kintsugi.webp"
                     loading="lazy"
                     alt="Module 1: History of Kintsugi"
                     width={400}
@@ -988,7 +988,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/2materials.jpg"
+                    src="/2materials.webp"
                     loading="lazy"
                     alt="Module 2: Materials"
                     width={400}
@@ -1026,7 +1026,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/3chips and hairlines.jpg"
+                    src="/3chips and hairlines.webp"
                     loading="lazy"
                     alt="Module 3: Chips & Hairlines"
                     width={400}
@@ -1061,7 +1061,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/4clean breaks.jpg"
+                    src="/4clean breaks.webp"
                     loading="lazy"
                     alt="Module 4: Clean Breaks"
                     width={400}
@@ -1095,7 +1095,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/5missing piecess.jpg"
+                    src="/5missing piecess.webp"
                     loading="lazy"
                     alt="Module 5: Missing Pieces"
                     width={400}
@@ -1130,7 +1130,7 @@ export default function SpecialOfferPage() {
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="md:w-2/5">
                   <Image
-                    src="/6troubleshooting.jpg"
+                    src="/6troubleshooting.webp"
                     loading="lazy"
                     alt="Module 6: Troubleshooting"
                     width={400}
@@ -1201,7 +1201,7 @@ export default function SpecialOfferPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.png"
+                src="/kintsugisocialproof/the bonus add ons are great jokeeta johnson.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1211,7 +1211,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/lovely philosophy and object.png"
+                src="/kintsugisocialproof/lovely philosophy and object.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1221,7 +1221,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/brilliant idea.png"
+                src="/kintsugisocialproof/brilliant idea.webp"
                 alt="Customer review"
                 width={600}
                 height={400}
@@ -1231,7 +1231,7 @@ export default function SpecialOfferPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.png"
+                src="/kintsugisocialproof/there is a crack in everything that is where the light gets in.webp"
                 alt="Customer review"
                 width={600}
                 height={400}

@@ -171,7 +171,7 @@ export default function ThankYouPage() {
         {/* Hero Image */}
         <div className="rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto mb-10 aspect-video">
           <Image
-            src="/sashiko-upsell/p2-shippo.jpg"
+            src="/sashiko-upsell/p2-shippo.webp"
             alt="Shippo pattern sashiko"
             width={800}
             height={450}
@@ -219,55 +219,55 @@ export default function ThankYouPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/1introhistory.jpg" alt="The Story of Sashiko" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/1introhistory.webp" alt="The Story of Sashiko" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">1. The Story of Sashiko</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/2materials.jpg" alt="Materials & Setup" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/2materials.webp" alt="Materials & Setup" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">2. Materials & Setup</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/3the sashiko stitch.jpg" alt="The One Stitch" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/3the sashiko stitch.webp" alt="The One Stitch" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">3. The One Stitch</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/p1_yamagata.jpg" alt="Yamagata" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/p1_yamagata.webp" alt="Yamagata" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">4. Yamagata (山形)</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/p2-shippo.jpg" alt="Shippo" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/p2-shippo.webp" alt="Shippo" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">5. Shippo (七宝)</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/p3_seigaiha.jpg" alt="Seigaiha" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/p3_seigaiha.webp" alt="Seigaiha" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">6. Seigaiha (青海波)</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/p4_asanoha.jpg" alt="Asanoha" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/p4_asanoha.webp" alt="Asanoha" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">7. Asanoha (麻の葉)</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/p5_non-continuous patterns.jpg" alt="Non-Continuous Patterns" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/p5_non-continuous patterns.webp" alt="Non-Continuous Patterns" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">8. Non-Continuous Patterns</p>
             </div>
             <div className="text-center">
               <div className="rounded-lg overflow-hidden shadow-md mb-2 aspect-video">
-                <Image src="/sashiko-upsell/mending.jpg" alt="Mending" width={300} height={169} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/mending.webp" alt="Mending" width={300} height={169} className="w-full h-full object-cover" />
               </div>
               <p className="text-base md:text-lg font-medium">9. Mending & Long-Term Care</p>
             </div>
@@ -287,18 +287,18 @@ export default function ThankYouPage() {
           <div className="space-y-4 max-w-3xl mx-auto mb-8">
             <div className="grid grid-cols-2 gap-1">
               <div className="aspect-[400/566] rounded-l shadow-md overflow-hidden">
-                <Image src="/sashiko-upsell/pdf-spread-1-page-9.png" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/pdf-spread-1-page-9.webp" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
               </div>
               <div className="aspect-[400/566] rounded-r shadow-md overflow-hidden">
-                <Image src="/sashiko-upsell/pdf-spread-1-page-10.png" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/pdf-spread-1-page-10.webp" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="grid grid-cols-2 gap-1">
               <div className="aspect-[400/566] rounded-l shadow-md overflow-hidden">
-                <Image src="/sashiko-upsell/pdf-spread-2-page-15.png" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/pdf-spread-2-page-15.webp" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
               </div>
               <div className="aspect-[400/566] rounded-r shadow-md overflow-hidden">
-                <Image src="/sashiko-upsell/pdf-spread-2-page-16.png" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
+                <Image src="/sashiko-upsell/pdf-spread-2-page-16.webp" alt="Pattern library" width={400} height={566} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -369,7 +369,7 @@ export default function ThankYouPage() {
         <div className="flex justify-center mb-10">
           <div className="w-32 h-32">
             <Image
-              src="/guarantee1.png"
+              src="/guarantee1.webp"
               alt="90 Days 100% Money Back Guarantee"
               width={140}
               height={140}
@@ -490,7 +490,7 @@ export default function ThankYouPage() {
           <div className="flex justify-center">
             <div className="w-28 h-28">
               <Image
-                src="/guarantee1.png"
+                src="/guarantee1.webp"
                 alt="90 Days 100% Money Back Guarantee"
                 width={120}
                 height={120}

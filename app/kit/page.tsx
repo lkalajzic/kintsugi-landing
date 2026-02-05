@@ -86,7 +86,7 @@ export default function KitUpsell() {
           <div className="grid md:grid-cols-2 gap-8 mb-16 items-start">
             <div className="bg-warmGray/30 rounded-lg overflow-hidden aspect-[4/3] relative">
               <Image
-                src="/videoplaceholder.png"
+                src="/videoplaceholder.webp"
                 alt="Master Yuki's Video Lessons"
                 fill
                 className="object-cover object-bottom"
@@ -94,7 +94,7 @@ export default function KitUpsell() {
             </div>
             <div className="bg-warmGray/30 rounded-lg overflow-hidden aspect-[4/3] relative">
               <Image
-                src="/kitphoto.png"
+                src="/kitphoto.webp"
                 alt="Kintsugi Starter Kit"
                 fill
                 className="object-cover object-center"
