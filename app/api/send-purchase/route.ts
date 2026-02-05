@@ -40,6 +40,7 @@ export async function POST(req: NextRequest) {
       'plink_1SuYVGIWj0la69bvHSutIaZW', // Kintsugi NYS ($47)
       'plink_1Sn3Q7IWj0la69bvgsrTURp5', // Kintsugi NYS old ($49)
       'plink_1SRID9IWj0la69bvZLLLn0hT', // Kintsugi old main ($47)
+      'plink_1Sw3lYIWj0la69bvo1q7tZo9', // Sashiko upsell ($29.99)
     ];
 
     if (!paymentLinkId || !KINTSUGI_PAYMENT_LINKS.includes(paymentLinkId)) {
