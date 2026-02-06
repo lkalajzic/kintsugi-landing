@@ -331,7 +331,7 @@ export async function POST(req: NextRequest) {
       const result = await resend.emails.send({
         from: 'Kintsugi Class <support@kintsugiclass.com>',
         to: customerEmail,
-        subject: 'Your Kintsugi Course is Ready! 🎨',
+        subject: 'Your Kintsugi Course is Ready',
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <h1 style="color: #2c3e50; font-weight: 400; margin-bottom: 24px;">Welcome to Your Kintsugi Journey</h1>
