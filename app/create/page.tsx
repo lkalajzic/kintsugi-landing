@@ -380,7 +380,7 @@ export default function CreatePage() {
               <span className="text-3xl md:text-4xl">🎬</span> 8 HD Video Lessons
             </p>
             <p className="text-2xl md:text-3xl">
-              <span className="text-3xl md:text-4xl">💬</span> Captions
+              <span className="text-3xl md:text-4xl">💬</span> Subtitles in English, Spanish, Portuguese, German, Italian, French & Japanese
             </p>
             <p className="text-2xl md:text-3xl font-bold">
               <span className="text-3xl md:text-4xl">♾️</span> Lifetime Access (Forever!!)
@@ -770,6 +770,15 @@ export default function CreatePage() {
                 90-day money-back guarantee. Try the entire class. Do your first
                 repair. If you don&apos;t love it, email us within 90 days for a
                 full refund. No questions asked. No hoops.
+              </p>
+            </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg md:text-xl">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>
@@ -1348,6 +1357,15 @@ export default function CreatePage() {
                 90-day money-back guarantee. Try the entire class. Do your first
                 repair. If you don&apos;t love it, email us within 90 days for a
                 full refund. No questions asked. No hoops.
+              </p>
+            </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg md:text-xl">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>

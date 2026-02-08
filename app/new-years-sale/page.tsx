@@ -326,7 +326,7 @@ export default function NewYearsSaleV2() {
             What&apos;s Inside Kintsugi Class
           </h2>
           <p className="text-xl text-center text-charcoal/60 font-bold mb-16">
-            8 HD video lessons • Lifetime access • Complete beginner friendly
+            8 HD video lessons • Subtitles in English, Spanish, Portuguese, German, Italian, French & Japanese • Lifetime access • Complete beginner friendly
           </p>
 
           <div className="space-y-12">
@@ -1115,6 +1115,15 @@ export default function NewYearsSaleV2() {
                 90-day money-back guarantee. Try the entire class. Do your first
                 repair. If you don&apos;t love it, email us within 90 days for a
                 full refund. No questions asked. No hoops.
+              </p>
+            </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg md:text-xl">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>

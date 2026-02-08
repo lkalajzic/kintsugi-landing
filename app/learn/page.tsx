@@ -580,6 +580,7 @@ export default function Home() {
             <div className="space-y-1 text-charcoal/70">
               <p>5 Core Modules - 2 hours ($297)</p>
               <p>6 Bonus Trainings ($182)</p>
+              <p>Subtitles in English, Spanish, Portuguese, German, Italian, French & Japanese</p>
               <p>Lifetime Access (Priceless)</p>
             </div>
             <p className="text-2xl font-medium pt-4">Total Value: $479</p>
@@ -717,6 +718,15 @@ export default function Home() {
                 absolutely love it, just email us within 90 days and we'll
                 refund you in full. No questions asked. No hoops to jump
                 through. We only want students who love learning this craft.
+              </p>
+            </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-charcoal/80">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>

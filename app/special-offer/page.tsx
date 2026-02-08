@@ -361,8 +361,8 @@ export default function SpecialOfferPage() {
           {/* What you get - conversational, objection-handling copy */}
           <div className="max-w-2xl mx-auto space-y-8 text-xl md:text-2xl leading-relaxed">
             <p>
-              🎉 You get <strong>8 HD video lessons</strong> that walk you
-              through every single step.
+              🎉 You get <strong>8 HD video lessons</strong> with subtitles in
+              English, Spanish, Portuguese, German, Italian, French & Japanese subtitles that walk you through every single step.
             </p>
 
             <p>
@@ -820,6 +820,15 @@ export default function SpecialOfferPage() {
                 full refund. No questions asked. No hoops.
               </p>
             </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg md:text-xl">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
+              </p>
+            </details>
           </div>
         </div>
       </section>
@@ -938,7 +947,7 @@ export default function SpecialOfferPage() {
             What&apos;s Inside Kintsugi Class
           </h2>
           <p className="text-xl text-center text-charcoal/60 font-bold mb-16">
-            8 HD video lessons • Lifetime access • Complete beginner friendly
+            8 HD video lessons • Subtitles in English, Spanish, Portuguese, German, Italian, French & Japanese • Lifetime access • Complete beginner friendly
           </p>
 
           <div className="space-y-12">
@@ -1322,6 +1331,15 @@ export default function SpecialOfferPage() {
                 90-day money-back guarantee. Try the entire class. Do your first
                 repair. If you don&apos;t love it, just send us one email for a
                 full refund. No questions asked. No hoops.
+              </p>
+            </details>
+
+            <details className="bg-cream rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg md:text-xl">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-lg md:text-xl text-charcoal/80 leading-relaxed">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>

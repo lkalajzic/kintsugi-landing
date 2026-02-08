@@ -781,6 +781,7 @@ export default function Home() {
                 <p>✓ Everything in Digital Guide</p>
                 <p>✓ 3+ hours HD video lessons with Taku</p>
                 <p>✓ Step-by-step demonstrations</p>
+                <p>✓ Subtitles in English, Spanish, Portuguese, German, Italian, French & Japanese</p>
                 <p>✓ Lifetime access</p>
               </div>
             </div>
@@ -984,6 +985,15 @@ export default function Home() {
                 A simple crack: 30-45 minutes of active work (plus overnight
                 drying). Complex pieces: 2-3 hours spread over a few days. The
                 meditative pace is part of the practice.
+              </p>
+            </details>
+
+            <details className="bg-warmGray/30 rounded-lg p-6">
+              <summary className="font-medium cursor-pointer text-lg">
+                Do you have subtitles or captions?
+              </summary>
+              <p className="mt-4 text-charcoal/80">
+                Yes! The audio is in English, and we have subtitles available in English, Spanish, Portuguese, German, Italian, French and Japanese. You can toggle them on and off in the video player.
               </p>
             </details>
           </div>
