@@ -56,7 +56,7 @@ export default function CountdownTimer() {
     <div className="pt-6 max-w-lg mx-auto">
       <div className="bg-gold/10 border-2 border-gold/30 rounded-xl p-6">
         <p className="text-sm font-medium text-charcoal mb-3 text-center">
-          Flash sale ends in:
+          Winter sale ends in:
         </p>
         <div className="grid grid-cols-3 gap-4">
           <div className="text-center">

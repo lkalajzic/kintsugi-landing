@@ -63,7 +63,7 @@ export default function StickyHeaderV2() {
       <div className="bg-[#1a1a1a] text-white py-4">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-6 sm:gap-10">
           <span className="text-base sm:text-lg md:text-xl font-medium tracking-wide">
-            <span className="text-gold">80% Off</span> · Winter Flash Sale Ends
+            <span className="text-gold">80% Off</span> · Winter Sale Ends
             Tonight
           </span>
 

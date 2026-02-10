@@ -546,7 +546,7 @@ export default function WinterFlashSale() {
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Winter Flash Sale · 80% Off
+            Winter Sale · 80% Off
           </h2>
           <FullCTASection />
         </div>
@@ -814,7 +814,7 @@ export default function WinterFlashSale() {
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Winter Flash Sale · 80% Off
+            Winter Sale · 80% Off
           </h2>
           <FullCTASection />
         </div>
@@ -921,7 +921,7 @@ export default function WinterFlashSale() {
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Winter Flash Sale · 80% Off
+            Winter Sale · 80% Off
           </h2>
           <FullCTASection />
         </div>
@@ -1030,7 +1030,7 @@ export default function WinterFlashSale() {
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Winter Flash Sale · 80% Off
+            Winter Sale · 80% Off
           </h2>
           <FullCTASection />
         </div>
