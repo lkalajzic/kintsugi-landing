@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
       }
     } catch (err) {
       console.error('Error checking payment link for async payment failure:', err);
-      // Continue anyway - better to send recovery email than miss a customer
+      return NextResponse.json({ received: true });
     }
 
     console.log(`❌ ASYNC PAYMENT FAILED: ${customerEmail}`);
@@ -162,13 +162,13 @@ export async function POST(req: NextRequest) {
       });
 
       const session = sessions.data[0];
-      if (session && !isKintsugiSession(session)) {
-        console.log(`Ignoring non-Kintsugi failed payment (payment_link: ${session.payment_link})`);
+      if (!session || !isKintsugiSession(session)) {
+        console.log(`Ignoring non-Kintsugi failed payment (payment_link: ${session?.payment_link})`);
         return NextResponse.json({ received: true });
       }
     } catch (err) {
       console.error('Error checking payment link for failed payment:', err);
-      // Continue anyway - better to send recovery email than miss a customer
+      return NextResponse.json({ received: true });
     }
 
     // Check if they already succeeded with a retry
@@ -232,7 +232,7 @@ export async function POST(req: NextRequest) {
       }
     } catch (err) {
       console.error('Error checking payment link for expired checkout:', err);
-      // Continue anyway - better to send recovery email than miss a customer
+      return NextResponse.json({ received: true });
     }
 
     console.log(`⏰ ABANDONED CHECKOUT: ${customerEmail}`);
