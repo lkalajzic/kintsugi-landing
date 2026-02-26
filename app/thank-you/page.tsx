@@ -330,24 +330,22 @@ export default function ThankYouPage() {
         {/* Timer + Pricing */}
         <div className="text-center mb-8">
           <p className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
-            One-time offer - Learn Sashiko For 80% Off - Valid only for
+            One-time offer - Learn Sashiko - Valid only for
           </p>
           <UpsellTimer large />
         </div>
 
         <div className="text-center mb-6">
-          <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $297</p>
-          <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$59</p>
-          <p className="text-xl text-charcoal/60">80% off - today only</p>
+          <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$47</p>
         </div>
 
         {/* CTA Button */}
         <div className="flex justify-center mb-6">
           <a
-            href="https://buy.stripe.com/8x27sMg4W17dbotbrA43S0h"
+            href="https://buy.stripe.com/00w8wQdWO0392RX2V443S0f"
             className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
           >
-            Add Sashiko Mastery — $59
+            Add Sashiko Mastery — $47
           </a>
         </div>
 
@@ -454,23 +452,21 @@ export default function ThankYouPage() {
         <div className="bg-warmGray/30 rounded-xl p-8 mb-10">
           <div className="text-center mb-6">
             <p className="text-2xl md:text-3xl font-medium text-charcoal mb-2">
-              One-time offer - Learn Sashiko For 80% Off - Valid only for
+              One-time offer - Learn Sashiko - Valid only for
             </p>
             <UpsellTimer large />
           </div>
 
           <div className="text-center mb-6">
-            <p className="text-3xl text-charcoal/60 line-through mb-1">Normally $297</p>
-            <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$59</p>
-            <p className="text-xl text-charcoal/60">80% off - today only</p>
+            <p className="text-6xl md:text-7xl font-serif text-[#22385c] mb-2">$47</p>
           </div>
 
           <div className="flex justify-center mb-6">
             <a
-              href="https://buy.stripe.com/8x27sMg4W17dbotbrA43S0h"
+              href="https://buy.stripe.com/00w8wQdWO0392RX2V443S0f"
               className="bg-[#22385c] hover:bg-[#22385c]/90 text-white text-xl md:text-2xl font-semibold px-10 py-5 rounded-xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] text-center"
             >
-              Add Sashiko Mastery — $59
+              Add Sashiko Mastery — $47
             </a>
           </div>
 
