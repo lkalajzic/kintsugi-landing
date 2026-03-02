@@ -350,6 +350,13 @@ export default function KitUpsell() {
             </div>
           </div>
 
+          <p className="text-center text-charcoal/60 mt-12">
+            Have a specific question? Reach out at{" "}
+            <a href="mailto:support@kintsugiclass.com" className="text-gold hover:underline">
+              support@kintsugiclass.com
+            </a>
+          </p>
+
           {/* Final CTA */}
           <div className="text-center mt-16">
             <button

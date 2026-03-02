@@ -1369,6 +1369,13 @@ export default function CreatePage() {
               </p>
             </details>
           </div>
+
+          <p className="text-center text-charcoal/60 mt-12">
+            Have a specific question? Reach out at{" "}
+            <a href="mailto:support@kintsugiclass.com" className="text-gold hover:underline">
+              support@kintsugiclass.com
+            </a>
+          </p>
         </div>
       </section>
 
