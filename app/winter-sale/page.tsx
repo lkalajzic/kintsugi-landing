@@ -18,7 +18,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           Normally $235
         </p>
         <p className="text-6xl md:text-7xl font-serif text-gold mb-2">$47</p>
-        <p className="text-lg text-charcoal/60">80% off • Today only</p>
+        <p className="text-lg text-charcoal/60">80% off • Now only</p>
       </div>
 
       {/* CTA Button - Using custom styled version */}

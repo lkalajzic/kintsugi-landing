@@ -18,7 +18,7 @@ function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
           Normally $235
         </p>
         <p className="text-6xl md:text-7xl font-serif text-gold mb-2">$47</p>
-        <p className="text-lg text-charcoal/60">80% off • Today only</p>
+        <p className="text-lg text-charcoal/60">80% off • Now only</p>
       </div>
 
       {/* Arrow */}
@@ -427,7 +427,7 @@ export default function SpecialOfferPage() {
       <section className="py-20 px-6 bg-warmGray/30">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Get Kintsugi Class Access For 80% Off - Today Only
+            Get Kintsugi Class Access For 80% Off. Now Only $47
           </h2>
           <FullCTASection />
         </div>
@@ -837,7 +837,7 @@ export default function SpecialOfferPage() {
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-center mb-12">
-            Get Kintsugi Class Access For 80% Off - Today Only
+            Get Kintsugi Class Access For 80% Off. Now Only $47
           </h2>
           <FullCTASection />
         </div>
@@ -1357,7 +1357,7 @@ export default function SpecialOfferPage() {
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-12">
-            Get Kintsugi Class Access For 80% Off - Today Only
+            Get Kintsugi Class Access For 80% Off. Now Only $47
           </h2>
           <FullCTASection showTimer={true} />
         </div>
