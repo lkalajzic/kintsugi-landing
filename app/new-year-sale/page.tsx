@@ -1,5 +1,4 @@
 import PaymentLinkButton from "../components/PaymentLinkButton";
-import CountdownTimerNewYear from "./CountdownTimerNewYear";
 import StickyHeaderNewYear from "./StickyHeaderNewYear";
 import Image from "next/image";
 
@@ -612,9 +611,6 @@ export default function NewYearSale() {
               email us within 90 days for a full refund. No questions asked.
             </p>
           </div>
-
-          <CountdownTimerNewYear />
-
           <div className="pt-4 space-y-1 text-sm text-charcoal/60">
             <p>💳 Secure Payment via Stripe</p>
           </div>

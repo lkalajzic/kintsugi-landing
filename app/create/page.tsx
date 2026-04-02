@@ -1,7 +1,6 @@
 "use client";
 
 import PaymentLinkButton from "../components/PaymentLinkButton";
-import CountdownTimer from "./CountdownTimer";
 import StickyHeaderV2 from "./StickyHeaderV2";
 import Image from "next/image";
 
@@ -9,8 +8,6 @@ import Image from "next/image";
 function FullCTASection({ showTimer = true }: { showTimer?: boolean }) {
   return (
     <div className="space-y-8">
-      {showTimer && <CountdownTimer />}
-
       <div className="text-center">
         <p className="text-3xl md:text-4xl text-charcoal/60 line-through mb-2">
           Normally $235

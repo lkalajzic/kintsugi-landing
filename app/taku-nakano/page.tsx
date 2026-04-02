@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import StickyHeader from "../components/StickyHeader";
-import CountdownTimer from "../components/CountdownTimer";
 import { BookOpen, Video, Package, Crown, Shield } from "lucide-react";
 
 export default function Home() {
@@ -852,9 +851,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <CountdownTimer />
-
           {/* CTA Button */}
           <div className="text-center mb-8">
             <button

@@ -1,6 +1,5 @@
 import StripeButton from "../components/StripeButton";
 import StripeButtonAlt from "../components/StripeButtonAlt";
-import CountdownTimer from "../components/CountdownTimer";
 import StickyHeader from "../components/StickyHeader";
 import Image from "next/image";
 
@@ -632,9 +631,6 @@ export default function Home() {
               email us within 30 days for a full refund. No questions asked.
             </p>
           </div>
-
-          <CountdownTimer />
-
           <div className="pt-4 space-y-1 text-sm text-charcoal/60">
             <p>💳 Secure Payment via Stripe</p>
           </div>
