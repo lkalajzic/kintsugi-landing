@@ -4,76 +4,76 @@ import Script from 'next/script'
 import { Cormorant_Garamond } from 'next/font/google'
 
 const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
+ subsets: ['latin'],
+ weight: ['300', '400', '500', '600', '700'],
+ variable: '--font-cormorant',
+ display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Learn Kintsugi - Japanese Golden Repair for Beginners',
-  description: 'Learn how to kintsugi with our beginner-friendly digital book. Master the ancient Japanese art of repairing broken pottery with gold. Step-by-step techniques from Kyoto tradition.',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
+ title: 'Learn Kintsugi - Japanese Golden Repair for Beginners',
+ description: 'Learn how to kintsugi with our beginner-friendly digital book. Master the ancient Japanese art of repairing broken pottery with gold. Step-by-step techniques from Kyoto tradition.',
+ icons: {
+ icon: '/favicon.ico',
+ apple: '/apple-touch-icon.png',
+ },
 }
 
 export default function RootLayout({
-  children,
+ children,
 }: {
-  children: React.ReactNode
+ children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={cormorant.variable}>
-      <head>
-        {/* DNS prefetch for Stripe - lightweight, stays cached for minutes */}
-        <link rel="dns-prefetch" href="https://js.stripe.com" />
-        <link rel="dns-prefetch" href="https://api.stripe.com" />
-        <link rel="dns-prefetch" href="https://checkout.stripe.com" />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+ return (
+ <html lang="en" className={cormorant.variable}>
+ <head>
+ {/* DNS prefetch for Stripe - lightweight, stays cached for minutes */}
+ <link rel="dns-prefetch" href="https://js.stripe.com" />
+ <link rel="dns-prefetch" href="https://api.stripe.com" />
+ <link rel="dns-prefetch" href="https://checkout.stripe.com" />
+ <Script id="google-tag-manager" strategy="afterInteractive">
+ {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WL7ZGB88');`}
-        </Script>
-        {/* Meta Pixel - Direct (DISABLE IN GTM FIRST to avoid duplicates) */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1344457960748728');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1344457960748728&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
-      </head>
-      <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WL7ZGB88"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {children}
-      </body>
-    </html>
-  )
+ </Script>
+ {/* Meta Pixel - Direct (DISABLE IN GTM FIRST to avoid duplicates) */}
+ <Script id="facebook-pixel" strategy="afterInteractive">
+ {`
+ !function(f,b,e,v,n,t,s)
+ {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+ n.queue=[];t=b.createElement(e);t.async=!0;
+ t.src=v;s=b.getElementsByTagName(e)[0];
+ s.parentNode.insertBefore(t,s)}(window, document,'script',
+ 'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1344457960748728');
+ fbq('track', 'PageView');
+ `}
+ </Script>
+ <noscript>
+ <img
+ height="1"
+ width="1"
+ style={{ display: 'none' }}
+ src="https://www.facebook.com/tr?id=1344457960748728&ev=PageView&noscript=1"
+ alt=""
+ />
+ </noscript>
+ </head>
+ <body>
+ <noscript>
+ <iframe
+ src="https://www.googletagmanager.com/ns.html?id=GTM-WL7ZGB88"
+ height="0"
+ width="0"
+ style={{ display: 'none', visibility: 'hidden' }}
+ />
+ </noscript>
+ {children}
+ </body>
+ </html>
+ )
 }
